@@ -1,9 +1,64 @@
 {
-    "usersdata": [
-      { "id": 1, "username": "json-server", "password": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+  "usersdata": [
+    {
+      "mobileNo": "",
+      "password": "",
+      "id": 1
+    },
+    {
+      "mobileNo": "",
+      "password": "",
+      "id": 2
+    },
+    {
+      "mobileNo": "08886081842",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "mobileNo": "08886081842",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "mobileNo": "08886081842",
+      "password": "159",
+      "id": 5
+    },
+    {
+      "mobileNo": "08886081842",
+      "password": "159",
+      "id": 6
+    },
+    {
+      "mobileNo": "08886081842",
+      "password": "159",
+      "id": 7
+    },
+    {
+      "mobileNo": "08886081842",
+      "password": "123",
+      "id": 8
+    },
+    {
+      "mobileNo": "987456",
+      "password": "123",
+      "id": 9
+    },
+    {
+      "mobileNo": "123",
+      "password": "123",
+      "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
   }
+}
