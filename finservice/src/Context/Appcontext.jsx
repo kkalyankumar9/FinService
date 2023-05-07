@@ -10,7 +10,10 @@ export default function AppContextProvider({children}){
     let LogOut=()=>{
         setisAuth(false)
     }
-    return <AppContext.Provider value={{LogIn,LogOut,isAuth}}>
+    const [founds,setFounds]=useState(0)
+    
+
+    return <AppContext.Provider value={{LogIn,LogOut,isAuth,founds,setFounds}}>
         {children}
     </AppContext.Provider>
 }

@@ -3,26 +3,33 @@ import { Link } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import Footer from "./Footer";
 import Poster from "./Middle";
-import Slideshow from "./slid";
-import AssetClasses from "./nn";
+// import Slideshow from "./slid";
+
+import { useContext } from "react";
+import { AppContext } from "../Context/Appcontext";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const {isAuth}=useContext(AppContext)
   return (
     <>
 
     <Box
+     px={4} py={3} position="sticky" top={0} zIndex="docked"
     
       as="nav"
       display="flex"
       alignItems="center"
       justifyContent="space-between"
-      backgroundColor="#dfd3ec"
+      backgroundColor=""
       boxShadow="md"
-      px={4}
-      py={2}
+      
+    
       width={"100%"}
+      fontSize= "14px"
+    line-height="1.42857143"
+    color= "#333"
+    background-color=" #fff"
       
     >
       <Box display="flex" alignItems="center" >
@@ -45,19 +52,19 @@ const Navbar = () => {
         mt={{ base: 4, md: 0 }}
       >
         <Box as="li">
-          <Link to="/"><Text textColor={"white"} fontSize={"28px"} w={"100px"}>Home</Text> </Link>
+          <Link to="/invest"><Text textColor={"#8323f1"} fontSize={"28px"} w={"100px"}>Invest</Text> </Link>
         </Box>
         <Box as="li">
-          <Link to="/about"><Text textColor={"white"} fontSize={"28px"} w={"100px"}>About</Text> </Link>
+          <Link to="/about"><Text textColor={"#8323f1"} fontSize={"28px"} w={"100px"}>About</Text> </Link>
         </Box>
         <Box as="li">
-          <Link to="/contact"><Text textColor={"white"} fontSize={"28px"} w={"100px"}>Contact</Text> </Link>
+          <Link to="/contact"><Text textColor={"#8323f1"} fontSize={"28px"} w={"100px"}>Contact</Text> </Link>
         </Box>
       </HStack>
       <Box>
         <Box>
-      <Button colorScheme="pink"   size="md" width={"200px"}  fontSize={"20px"} gap={"5px"}>
-        <Link to="/signup">Create</Link>
+      <Button colorScheme="pink"    size="md" width={"200px"}  fontSize={"20px"} gap={"5px"}>
+        <Link to="/signup" >Create</Link>
       </Button>
       <Button colorScheme="teal" size="md"  width={"200px"}  fontSize={"20px"}>
         <Link to={"/login"}> Login</Link>

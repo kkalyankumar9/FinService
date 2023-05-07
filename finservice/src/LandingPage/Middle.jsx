@@ -30,7 +30,7 @@ return (
     {/* PART-1 */}
 
     <Box display={{base: "block", md: "flex"}} justifyContent={"center"} textAlign={"center"} m={"auto"}>
-  <Box  p={10} rounded="md" boxShadow="lg" w={{base: "100%", md: "50%"}} mb={{base: 10, md: 0}}>
+  <Box  p={10} rounded="md"  w={{base: "100%", md: "50%"}} mb={{base: 10, md: 0}}>
     <Heading as="h2" size="lg" mb={5}>
       OPEN A FREE DEMAT ACCOUNT
     </Heading>
@@ -56,7 +56,7 @@ return (
     <Image src="https://png.pngtree.com/template/20190905/ourmid/pngtree-return-of-investment-growth-investing-stock-market-golden-coin-dollar-and-image_301813.jpg" alt="error" w="100%"></Image>
   </Box>
 </Box>
-
+<br />
 
  {/* PART-2 */}
 <Box py={10} bg="gray.50">
@@ -212,7 +212,7 @@ return (
 
 <Box py={6} bg="gray.50">
 <Box textAlign="center">
-<Button  color="white" fontSize={"26px"} bg={"#39305d"} > Start Investing</Button>
+<Button  color="white" fontSize={"26px"} bg={"#39305d"} > <Link to="/invest">Start Investing</Link> </Button>
 <br />
 <br />
 <Text fontSize="lg">Open an account today and enjoy ZERO brokerage* for 30 days</Text>
