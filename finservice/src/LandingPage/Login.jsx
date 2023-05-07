@@ -76,7 +76,8 @@ function Login() {
         
       
       </form>
-      <Button><Link to="/signup">Back    </Link></Button>
+      <Button><Link to="/signup" >Sign Up  </Link></Button>
+      <Button><Link to="/">Back    </Link></Button>
     </Box>
   );
 }
