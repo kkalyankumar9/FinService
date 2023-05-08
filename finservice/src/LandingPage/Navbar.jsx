@@ -75,7 +75,7 @@ const Navbar = () => {
       <Box display={{ base: isOpen ? "block" : "none", md: "none" }} position="absolute" top={0} left={0} w="full" h="full" bg="white" pt="80px">
         <HStack as="ul" listStyleType="none" spacing={4} flexDir="column" alignItems="center">
           <Box as="li" onClick={onClose} >
-            <Link to="/" ><Text textColor={"teal"} fontSize={"28px"} w={"100px"}>Home</Text> </Link>
+            <Link to="/invest" ><Text textColor={"teal"} fontSize={"28px"} w={"100px"}>Invest</Text> </Link>
           </Box>
           <Box as="li" onClick={onClose}>
             <Link to="/about"><Text textColor={"teal"} fontSize={"28px"} w={"100px"}>About</Text></Link>

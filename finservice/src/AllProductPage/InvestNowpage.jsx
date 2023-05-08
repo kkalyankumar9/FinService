@@ -5,6 +5,10 @@ import axios from 'axios';
 import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../Context/Appcontext";
 import DrawerExample from "./AddFound";
+import Iposdata from "./Ipos";
+import { SearchIcon } from "@chakra-ui/icons";
+import { SearchBar } from "./Searchbar";
+import Footer from "../LandingPage/Footer";
 const InvestNow = () => {
   const [stock,setStock]=useState([])
   const [loading,setLoading]=useState(true)
@@ -13,7 +17,7 @@ const InvestNow = () => {
   const [orderby,setOrderby]=useState("")
   const [searchby,setSearchby]=useState("")
   const [page,setPage]=useState(1)
-  
+const {orderData,setOrderData}=useContext(AppContext)
 
   useEffect(() => {
     let url = `http://localhost:8080/stocks?_page=${page}&_limit=9&`;
@@ -40,6 +44,7 @@ const InvestNow = () => {
         console.log(error);
         setLoading(false);
       });
+
   }, [location, sortby, orderby, searchby,page]);
   
 const {LogOut}=useContext(AppContext)
@@ -48,23 +53,47 @@ const handleOut=()=>{
   LogOut()
   navigate("/")
 }
+const {funds,setFunds}=useContext(AppContext)
+const {orders,setOrders}=useContext(AppContext)
 
-const {founds}=useContext(AppContext)
-const handleBuy = (id, data) => {
-  if (founds > 0) {
-    axios.post('http://localhost:8080/buystock', { id, stock })
-      .then(function (response) {
-        console.log(response)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
+const handleBuy =  (id,current_price) => {
 
-    alert("Stock Bought")
+  if (funds > 0) {
+    if(funds>=current_price){
+      
+      axios.get(`http://localhost:8080/stocks/${id}`)
+      .then((res) => {
+        setOrders([...orders, res]);
+        //console.log(res)
+        console.log(orders)
+        setFunds(Math.abs(funds-(+current_price)))
+        
+      })
+      
+      alert("Stock Bought");
+
+    }else{
+      alert(`Insufficient funds. Please add more funds. Balance: ₹${funds.toFixed(2)}`)
+    }
+   
+   
   } else {
-    alert("Please add funds")
+    alert("Please add funds");
   }
-}
+};
+// useEffect(() => {
+//   console.log('Orders:', orders);
+// }, [orders]);
+// const [cart,setcartdata]=useState([])
+// const {data,setdata}=useContext(AuthContext)
+// const handlecart=(id)=>{
+//   axios.get(`http://localhost:8080/Products/${id}`)
+//   .then((res)=>setdata([...data,res.data]))
+   
+// }
+// console.log(data)
+
+ 
 
 
 
@@ -72,7 +101,7 @@ return (
   <>
 
   <Box bg={"	gray.100"}>
-  <HStack bg="#8323f1" px={4} py={3} position="sticky" top={0} zIndex="docked" justifyContent={"space-between"}>
+  <HStack bg="#8F00FF" px={4} py={3} position="sticky" top={0} zIndex="docked" justifyContent={"space-between"}>
       <Box display="flex" alignItems="center" >
         {/* <Image
           src="https://t4.ftcdn.net/jpg/00/79/77/19/360_F_79771929_dkEtuIuxFdNOlv6Evj1Nj1kaSLgSas34.jpg"
@@ -91,25 +120,39 @@ return (
    
       </Text>
       <Text as="h6" color="white" fontWeight="bold">
-      <Link>   IPOs  </Link>
+      <Link to={"/ipos"}>   IPOs  </Link>
        
         </Text>
       <Text as="h6" color="white" fontWeight="bold">
-      <Link>      Mutual Founds  </Link>
+      <Link to={"/mutualfound"}>      Mutual Founds  </Link>
        
      </Text>
+     <Text as="h6" color="white" fontWeight="bold">
+      <Link to={"/order"}>      Orders </Link>
+       
+     </Text>
+     
+     
+     
      <DrawerExample/>
+     <Text as="h6" color="white" fontWeight="bold">
+   Balance:₹{funds.toFixed(2)}
+       
+     </Text>
       </HStack>
-      <Button onClick={handleOut} bg="teal" color="white">
+      <Button onClick={handleOut} bg=" #C5FAD5" color="black">
         Log Out
       </Button>
       
     </HStack>
   <br/>
-  <HStack w={"50%"} m="auto"  > 
-            <Text>Search:</Text>
-            <Input value={searchby} onChange={(e) => setSearchby(e.target.value)}  border={"1px solid teal"}/>
+  <HStack w={"50%"} m="auto"  textAlign={"center"}> 
+            
+            <Input value={searchby} onChange={(e) => setSearchby(e.target.value)} border={"2px solid teal"}  />
+            <SearchIcon/>
+            
           </HStack>
+       
           <br/>
     <Grid
       templateColumns={{ base: "1fr", md: "1fr 3fr" }}
@@ -119,7 +162,7 @@ return (
       <Box>
         <Grid templateColumns="repeat(1, 1fr)" gap={4} alignItems="center" >
           <Box>
-            <Text>Location:</Text>
+            <Text fontSize={"20px"} color={"#8323f1"}>Location</Text>
             <Select
               className="filter-by-location"
               value={location}
@@ -142,7 +185,7 @@ return (
             </Select>
           </Box>
           <Box>
-            <Text>Sort by:</Text>
+            <Text fontSize={"20px"} color={"#8323f1"}>Sort by</Text>
             <Select
               className="sort-by"
               value={sortby}
@@ -155,7 +198,7 @@ return (
             </Select>
           </Box>
           <Box>
-            <Text>Order:</Text>
+            <Text fontSize={"20px"} color={"#8323f1"} >Order</Text>
             <Select
               className="order"
               value={orderby}
@@ -182,12 +225,16 @@ return (
               <Box
                 key={e.id}
                 borderWidth="1px"
-                borderRadius="2g"
+               // borderRadius="2g"
                 overflow="hidden"
                 p={4}
-                bg={"pink.50"}
+               // bg={"#FFFFD2"}
+                bg="white"
+              border="1px solid gray"
+              borderRadius="md"
+              boxShadow="md"
               >
-                <Heading size="md" mb={2} >
+                <Heading size="md"color="#8F00FF" mb={2} >
                   {e.company_name}
                 </Heading>
                 <Text mb={2} >
@@ -202,8 +249,8 @@ return (
                 <Text mb={2} >
                   Market Cap: {e.market_cap}
                 </Text>
-                <Button mr={2} bg={["blue.500", "blue.300"]} color={["white", "gray.800"]}
-                onClick={handleBuy}
+                <Button mr={2} bg={["#FFFFD2", "blue.300"]} color={["white", "gray.800"]}
+                onClick={()=>handleBuy(e.id,e.current_price)}
                 >
                   BUY
                 </Button>
@@ -227,6 +274,7 @@ return (
       
     </Grid>
     </Box>
+<Footer/>
     <br />
     
   </>

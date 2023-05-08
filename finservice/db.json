@@ -4,6 +4,12 @@
       "mobileNo": "08886081842",
       "password": "456",
       "id": 1
+    },
+    {
+      "mobileNo": "08886081842",
+      "username": "k kalyan kumar",
+      "password": "123",
+      "id": 2
     }
   ],
   "founds": [
@@ -20,6 +26,97 @@
       "paymentMode": "",
       "description": "",
       "id": 2
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 3
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 4
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 5
+    },
+    {
+      "amount": "78",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 6
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 7
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 8
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 9
+    },
+    {
+      "amount": "78",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 10
+    },
+    {
+      "amount": "48",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 11
+    },
+    {
+      "amount": "2000",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 12
+    },
+    {
+      "amount": "10",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 13
+    },
+    {
+      "amount": "400",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 14
+    },
+    {
+      "amount": "80",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 15
     }
   ],
   "buystock": [
@@ -27,6 +124,273 @@
       "id": 1
     }
   ],
+  "ipos": [
+    {
+      "id": 1,
+      "name": "Paytm",
+      "symbol": "PAYTM",
+      "description": "A digital wallet and e-commerce company based in India.",
+      "pricePerShare": 100,
+      "totalShares": 10000000,
+      "availableShares": 5000000,
+      "ipoDate": "2021-11-01",
+      "location": "Noida, Uttar Pradesh, India",
+      "imageURL": "https://paytm.com/assets/images/paytm_logo.png"
+    },
+    {
+      "id": 2,
+      "name": "MobiKwik",
+      "symbol": "MOBIKWIK",
+      "description": "An Indian mobile payment and financial services company.",
+      "pricePerShare": 50,
+      "totalShares": 5000000,
+      "availableShares": 2500000,
+      "ipoDate": "2022-01-01",
+      "location": "Gurugram, Haryana, India",
+      "imageURL": "https://cdn.mobiwik.com/assets/images/logo.png"
+    },
+    {
+      "id": 3,
+      "name": "CarTrade Tech",
+      "symbol": "CTRDTCH",
+      "description": "An online marketplace for buying and selling new and used cars in India.",
+      "pricePerShare": 75,
+      "totalShares": 8000000,
+      "availableShares": 4000000,
+      "ipoDate": "2022-03-01",
+      "location": "Mumbai, Maharashtra, India",
+      "imageURL": "https://cartrade.com/static/images/CarTrade_Tech_Logo.png"
+    },
+    {
+      "id": 4,
+      "name": "Zomato",
+      "symbol": "ZOMATO",
+      "description": "An Indian restaurant aggregator and food delivery company.",
+      "pricePerShare": 80,
+      "totalShares": 12000000,
+      "availableShares": 6000000,
+      "ipoDate": "2021-07-01",
+      "location": "Gurugram, Haryana, India",
+      "imageURL": "https://b.zmtcdn.com/images/logo/zomato_logo_2017.png"
+    },
+    {
+      "id": 5,
+      "name": "Delhivery",
+      "symbol": "DEL",
+      "description": "A leading logistics and supply chain solutions provider in India.",
+      "pricePerShare": 50,
+      "totalShares": 20000000,
+      "availableShares": 10000000,
+      "ipoDate": "2023-07-01",
+      "location": "Gurgaon, Haryana, India",
+      "imageURL": "https://www.delhivery.com/assets/images/logo.png"
+    },
+    {
+      "id": 6,
+      "name": "Policybazaar",
+      "symbol": "POL",
+      "description": "India's largest online insurance aggregator offering a range of insurance products.",
+      "pricePerShare": 100,
+      "totalShares": 15000000,
+      "availableShares": 7500000,
+      "ipoDate": "2023-07-15",
+      "location": "Gurgaon, Haryana, India",
+      "imageURL": "https://www.policybazaar.com/assets/images/logo.svg"
+    },
+    {
+      "id": 7,
+      "name": "Flipkart",
+      "symbol": "FLP",
+      "description": "India's leading e-commerce company offering a range of products and services.",
+      "pricePerShare": 200,
+      "totalShares": 25000000,
+      "availableShares": 12500000,
+      "ipoDate": "2023-08-01",
+      "location": "Bengaluru, Karnataka, India",
+      "imageURL": "https://www.flipkart.com/apple-touch-icon.png"
+    },
+    {
+      "id": 8,
+      "name": "Nykaa",
+      "symbol": "NYK",
+      "description": "A leading online beauty and wellness platform in India.",
+      "pricePerShare": 150,
+      "totalShares": 10000000,
+      "availableShares": 5000000,
+      "ipoDate": "2023-08-15",
+      "location": "Mumbai, Maharashtra, India",
+      "imageURL": "https://www.nykaa.com/skin/frontend/nykaa/default/images/nykaa-logo.png"
+    },
+    {
+      "id": 9,
+      "name": "Ola Electric",
+      "symbol": "OLA",
+      "description": "An Indian electric vehicle manufacturer and mobility company.",
+      "pricePerShare": 250,
+      "totalShares": 20000000,
+      "availableShares": 10000000,
+      "ipoDate": "2023-09-01",
+      "location": "Bengaluru, Karnataka, India",
+      "imageURL": "https://www.olaelectric.com/assets/images/ola-electric-logo.svg"
+    },
+    {
+      "id": 10,
+      "name": "Grofers",
+      "symbol": "GRF",
+      "description": "An Indian online grocery delivery service.",
+      "pricePerShare": 50,
+      "totalShares": 15000000,
+      "availableShares": 7500000,
+      "ipoDate": "2023-09-15",
+      "location": "Gurgaon, Haryana, India",
+      "imageURL": "https://www.grofers.com/images/grofers-logo.png"
+    },
+    {
+      "id": 11,
+      "name": "Nuvoco Vistas Corporation Ltd",
+      "symbol": "NUV",
+      "description": "A leading Indian cement manufacturer.",
+      "pricePerShare": 100,
+      "totalShares": 30000000,
+      "availableShares": 15000000,
+      "ipoDate": "2023-10-01",
+      "location": "Mumbai, Maharashtra, India",
+      "imageURL": "https://www.nuvoco.in/content/dam/nvc/main-page/NUVOCO_Logo.png"
+    },
+    {
+      "id": 12,
+      "name": "Bajaj Energy Limited",
+      "symbol": "BJE",
+      "description": "A thermal power generation company in India.",
+      "pricePerShare": 50,
+      "totalShares": 25000000,
+      "availableShares": 12500000,
+      "ipoDate": "2023-10-15",
+      "location": "Noida, Uttar Pradesh, India",
+      "imageURL": "https://www.bajajenergy.com/images/bajaj-logo.svg"
+    },
+    {
+      "id": 13,
+      "name": "Krsnaa Diagnostics Limited",
+      "symbol": "KDL",
+      "description": "A leading diagnostic services provider in India.",
+      "pricePerShare": 150,
+      "totalShares": 20000000,
+      "availableShares": 10000000,
+      "ipoDate": "2023-11-01",
+      "location": "Bengaluru, Karnataka, India",
+      "imageURL": "https://www.krsnaadiagnostics.com/images/Krsnaa-logo.svg"
+    },
+    {
+      "id": 14,
+      "name": "Ami Organics Limited",
+      "symbol": "AMI",
+      "description": "A specialty chemicals manufacturer in India, providing custom manufacturing and advanced intermediates to global pharmaceutical companies.",
+      "pricePerShare": 100,
+      "totalShares": 15000000,
+      "availableShares": 7500000,
+      "ipoDate": "2021-09-14",
+      "location": "Surat, Gujarat, India",
+      "imageURL": "https://www.amiorganics.com/assets/img/logo.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Exxaro Tiles Limited",
+      "symbol": "EXX",
+      "description": "A manufacturer and exporter of ceramic tiles and sanitaryware, catering to over 30 countries worldwide.",
+      "pricePerShare": 50,
+      "totalShares": 10000000,
+      "availableShares": 5000000,
+      "ipoDate": "2021-08-23",
+      "location": "Morbi, Gujarat, India",
+      "imageURL": "https://www.exxarotiles.com/images/logo.png"
+    },
+    {
+      "id": 16,
+      "name": "Vijaya Diagnostic Centre Ltd",
+      "symbol": "VDC",
+      "description": "A leading diagnostic chain in South India, providing a range of diagnostic services including pathology, radiology and imaging.",
+      "pricePerShare": 500,
+      "totalShares": 10000000,
+      "availableShares": 5000000,
+      "ipoDate": "2021-09-14",
+      "location": "Hyderabad, Telangana, India",
+      "imageURL": "https://www.vijayadiagnostic.com/images/vijaya-logo.png"
+    },
+    {
+      "id": 17,
+      "name": "Glenmark Life Sciences Limited",
+      "symbol": "GLS",
+      "description": "A leading developer and manufacturer of active pharmaceutical ingredients (APIs) in India, with a global presence in over 65 countries.",
+      "pricePerShare": 700,
+      "totalShares": 15000000,
+      "availableShares": 7500000,
+      "ipoDate": "2021-07-27",
+      "location": "Mumbai, Maharashtra, India",
+      "imageURL": "https://www.glenmarklifesciences.com/images/logo.png"
+    },
+    {
+      "id": 18,
+      "name": "Devyani International Limited",
+      "symbol": "DEV",
+      "description": "One of the largest franchisee operators of quick service restaurants (QSR) in India, with a portfolio of well-known brands like KFC, Pizza Hut, Costa Coffee and more.",
+      "pricePerShare": 90,
+      "totalShares": 20000000,
+      "availableShares": 10000000,
+      "ipoDate": "2021-08-16",
+      "location": "Gurgaon, Haryana, India",
+      "imageURL": "https://www.devyaniinternational.com/wp-content/uploads/2019/11/DIL-Logo.png"
+    },
+    {
+      "id": 19,
+      "name": "RailTel Corporation of India Limited",
+      "symbol": "RAILTEL",
+      "description": "A Mini Ratna (Category-I) public sector enterprise, providing telecom infrastructure and broadband services in India.",
+      "pricePerShare": 94,
+      "totalShares": 87200000,
+      "availableShares": 43600000,
+      "ipoDate": "2021-02-26",
+      "location": "New Delhi, India",
+      "imageURL": "https://www.railtelindia.com/img/Logo.png"
+    },
+    {
+      "id": 20,
+      "name": "Sona BLW Precision Forgings Limited",
+      "symbol": "SONA",
+      "description": "A leading manufacturer of precision forged and machined components for the automotive industry, serving clients like Maruti Suzuki, Hyundai, and Ford.",
+      "pricePerShare": 291,
+      "totalShares": 16500000,
+      "availableShares": 8250000,
+      "ipoDate": "2021-06-16",
+      "location": "Gurgaon, Haryana, India",
+      "imageURL": "https://www.sonablw.com/img/sona-blg.png"
+    },
+    {
+      "id": 21,
+      "name": "Chemplast Sanmar Limited",
+      "symbol": "CHEMPLAST",
+      "description": "A specialty chemicals manufacturer in India, providing products like PVC resins, caustic soda, and more, with a global presence in over 30 countries.",
+      "pricePerShare": 530,
+      "totalShares": 43000000,
+      "availableShares": 21500000,
+      "ipoDate": "2021-08-10",
+      "location": "Chennai, Tamil Nadu, India",
+      "imageURL": "https://www.chemplastsanmar.com/images/logo.svg"
+    },
+    {
+      "id": 22,
+      "name": "Aptus Value Housing Finance India Limited",
+      "symbol": "APTUS",
+      "description": "A retail-focused housing finance company in India, providing affordable home loans to low- and middle-income customers in semi-urban and rural areas.",
+      "pricePerShare": 353,
+      "totalShares": 27800000,
+      "availableShares": 13900000,
+      "ipoDate": "2021-08-10",
+      "location": "Chennai, Tamil Nadu, India",
+      "imageURL": "https://www.aptusindia.com/images/brand-logo.png"
+    }
+  ],
+  "mutualfounds": [],
   "stocks": [
     {
       "id": 1,

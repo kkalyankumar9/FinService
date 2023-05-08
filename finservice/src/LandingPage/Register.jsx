@@ -13,7 +13,9 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [mobileNo, setMobileNo] = useState('');
+  const [username,setUsername] = useState('');
   const [password, setPassword] = useState('');
+
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
@@ -23,7 +25,7 @@ const Signup = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (mobileNo === '' || password === '' || confirmPassword === '') {
+    if (mobileNo === '' || username===`` || password === '' || confirmPassword === '') {
       setError('Please fill out all fields');
       return;
     }
@@ -36,6 +38,7 @@ const Signup = () => {
     axios
       .post('http://localhost:8080/usersdata', {
         mobileNo: mobileNo,
+        username:username,
         password: password,
       })
       .then((response) => {
@@ -74,6 +77,15 @@ const Signup = () => {
             name="mobileNo"
             value={mobileNo}
             onChange={(event) => setMobileNo(event.target.value)}
+            border={"1px solid pink"}
+          />
+          <FormLabel htmlFor="username">User Name</FormLabel>
+          <Input
+            type="text"
+            name="username"
+            value={username}
+            onChange={(event) => setUsername(event.target.value)}
+            border={"1px solid pink"}
           />
         </FormControl>
         <FormControl isRequired>
@@ -83,6 +95,7 @@ const Signup = () => {
             name="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
+            border={"1px solid pink"}
           />
         </FormControl>
         <FormControl isRequired>
@@ -92,6 +105,7 @@ const Signup = () => {
             name="confirmPassword"
             value={confirmPassword}
             onChange={(event) => setConfirmPassword(event.target.value)}
+            border={"1px solid pink"}
           />
         </FormControl>
         {error && <p style={{ color: 'red' }}>{error}</p>}
