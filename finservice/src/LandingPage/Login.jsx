@@ -59,16 +59,18 @@ function Login() {
   };
 
   return (
+    <>
+    <Box >
     <Box w="400px" mx="auto" mt="50px" p="20px" borderWidth="1px" borderRadius="lg" boxShadow="lg">
       <form onSubmit={handleSubmit}>
         <FormControl isRequired>
           <FormLabel htmlFor="mobile-no">Mobile Number:</FormLabel>
-          <Input type="text" id="mobile-no" name="mobileNo" value={mobileNo} onChange={(e) => setMobileNo(e.target.value)} />
+          <Input type="text" id="mobile-no" name="mobileNo" border={"1px solid pink"} value={mobileNo} onChange={(e) => setMobileNo(e.target.value)} />
         </FormControl>
 
         <FormControl mt="20px" isRequired>
           <FormLabel htmlFor="password">Password:</FormLabel>
-          <Input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <Input type="password" id="password" name="password" border={"1px solid pink"} value={password} onChange={(e) => setPassword(e.target.value)} />
         </FormControl>
 
         <Button type="submit" colorScheme="blue" mt="20px">Login</Button>
@@ -79,6 +81,8 @@ function Login() {
       <Button><Link to="/signup" >Sign Up  </Link></Button>
       <Button><Link to="/">Back    </Link></Button>
     </Box>
+    </Box>
+    </>
   );
 }
 

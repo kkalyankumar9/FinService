@@ -25,12 +25,12 @@ import { AppContext } from '../Context/Appcontext'
 export default function DrawerExample() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const firstField = React.useRef()
-    const [foundData,setFoundData]=useState([])
+    const [fundData,setFundData]=useState([])
     const [amount,setAmount]=useState("")
     const [mobileno,setMobileno]=useState("")
     const [paymentMode,setpaymentMode]=useState("")
     const [description,setdescription]=useState("")
-const {founds,setFounds}=useContext(AppContext)
+const {funds,setFunds}=useContext(AppContext)
 
    
   const handleSubmit = (e) => {
@@ -39,8 +39,8 @@ const {founds,setFounds}=useContext(AppContext)
     axios.post('http://localhost:8080/founds', formData)
       .then(function (response) {
         console.log(response)
-        setFoundData(response.data) // set the response data to state
-        setFounds(+founds+(+response.data.amount))
+        setFundData(response.data) // set the response data to state
+        setFunds(+funds+(+response.data.amount))
         setAmount("")
         setMobileno("")
         setpaymentMode("")
@@ -59,7 +59,7 @@ const {founds,setFounds}=useContext(AppContext)
   
     return (
       <>
-        <Button leftIcon={<AddIcon />} colorScheme='teal' onClick={onOpen}>
+        <Button leftIcon={<AddIcon />} colorScheme='#8A307F'  onClick={onOpen}>
           Add Founds
         </Button>
         <Drawer
@@ -76,7 +76,7 @@ const {founds,setFounds}=useContext(AppContext)
             </DrawerHeader>
             <Text textAlign={"end"} color={'teal'} p={"5px"}>
                 Balance Amount:
-                {founds}
+                {funds.toFixed(2)}
               </Text>
             <DrawerBody>
               <Stack spacing='24px'>
