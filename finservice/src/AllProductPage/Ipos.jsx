@@ -48,7 +48,7 @@ function IpoData() {
   const [searchby,setSearchby]=useState("")
   const [page,setPage]=useState(1)
   useEffect(() => {
-    let url = `http://localhost:8080/ipos?_page=${page}&_limit=3&`;
+    let url = `http://localhost:${process.env.REACT_APP_USERSDATA}/ipos?_page=${page}&_limit=3&`;
   
    
   
@@ -67,7 +67,29 @@ function IpoData() {
         dispatch({ type: "DATA_ERROR", payload: error.message });
     });
   }, [ searchby,page]);
-  
+
+  const {funds,setFunds}=useContext(AppContext)
+const {orders,setOrders}=useContext(AppContext)
+const handleBuy = (id, pricePerShare,data) => {
+ 
+
+  if (funds < pricePerShare) {
+    alert(`Insufficient funds. Please add more funds. Balance: ₹${funds.toFixed(2)}`);
+    return;
+  }
+
+  axios
+    .post("http://localhost:8080/ordersipo", data)
+    .then(() => {
+      setFunds(funds - pricePerShare);
+      alert("Stock bought successfully");
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("Failed to add stock to orders");
+    });
+};
+
 //   useEffect(() => {
 //     let url = `http://localhost:8080/ipos?_page=${page}&_limit=5&`;
     
@@ -89,7 +111,7 @@ function IpoData() {
 //     fetchData();
     
 //   }, [searchby,page]);
-const {LogOut,funds}=useContext(AppContext)
+const {LogOut}=useContext(AppContext)
 const navigate=useNavigate()
 const handleOut=()=>{
   LogOut()
@@ -101,7 +123,7 @@ const handleOut=()=>{
   return (
     <>
 
-    <Box bg="gray.100">
+    <Box bg="gray.50">
 
     <HStack bg="#8F00FF" px={4} py={3} position="sticky" top={0} zIndex="docked" justifyContent={"space-between"}>
       <Box display="flex" alignItems="center" >
@@ -141,7 +163,7 @@ const handleOut=()=>{
         Log Out
       </Button>
       
-    </HStack>
+    </HStack >
   <br />
     <HStack w={"50%"} m="auto"  textAlign={"center"}> 
 
@@ -151,7 +173,7 @@ const handleOut=()=>{
             
           </HStack>
        
-    <Flex justifyContent="center" bg="gray.100" py={8}>
+    <Flex justifyContent="center" bg="gray.50" py={8}>
     <Box width="100%" maxWidth="800px" px={4}>
       {state.loading && (
         <Text fontSize="lg" fontWeight="bold" my={4} color="gray.600">
@@ -203,7 +225,7 @@ const handleOut=()=>{
                   {ipo.availableShares} available shares
                 </Text>
               </Flex>
-              <Button bg={"pink"}>Subscribe</Button>
+              <Button bg={"pink"} onClick={()=>handleBuy(ipo.id,ipo.pricePerShare,ipo)}>Subscribe</Button>
             </Box>
           ))}
         </>
@@ -226,12 +248,3 @@ const handleOut=()=>{
 }
 
 export default IpoData;
-// "name": "Aptus Value Housing Finance India Limited",
-//       "symbol": "APTUS",
-//       "description": "A retail-focused housing finance company in India, providing affordable home loans to low- and middle-income customers in semi-urban and rural areas.",
-//       "pricePerShare": 353,
-//       "totalShares": 27800000,
-//       "availableShares": 13900000,
-//       "ipoDate": "2021-08-10",
-//       "location": "Chennai, Tamil Nadu, India",
-{/*  */}

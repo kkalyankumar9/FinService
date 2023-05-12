@@ -17,7 +17,7 @@ const InvestNow = () => {
   const [orderby,setOrderby]=useState("")
   const [searchby,setSearchby]=useState("")
   const [page,setPage]=useState(1)
-const {orderData,setOrderData}=useContext(AppContext)
+
 
   useEffect(() => {
     let url = `http://localhost:8080/stocks?_page=${page}&_limit=9&`;
@@ -56,51 +56,38 @@ const handleOut=()=>{
 const {funds,setFunds}=useContext(AppContext)
 const {orders,setOrders}=useContext(AppContext)
 
-const handleBuy =  (id,current_price) => {
 
-  if (funds > 0) {
-    if(funds>=current_price){
-      
-      axios.get(`http://localhost:8080/stocks/${id}`)
-      .then((res) => {
-        setOrders([...orders, res]);
-        //console.log(res)
-        console.log(orders)
-        setFunds(Math.abs(funds-(+current_price)))
-        
-      })
-      
-      alert("Stock Bought");
 
-    }else{
-      alert(`Insufficient funds. Please add more funds. Balance: ₹${funds.toFixed(2)}`)
-    }
-   
-   
-  } else {
-    alert("Please add funds");
-  }
-};
-// useEffect(() => {
-//   console.log('Orders:', orders);
-// }, [orders]);
-// const [cart,setcartdata]=useState([])
-// const {data,setdata}=useContext(AuthContext)
-// const handlecart=(id)=>{
-//   axios.get(`http://localhost:8080/Products/${id}`)
-//   .then((res)=>setdata([...data,res.data]))
-   
-// }
-// console.log(data)
 
+
+const handleBuy = (id, current_price,data) => {
  
+
+  if (funds < current_price) {
+    alert(`Insufficient funds. Please add more funds. Balance: ₹${funds.toFixed(2)}`);
+    return;
+  }
+
+  axios
+    .post("http://localhost:8080/orderstock", data)
+    .then(() => {
+      setFunds(funds - current_price);
+      alert("Stock bought successfully");
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("Failed to add stock to orders");
+    });
+};
+
+
 
 
 
 return (
   <>
 
-  <Box bg={"	gray.100"}>
+  <Box bg={"	gray.50"}>
   <HStack bg="#8F00FF" px={4} py={3} position="sticky" top={0} zIndex="docked" justifyContent={"space-between"}>
       <Box display="flex" alignItems="center" >
         {/* <Image
@@ -250,7 +237,7 @@ return (
                   Market Cap: {e.market_cap}
                 </Text>
                 <Button mr={2} bg={["#FFFFD2", "blue.300"]} color={["white", "gray.800"]}
-                onClick={()=>handleBuy(e.id,e.current_price)}
+                onClick={()=>handleBuy(e.id,e.current_price,e)}
                 >
                   BUY
                 </Button>
