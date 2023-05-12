@@ -1,8 +1,9 @@
-import { Box, Heading, Text, Stack } from "@chakra-ui/react";
+import { Box, Heading, Text, Stack, Button } from "@chakra-ui/react";
 import Footer from "../LandingPage/Footer";
+import { Link } from "react-router-dom";
 
 const AboutPage = () => {
-  return (
+  return (     <>
     <Box maxW="xl" mx="auto" my={10} px={6}>
       <Heading as="h1" size="xl" mb={5}>
         About Us
@@ -22,8 +23,13 @@ const AboutPage = () => {
           customers, whether they're new to investing or seasoned traders.
         </Text>
       </Stack>
-      <Footer/>
+      <Button><Link to="/">Back</Link> </Button>
+      <br />
+     
+
     </Box>
+     <Footer />
+</>
   );
 };
 

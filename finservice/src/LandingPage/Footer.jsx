@@ -2,7 +2,9 @@ import { Box, Stack, Text } from "@chakra-ui/react";
 
 function Footer() {
   return (
-    <Box bg="#dfd3ec" py={8}>
+    <Box bg="#dfd3ec" py={8} 
+    bottom="0" 
+    width="100%">
       <Stack direction="column" spacing={4} align="center">
         <Text fontSize="sm">
           RKSV Securities: SEBI Registration No. INZ000185137 | NSE Member Code:

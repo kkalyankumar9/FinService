@@ -11,6 +11,8 @@ import MutualFounds from "../AllProductPage/Mutualfounds"
 import Orders from "../AllProductPage/Orderspage"
 import AboutPage from "../Aboutpage/About"
 import ContactDetails from "../Aboutpage/Contact"
+import Orderstock from "../AllProductPage/Orderstock"
+import Ordersipo from "../AllProductPage/Odersipo"
 
 function AllRoutes(){
   return <div>
@@ -19,12 +21,14 @@ function AllRoutes(){
   <Route path="/signup" element={<Signup/>}/>
   <Route path="/login" element={<Login/>}/>
   <Route path="/invest" element={<PrivateRoute><InvestNow/></PrivateRoute>}/>
-  <Route path="/invest/:id" element={<MoreDetails/>}/>
-  <Route path="/ipos" element={<Iposdata/>}/>
-  <Route path="/mutualfound" element={<MutualFounds/>}/>
-  <Route path="/order" element={<Orders/>}/>
+  <Route path="/invest/:id" element={<PrivateRoute><MoreDetails/></PrivateRoute>}/>
+  <Route path="/ipos" element={<PrivateRoute><Iposdata/></PrivateRoute>}/>
+  <Route path="/mutualfound" element={<PrivateRoute><MutualFounds/></PrivateRoute>}/>
+  <Route path="/order" element={<PrivateRoute><Orders/></PrivateRoute>}/>
   <Route path="/about" element={<AboutPage/>}/>
   <Route path="/contact" element={<ContactDetails/>}/>
+  <Route path="/stoksorder" element={<Orderstock/>}/>
+  <Route path="/iposorder" element={<Ordersipo/>}/>
 
   <Route path="*" element={<PageNotFound/>}/>
 </Routes>

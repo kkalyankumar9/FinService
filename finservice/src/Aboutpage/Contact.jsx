@@ -1,8 +1,9 @@
-import { Box, Text, Link } from "@chakra-ui/react";
+import { Box, Text, Link, Button } from "@chakra-ui/react";
 import Footer from "../LandingPage/Footer";
 
 function ContactDetails() {
   return (
+    <Box>
     <Box>
       <Text fontWeight="bold" mb={2}>Contact Details:</Text>
       <Box mb={2}>
@@ -17,7 +18,13 @@ function ContactDetails() {
         <Text as="span" fontWeight="bold">Address: </Text>
         <Text>India</Text>
       </Box>
-      <Footer/>
+      
+    
+
+    </Box>
+   
+   
+    <Footer/>
     </Box>
   );
 }

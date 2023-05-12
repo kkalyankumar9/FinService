@@ -25,7 +25,7 @@ import { AppContext } from '../Context/Appcontext'
 export default function DrawerExample() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const firstField = React.useRef()
-    const [fundData,setFundData]=useState([])
+
     const [amount,setAmount]=useState("")
     const [mobileno,setMobileno]=useState("")
     const [paymentMode,setpaymentMode]=useState("")
@@ -39,7 +39,7 @@ const {funds,setFunds}=useContext(AppContext)
     axios.post('http://localhost:8080/founds', formData)
       .then(function (response) {
         console.log(response)
-        setFundData(response.data) // set the response data to state
+      
         setFunds(+funds+(+response.data.amount))
         setAmount("")
         setMobileno("")

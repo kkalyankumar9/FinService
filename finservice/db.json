@@ -10,6 +10,12 @@
       "username": "k kalyan kumar",
       "password": "123",
       "id": 2
+    },
+    {
+      "mobileNo": "08886081842",
+      "username": "k.kalyankumar",
+      "password": "789",
+      "id": 3
     }
   ],
   "founds": [
@@ -117,6 +123,237 @@
       "paymentMode": "",
       "description": "",
       "id": 15
+    },
+    {
+      "amount": "78",
+      "mobileno": "",
+      "paymentMode": "PayTm",
+      "description": "",
+      "id": 16
+    },
+    {
+      "amount": "1000",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 17
+    },
+    {
+      "amount": "500",
+      "mobileno": "",
+      "paymentMode": "PayTm",
+      "description": "m",
+      "id": 18
+    },
+    {
+      "amount": "200000",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 19
+    },
+    {
+      "amount": "5000",
+      "mobileno": "08886081842",
+      "paymentMode": "PayTm",
+      "description": "",
+      "id": 20
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 21
+    },
+    {
+      "amount": "456",
+      "mobileno": "08886081842",
+      "paymentMode": "",
+      "description": "",
+      "id": 22
+    },
+    {
+      "amount": "4567",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 23
+    },
+    {
+      "amount": "7894",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 24
+    },
+    {
+      "amount": "789",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 25
+    },
+    {
+      "amount": "7894",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 26
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 27
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 28
+    },
+    {
+      "amount": "789",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 29
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 30
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 31
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 32
+    },
+    {
+      "amount": "21",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 33
+    },
+    {
+      "amount": "852",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 34
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 35
+    },
+    {
+      "amount": "200000",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 36
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 37
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 38
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 39
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 40
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 41
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 42
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 43
+    },
+    {
+      "amount": "45",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 44
+    },
+    {
+      "amount": "78",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 45
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 46
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 47
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 48
     }
   ],
   "buystock": [
@@ -1374,5 +1611,28 @@
       ],
       "trading": true
     }
-  ]
+  ],
+  "orderstock": [
+    {
+      "id": 1,
+      "company_name": "Sunshine Foods Pvt Ltd",
+      "location": "Mumbai",
+      "founded_year": 2008,
+      "revenue": 8000000,
+      "number_of_employees": 250,
+      "current_price": 20.55,
+      "market_cap": 501.6,
+      "pe_ratio": 23.06,
+      "high": 22.1,
+      "low": 19.8,
+      "industry": "Food and Beverages",
+      "product_categories": [
+        "Packaged foods",
+        "Snacks",
+        "Beverages"
+      ],
+      "trading": true
+    }
+  ],
+  "ordersipo": []
 }

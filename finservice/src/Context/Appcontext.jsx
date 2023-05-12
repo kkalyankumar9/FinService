@@ -11,9 +11,8 @@ export default function AppContextProvider({children}){
         setisAuth(false)
     }
     const [funds,setFunds]=useState(0)
-    const [orderData,setOrderData]=useState([])
     const [orders,setOrders]=useState([])
-    return <AppContext.Provider value={{LogIn,LogOut,isAuth,funds,setFunds,orderData,setOrderData,orders,setOrders}}>
+    return <AppContext.Provider value={{LogIn,LogOut,isAuth,funds,setFunds,orders,setOrders}}>
         {children}
     </AppContext.Provider>
 }
