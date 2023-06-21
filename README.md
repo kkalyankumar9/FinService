@@ -39,8 +39,8 @@ Start the server
 ```bash
   npm run start
 ```
-## Netlify deployed
-https://melodious-mousse-545bd5.netlify.app/
+## Vercel deployed
+https://finservice.vercel.app/
 
 ## Screenshots
 
