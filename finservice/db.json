@@ -16,6 +16,12 @@
       "username": "k.kalyankumar",
       "password": "789",
       "id": 3
+    },
+    {
+      "mobileNo": "08886081842",
+      "username": "kkalyankumar",
+      "password": "456",
+      "id": 4
     }
   ],
   "founds": [
@@ -354,6 +360,34 @@
       "paymentMode": "",
       "description": "",
       "id": 48
+    },
+    {
+      "amount": "45",
+      "mobileno": "09502649799",
+      "paymentMode": "PhonePay",
+      "description": "",
+      "id": 49
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 50
+    },
+    {
+      "amount": "456",
+      "mobileno": "08886081842",
+      "paymentMode": "PayTm",
+      "description": "",
+      "id": 51
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 52
     }
   ],
   "buystock": [
@@ -1612,27 +1646,6 @@
       "trading": true
     }
   ],
-  "orderstock": [
-    {
-      "id": 1,
-      "company_name": "Sunshine Foods Pvt Ltd",
-      "location": "Mumbai",
-      "founded_year": 2008,
-      "revenue": 8000000,
-      "number_of_employees": 250,
-      "current_price": 20.55,
-      "market_cap": 501.6,
-      "pe_ratio": 23.06,
-      "high": 22.1,
-      "low": 19.8,
-      "industry": "Food and Beverages",
-      "product_categories": [
-        "Packaged foods",
-        "Snacks",
-        "Beverages"
-      ],
-      "trading": true
-    }
-  ],
+  "orderstock": [],
   "ordersipo": []
 }

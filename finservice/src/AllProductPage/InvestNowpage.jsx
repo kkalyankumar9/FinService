@@ -20,7 +20,7 @@ const InvestNow = () => {
 
 
   useEffect(() => {
-    let url = `http://localhost:8080/stocks?_page=${page}&_limit=9&`;
+    let url = `https://friendly-shorts-jay.cyclic.app/stocks?_page=${page}&_limit=9&`;
   
     if (location !== 'all') {
       url += `location=${location}&`;
@@ -69,14 +69,14 @@ const handleBuy = (id, current_price,data) => {
   }
 
   axios
-    .post("http://localhost:8080/orderstock", data)
+    .post("https://friendly-shorts-jay.cyclic.app/orderstock", data)
     .then(() => {
       setFunds(funds - current_price);
       alert("Stock bought successfully");
     })
     .catch((error) => {
       console.log(error);
-      alert("Failed to add stock to orders");
+      alert("Failed to add stock to orders || Already in stock");
     });
 };
 

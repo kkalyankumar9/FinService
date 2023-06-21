@@ -10,7 +10,7 @@ function MoreDetails() {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/stocks/${id}`)
+    axios.get(`https://friendly-shorts-jay.cyclic.app/stocks/${id}`)
       .then((res) => {
         setData(res.data);
       })

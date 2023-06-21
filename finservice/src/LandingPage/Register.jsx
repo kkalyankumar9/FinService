@@ -10,8 +10,11 @@ import {
   Text
 } from "@chakra-ui/react";
 import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AppContext } from '../Context/Appcontext';
 
 const Signup = () => {
+
   const [mobileNo, setMobileNo] = useState('');
   const [username,setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -36,7 +39,7 @@ const Signup = () => {
     }
 
     axios
-      .post('http://localhost:8080/usersdata', {
+      .post('https://friendly-shorts-jay.cyclic.app/usersdata', {
         mobileNo: mobileNo,
         username:username,
         password: password,
@@ -110,7 +113,7 @@ const Signup = () => {
         </FormControl>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         {success && <p style={{ color: 'green' }}>{success}</p>}
-        <Button type="submit" mt={4} colorScheme="teal">
+        <Button type="submit" mt={4} colorScheme="teal" >
           Signup
         </Button>
        

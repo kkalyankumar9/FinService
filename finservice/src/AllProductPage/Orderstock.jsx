@@ -26,7 +26,7 @@ function Orderstock(){
     const {orders,setOrders,funds,setFunds,LogOut}=useContext(AppContext)
 
     useEffect(()=>{
-        axios.get(`http://localhost:8080/orderstock`)
+        axios.get(`https://friendly-shorts-jay.cyclic.app/orderstock`)
         .then((res)=>{
             console.log(res)
             setOrders(res.data)
@@ -143,7 +143,9 @@ const handlesell = (id, current_price,data) => {
   
   </Table>
 </TableContainer>
+<Box paddingTop={"200px"}>
      <Footer />
+     </Box>
     </div>
     </>
 }

@@ -15,57 +15,59 @@ function Orders() {
   };
 
   return (<>
-    <Box>
-      <VStack textAlign="center" margin="auto" justifyContent="center">
-        <HStack
-          bg="#8F00FF"
-          px={4}
-          py={3}
-          position="sticky"
-          top={0}
-          zIndex="docked"
-          justifyContent="space-between"
-        >
-          <Box display="flex" alignItems="center">
-            <Text fontWeight="bold" fontSize="xl" color="white">
-              FinService
-            </Text>
-          </Box>
-          <HStack gap="50px">
-            <Text as="h6" color="white" fontWeight="bold">
-              <Link to="/invest">Stock</Link>
-            </Text>
-            <Text as="h6" color="white" fontWeight="bold">
-              <Link to="/ipos">IPOs</Link>
-            </Text>
-            <Text as="h6" color="white" fontWeight="bold">
-              <Link to="/mutualfound">Mutual Funds</Link>
-            </Text>
-            <Text as="h6" color="white" fontWeight="bold">
-              <Link to="/order">Orders</Link>
-            </Text>
-            <DrawerExample />
-            <Text as="h6" color="white" fontWeight="bold">
-              Balance: ₹{funds.toFixed(2)}
-            </Text>
-            <Button onClick={handleOut} bg="#C5FAD5" color="black">
-              Log Out
-            </Button>
-          </HStack>
-        </HStack>
-        <VStack >
-        <Button>
-          <Link to="/stoksorder">Orderstock</Link>
+    
+    <HStack bg="#8F00FF" px={4} py={3} position="sticky" top={0} zIndex="docked" justifyContent={"space-between"}>
+      <Box display="flex" alignItems="center" >
+        
+        <Text fontWeight="bold" fontSize="xl" color="white">
+          FinService
+        </Text>
+      </Box >
+      <HStack gap={"50px"}>
+      <Text as="h6" color="white" fontWeight="bold">
+        <Link to={"/invest"}>     Stock</Link>
+   
+      </Text>
+      <Text as="h6" color="white" fontWeight="bold">
+      <Link to={"/ipos"}>   IPOs  </Link>
+       
+        </Text>
+      <Text as="h6" color="white" fontWeight="bold">
+      <Link to={"/mutualfound"}>      Mutual Founds  </Link>
+       
+     </Text>
+     <Text as="h6" color="white" fontWeight="bold">
+      <Link to={"/order"}>      Orders </Link>
+       
+     </Text>
+     
+     
+     
+     <DrawerExample/>
+     <Text as="h6" color="white" fontWeight="bold">
+   Balance:₹{funds.toFixed(2)}
+       
+     </Text>
+      </HStack>
+      <Button onClick={handleOut} bg=" #C5FAD5" color="black">
+        Log Out
+      </Button>
+      
+    </HStack>
+        <VStack  p={"50px"}>
+        <Button bg="pink">
+          <Link to="/stoksorder" >Orderstock</Link>
         </Button>
-        <Button >
+        <Button bg="pink">
           <Link to="/iposorder">Ordersipos</Link>
         </Button>
         </VStack>
-      </VStack>
      
-    </Box>
-  
+     
+
+  <Box paddingTop={"180px"}>
      <Footer />
+     </Box>
      </>
   );
 }

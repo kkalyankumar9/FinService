@@ -36,7 +36,7 @@ const {funds,setFunds}=useContext(AppContext)
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = { amount, mobileno, paymentMode, description }
-    axios.post('http://localhost:8080/founds', formData)
+    axios.post('https://friendly-shorts-jay.cyclic.app/funds', formData)
       .then(function (response) {
         console.log(response)
       
@@ -60,7 +60,7 @@ const {funds,setFunds}=useContext(AppContext)
     return (
       <>
         <Button leftIcon={<AddIcon />} colorScheme='#8A307F'  onClick={onOpen}>
-          Add Founds
+          Add Funds
         </Button>
         <Drawer
           isOpen={isOpen}
@@ -106,7 +106,7 @@ const {funds,setFunds}=useContext(AppContext)
   
                 
                   <FormLabel >Select Pay</FormLabel>
-                  <Select type="select" defaultValue='segun'
+                  <Select type="select" defaultValue='UPI'
                   value={paymentMode}
                   onChange={(e)=>setpaymentMode(e.target.value)}
                   >
