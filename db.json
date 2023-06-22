@@ -1,0 +1,1651 @@
+{
+  "usersdata": [
+    {
+      "mobileNo": "08886081842",
+      "password": "456",
+      "id": 1
+    },
+    {
+      "mobileNo": "08886081842",
+      "username": "k kalyan kumar",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "mobileNo": "08886081842",
+      "username": "k.kalyankumar",
+      "password": "789",
+      "id": 3
+    },
+    {
+      "mobileNo": "08886081842",
+      "username": "kkalyankumar",
+      "password": "456",
+      "id": 4
+    }
+  ],
+  "funds": [
+    {
+      "amount": 0,
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 1
+    },
+    {
+      "amount": "452",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 2
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 3
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 4
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 5
+    },
+    {
+      "amount": "78",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 6
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 7
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 8
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 9
+    },
+    {
+      "amount": "78",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 10
+    },
+    {
+      "amount": "48",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 11
+    },
+    {
+      "amount": "2000",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 12
+    },
+    {
+      "amount": "10",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 13
+    },
+    {
+      "amount": "400",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 14
+    },
+    {
+      "amount": "80",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 15
+    },
+    {
+      "amount": "78",
+      "mobileno": "",
+      "paymentMode": "PayTm",
+      "description": "",
+      "id": 16
+    },
+    {
+      "amount": "1000",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 17
+    },
+    {
+      "amount": "500",
+      "mobileno": "",
+      "paymentMode": "PayTm",
+      "description": "m",
+      "id": 18
+    },
+    {
+      "amount": "200000",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 19
+    },
+    {
+      "amount": "5000",
+      "mobileno": "08886081842",
+      "paymentMode": "PayTm",
+      "description": "",
+      "id": 20
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 21
+    },
+    {
+      "amount": "456",
+      "mobileno": "08886081842",
+      "paymentMode": "",
+      "description": "",
+      "id": 22
+    },
+    {
+      "amount": "4567",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 23
+    },
+    {
+      "amount": "7894",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 24
+    },
+    {
+      "amount": "789",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 25
+    },
+    {
+      "amount": "7894",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 26
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 27
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 28
+    },
+    {
+      "amount": "789",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 29
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 30
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 31
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 32
+    },
+    {
+      "amount": "21",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 33
+    },
+    {
+      "amount": "852",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 34
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 35
+    },
+    {
+      "amount": "200000",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 36
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 37
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 38
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 39
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 40
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 41
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 42
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 43
+    },
+    {
+      "amount": "45",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 44
+    },
+    {
+      "amount": "78",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 45
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 46
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 47
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 48
+    },
+    {
+      "amount": "45",
+      "mobileno": "09502649799",
+      "paymentMode": "PhonePay",
+      "description": "",
+      "id": 49
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 50
+    },
+    {
+      "amount": "456",
+      "mobileno": "08886081842",
+      "paymentMode": "PayTm",
+      "description": "",
+      "id": 51
+    },
+    {
+      "amount": "456",
+      "mobileno": "",
+      "paymentMode": "",
+      "description": "",
+      "id": 52
+    }
+  ],
+  "buystock": [
+    {
+      "id": 1
+    }
+  ],
+  "ipos": [
+    {
+      "id": 1,
+      "name": "Paytm",
+      "symbol": "PAYTM",
+      "description": "A digital wallet and e-commerce company based in India.",
+      "pricePerShare": 100,
+      "totalShares": 10000000,
+      "availableShares": 5000000,
+      "ipoDate": "2021-11-01",
+      "location": "Noida, Uttar Pradesh, India",
+      "imageURL": "https://paytm.com/assets/images/paytm_logo.png"
+    },
+    {
+      "id": 2,
+      "name": "MobiKwik",
+      "symbol": "MOBIKWIK",
+      "description": "An Indian mobile payment and financial services company.",
+      "pricePerShare": 50,
+      "totalShares": 5000000,
+      "availableShares": 2500000,
+      "ipoDate": "2022-01-01",
+      "location": "Gurugram, Haryana, India",
+      "imageURL": "https://cdn.mobiwik.com/assets/images/logo.png"
+    },
+    {
+      "id": 3,
+      "name": "CarTrade Tech",
+      "symbol": "CTRDTCH",
+      "description": "An online marketplace for buying and selling new and used cars in India.",
+      "pricePerShare": 75,
+      "totalShares": 8000000,
+      "availableShares": 4000000,
+      "ipoDate": "2022-03-01",
+      "location": "Mumbai, Maharashtra, India",
+      "imageURL": "https://cartrade.com/static/images/CarTrade_Tech_Logo.png"
+    },
+    {
+      "id": 4,
+      "name": "Zomato",
+      "symbol": "ZOMATO",
+      "description": "An Indian restaurant aggregator and food delivery company.",
+      "pricePerShare": 80,
+      "totalShares": 12000000,
+      "availableShares": 6000000,
+      "ipoDate": "2021-07-01",
+      "location": "Gurugram, Haryana, India",
+      "imageURL": "https://b.zmtcdn.com/images/logo/zomato_logo_2017.png"
+    },
+    {
+      "id": 5,
+      "name": "Delhivery",
+      "symbol": "DEL",
+      "description": "A leading logistics and supply chain solutions provider in India.",
+      "pricePerShare": 50,
+      "totalShares": 20000000,
+      "availableShares": 10000000,
+      "ipoDate": "2023-07-01",
+      "location": "Gurgaon, Haryana, India",
+      "imageURL": "https://www.delhivery.com/assets/images/logo.png"
+    },
+    {
+      "id": 6,
+      "name": "Policybazaar",
+      "symbol": "POL",
+      "description": "India's largest online insurance aggregator offering a range of insurance products.",
+      "pricePerShare": 100,
+      "totalShares": 15000000,
+      "availableShares": 7500000,
+      "ipoDate": "2023-07-15",
+      "location": "Gurgaon, Haryana, India",
+      "imageURL": "https://www.policybazaar.com/assets/images/logo.svg"
+    },
+    {
+      "id": 7,
+      "name": "Flipkart",
+      "symbol": "FLP",
+      "description": "India's leading e-commerce company offering a range of products and services.",
+      "pricePerShare": 200,
+      "totalShares": 25000000,
+      "availableShares": 12500000,
+      "ipoDate": "2023-08-01",
+      "location": "Bengaluru, Karnataka, India",
+      "imageURL": "https://www.flipkart.com/apple-touch-icon.png"
+    },
+    {
+      "id": 8,
+      "name": "Nykaa",
+      "symbol": "NYK",
+      "description": "A leading online beauty and wellness platform in India.",
+      "pricePerShare": 150,
+      "totalShares": 10000000,
+      "availableShares": 5000000,
+      "ipoDate": "2023-08-15",
+      "location": "Mumbai, Maharashtra, India",
+      "imageURL": "https://www.nykaa.com/skin/frontend/nykaa/default/images/nykaa-logo.png"
+    },
+    {
+      "id": 9,
+      "name": "Ola Electric",
+      "symbol": "OLA",
+      "description": "An Indian electric vehicle manufacturer and mobility company.",
+      "pricePerShare": 250,
+      "totalShares": 20000000,
+      "availableShares": 10000000,
+      "ipoDate": "2023-09-01",
+      "location": "Bengaluru, Karnataka, India",
+      "imageURL": "https://www.olaelectric.com/assets/images/ola-electric-logo.svg"
+    },
+    {
+      "id": 10,
+      "name": "Grofers",
+      "symbol": "GRF",
+      "description": "An Indian online grocery delivery service.",
+      "pricePerShare": 50,
+      "totalShares": 15000000,
+      "availableShares": 7500000,
+      "ipoDate": "2023-09-15",
+      "location": "Gurgaon, Haryana, India",
+      "imageURL": "https://www.grofers.com/images/grofers-logo.png"
+    },
+    {
+      "id": 11,
+      "name": "Nuvoco Vistas Corporation Ltd",
+      "symbol": "NUV",
+      "description": "A leading Indian cement manufacturer.",
+      "pricePerShare": 100,
+      "totalShares": 30000000,
+      "availableShares": 15000000,
+      "ipoDate": "2023-10-01",
+      "location": "Mumbai, Maharashtra, India",
+      "imageURL": "https://www.nuvoco.in/content/dam/nvc/main-page/NUVOCO_Logo.png"
+    },
+    {
+      "id": 12,
+      "name": "Bajaj Energy Limited",
+      "symbol": "BJE",
+      "description": "A thermal power generation company in India.",
+      "pricePerShare": 50,
+      "totalShares": 25000000,
+      "availableShares": 12500000,
+      "ipoDate": "2023-10-15",
+      "location": "Noida, Uttar Pradesh, India",
+      "imageURL": "https://www.bajajenergy.com/images/bajaj-logo.svg"
+    },
+    {
+      "id": 13,
+      "name": "Krsnaa Diagnostics Limited",
+      "symbol": "KDL",
+      "description": "A leading diagnostic services provider in India.",
+      "pricePerShare": 150,
+      "totalShares": 20000000,
+      "availableShares": 10000000,
+      "ipoDate": "2023-11-01",
+      "location": "Bengaluru, Karnataka, India",
+      "imageURL": "https://www.krsnaadiagnostics.com/images/Krsnaa-logo.svg"
+    },
+    {
+      "id": 14,
+      "name": "Ami Organics Limited",
+      "symbol": "AMI",
+      "description": "A specialty chemicals manufacturer in India, providing custom manufacturing and advanced intermediates to global pharmaceutical companies.",
+      "pricePerShare": 100,
+      "totalShares": 15000000,
+      "availableShares": 7500000,
+      "ipoDate": "2021-09-14",
+      "location": "Surat, Gujarat, India",
+      "imageURL": "https://www.amiorganics.com/assets/img/logo.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Exxaro Tiles Limited",
+      "symbol": "EXX",
+      "description": "A manufacturer and exporter of ceramic tiles and sanitaryware, catering to over 30 countries worldwide.",
+      "pricePerShare": 50,
+      "totalShares": 10000000,
+      "availableShares": 5000000,
+      "ipoDate": "2021-08-23",
+      "location": "Morbi, Gujarat, India",
+      "imageURL": "https://www.exxarotiles.com/images/logo.png"
+    },
+    {
+      "id": 16,
+      "name": "Vijaya Diagnostic Centre Ltd",
+      "symbol": "VDC",
+      "description": "A leading diagnostic chain in South India, providing a range of diagnostic services including pathology, radiology and imaging.",
+      "pricePerShare": 500,
+      "totalShares": 10000000,
+      "availableShares": 5000000,
+      "ipoDate": "2021-09-14",
+      "location": "Hyderabad, Telangana, India",
+      "imageURL": "https://www.vijayadiagnostic.com/images/vijaya-logo.png"
+    },
+    {
+      "id": 17,
+      "name": "Glenmark Life Sciences Limited",
+      "symbol": "GLS",
+      "description": "A leading developer and manufacturer of active pharmaceutical ingredients (APIs) in India, with a global presence in over 65 countries.",
+      "pricePerShare": 700,
+      "totalShares": 15000000,
+      "availableShares": 7500000,
+      "ipoDate": "2021-07-27",
+      "location": "Mumbai, Maharashtra, India",
+      "imageURL": "https://www.glenmarklifesciences.com/images/logo.png"
+    },
+    {
+      "id": 18,
+      "name": "Devyani International Limited",
+      "symbol": "DEV",
+      "description": "One of the largest franchisee operators of quick service restaurants (QSR) in India, with a portfolio of well-known brands like KFC, Pizza Hut, Costa Coffee and more.",
+      "pricePerShare": 90,
+      "totalShares": 20000000,
+      "availableShares": 10000000,
+      "ipoDate": "2021-08-16",
+      "location": "Gurgaon, Haryana, India",
+      "imageURL": "https://www.devyaniinternational.com/wp-content/uploads/2019/11/DIL-Logo.png"
+    },
+    {
+      "id": 19,
+      "name": "RailTel Corporation of India Limited",
+      "symbol": "RAILTEL",
+      "description": "A Mini Ratna (Category-I) public sector enterprise, providing telecom infrastructure and broadband services in India.",
+      "pricePerShare": 94,
+      "totalShares": 87200000,
+      "availableShares": 43600000,
+      "ipoDate": "2021-02-26",
+      "location": "New Delhi, India",
+      "imageURL": "https://www.railtelindia.com/img/Logo.png"
+    },
+    {
+      "id": 20,
+      "name": "Sona BLW Precision Forgings Limited",
+      "symbol": "SONA",
+      "description": "A leading manufacturer of precision forged and machined components for the automotive industry, serving clients like Maruti Suzuki, Hyundai, and Ford.",
+      "pricePerShare": 291,
+      "totalShares": 16500000,
+      "availableShares": 8250000,
+      "ipoDate": "2021-06-16",
+      "location": "Gurgaon, Haryana, India",
+      "imageURL": "https://www.sonablw.com/img/sona-blg.png"
+    },
+    {
+      "id": 21,
+      "name": "Chemplast Sanmar Limited",
+      "symbol": "CHEMPLAST",
+      "description": "A specialty chemicals manufacturer in India, providing products like PVC resins, caustic soda, and more, with a global presence in over 30 countries.",
+      "pricePerShare": 530,
+      "totalShares": 43000000,
+      "availableShares": 21500000,
+      "ipoDate": "2021-08-10",
+      "location": "Chennai, Tamil Nadu, India",
+      "imageURL": "https://www.chemplastsanmar.com/images/logo.svg"
+    },
+    {
+      "id": 22,
+      "name": "Aptus Value Housing Finance India Limited",
+      "symbol": "APTUS",
+      "description": "A retail-focused housing finance company in India, providing affordable home loans to low- and middle-income customers in semi-urban and rural areas.",
+      "pricePerShare": 353,
+      "totalShares": 27800000,
+      "availableShares": 13900000,
+      "ipoDate": "2021-08-10",
+      "location": "Chennai, Tamil Nadu, India",
+      "imageURL": "https://www.aptusindia.com/images/brand-logo.png"
+    }
+  ],
+  "mutualfounds": [],
+  "stocks": [
+    {
+      "id": 1,
+      "company_name": "Sunshine Foods Pvt Ltd",
+      "location": "Mumbai",
+      "founded_year": 2008,
+      "revenue": 8000000,
+      "number_of_employees": 250,
+      "current_price": 20.55,
+      "market_cap": 501.6,
+      "pe_ratio": 23.06,
+      "high": 22.1,
+      "low": 19.8,
+      "industry": "Food and Beverages",
+      "product_categories": [
+        "Packaged foods",
+        "Snacks",
+        "Beverages"
+      ],
+      "trading": true
+    },
+    {
+      "id": 2,
+      "company_name": "Nestle India Ltd",
+      "location": "New Delhi",
+      "founded_year": 1959,
+      "revenue": 1000000000,
+      "number_of_employees": 10000,
+      "current_price": 18451.45,
+      "market_cap": 167315.69,
+      "pe_ratio": 98.76,
+      "high": 18930.55,
+      "low": 18230.5,
+      "industry": "Food and Beverages",
+      "product_categories": [
+        "Beverages",
+        "Cereals",
+        "Dairy products"
+      ],
+      "trading": true
+    },
+    {
+      "id": 3,
+      "company_name": "Parle Agro Pvt Ltd",
+      "location": "Mumbai",
+      "founded_year": 1984,
+      "revenue": 50000000,
+      "number_of_employees": 500,
+      "current_price": 54.15,
+      "market_cap": 250.4,
+      "pe_ratio": 12.34,
+      "high": 57.8,
+      "low": 52.7,
+      "industry": "Food and Beverages",
+      "product_categories": [
+        "Beverages",
+        "Snacks",
+        "Confectionery"
+      ],
+      "trading": true
+    },
+    {
+      "id": 4,
+      "company_name": "Tata Consumer Products Ltd",
+      "location": "Mumbai",
+      "founded_year": 1962,
+      "revenue": 2000000000,
+      "number_of_employees": 15000,
+      "current_price": 789.95,
+      "market_cap": 118197.92,
+      "pe_ratio": 65.45,
+      "high": 799.8,
+      "low": 784.1,
+      "industry": "Food and Beverages",
+      "product_categories": [
+        "Tea",
+        "Coffee",
+        "Juices"
+      ],
+      "trading": true
+    },
+    {
+      "id": 5,
+      "company_name": "Britannia Industries Ltd",
+      "location": "Kolkata",
+      "founded_year": 1892,
+      "revenue": 1500000000,
+      "number_of_employees": 12000,
+      "current_price": 3596.65,
+      "market_cap": 98758.32,
+      "pe_ratio": 47.56,
+      "high": 3678.5,
+      "low": 3570.6,
+      "industry": "Food and Beverages",
+      "product_categories": [
+        "Tea",
+        "Coffee",
+        "Juices"
+      ],
+      "trading": true
+    },
+    {
+      "id": 6,
+      "company_name": "Reliance Industries Ltd",
+      "location": "Mumbai",
+      "founded_year": 1966,
+      "revenue": 9000000000,
+      "number_of_employees": 190000,
+      "current_price": 2306.35,
+      "market_cap": 1511627.08,
+      "pe_ratio": 30.18,
+      "high": 2345.6,
+      "low": 2291.75,
+      "industry": "Conglomerate",
+      "product_categories": [
+        "Oil and Gas",
+        "Retail",
+        "Telecommunications"
+      ],
+      "trading": true
+    },
+    {
+      "id": 7,
+      "company_name": "HDFC Bank Ltd",
+      "location": "Mumbai",
+      "founded_year": 1994,
+      "revenue": 3000000000,
+      "number_of_employees": 100000,
+      "current_price": 1413.25,
+      "market_cap": 828606.05,
+      "pe_ratio": 23.08,
+      "high": 1432.9,
+      "low": 1398.5,
+      "industry": "Banking and Finance",
+      "product_categories": [
+        "Retail banking",
+        "Corporate banking",
+        "Wealth management"
+      ],
+      "trading": true
+    },
+    {
+      "id": 8,
+      "company_name": "ITC Ltd",
+      "location": "Kolkata",
+      "founded_year": 1910,
+      "revenue": 4000000000,
+      "number_of_employees": 25000,
+      "current_price": 214.1,
+      "market_cap": 266984.41,
+      "pe_ratio": 16.77,
+      "high": 220.75,
+      "low": 211.9,
+      "industry": "Consumer goods",
+      "product_categories": [
+        "Cigarettes",
+        "FMCG",
+        "Hotels"
+      ],
+      "trading": true
+    },
+    {
+      "id": 9,
+      "company_name": "Infosys Ltd",
+      "location": "Bengaluru",
+      "founded_year": 1981,
+      "revenue": 6000000000,
+      "number_of_employees": 280000,
+      "current_price": 1529.1,
+      "market_cap": 639377.81,
+      "pe_ratio": 27.19,
+      "high": 1565.9,
+      "low": 1515.5,
+      "industry": "Information technology",
+      "product_categories": [
+        "Software development",
+        "Consulting",
+        "Outsourcing"
+      ],
+      "trading": true
+    },
+    {
+      "id": 10,
+      "company_name": "Titan Company Ltd",
+      "location": "Bengaluru",
+      "founded_year": 1984,
+      "revenue": 1000000000,
+      "number_of_employees": 25000,
+      "current_price": 1632.7,
+      "market_cap": 152943.91,
+      "pe_ratio": 91.42,
+      "high": 1675.4,
+      "low": 1620.5,
+      "industry": "Consumer goods",
+      "product_categories": [
+        "Watches",
+        "Jewelry",
+        "Eyewear"
+      ],
+      "trading": true
+    },
+    {
+      "id": 11,
+      "company_name": "Hindustan Unilever Ltd",
+      "location": "Mumbai",
+      "founded_year": 1933,
+      "revenue": 6000000000,
+      "number_of_employees": 18000,
+      "current_price": 2482.3,
+      "market_cap": 580000,
+      "pe_ratio": 70.1,
+      "high": 2500,
+      "low": 2450.1,
+      "industry": "Consumer goods",
+      "product_categories": [
+        "Personal care products",
+        "Home care products",
+        "Foods and Beverages"
+      ],
+      "trading": true
+    },
+    {
+      "id": 12,
+      "company_name": "Reliance Industries Ltd",
+      "location": "Mumbai",
+      "founded_year": 1966,
+      "revenue": 63000000000,
+      "number_of_employees": 195618,
+      "current_price": 2135,
+      "market_cap": 1416795.29,
+      "pe_ratio": 28.92,
+      "high": 2200,
+      "low": 2105.2,
+      "industry": "Conglomerate",
+      "product_categories": [
+        "Oil and Gas",
+        "Retail",
+        "Telecommunications"
+      ],
+      "trading": true
+    },
+    {
+      "id": 13,
+      "company_name": "Tata Consultancy Services Ltd",
+      "location": "Mumbai",
+      "founded_year": 1968,
+      "revenue": 25000000000,
+      "number_of_employees": 469261,
+      "current_price": 3156.4,
+      "market_cap": 1207686.8,
+      "pe_ratio": 35.28,
+      "high": 3200,
+      "low": 3100.5,
+      "industry": "Information technology",
+      "product_categories": [
+        "Consulting",
+        "IT services",
+        "Software products"
+      ],
+      "trading": true
+    },
+    {
+      "id": 14,
+      "company_name": "State Bank of India",
+      "location": "Mumbai",
+      "founded_year": 1955,
+      "revenue": 62000000000,
+      "number_of_employees": 240000,
+      "current_price": 406.9,
+      "market_cap": 328105,
+      "pe_ratio": 14.02,
+      "high": 418.5,
+      "low": 403.25,
+      "industry": "Banking and Finance",
+      "product_categories": [
+        "Retail banking",
+        "Corporate banking",
+        "Investment banking"
+      ],
+      "trading": true
+    },
+    {
+      "id": 15,
+      "company_name": "Infosys Ltd",
+      "location": "Bengaluru",
+      "founded_year": 1981,
+      "revenue": 13700000000,
+      "number_of_employees": 259619,
+      "current_price": 1578,
+      "market_cap": 82174,
+      "pe_ratio": 28.2,
+      "high": 1610.7,
+      "low": 1567,
+      "industry": "Information technology",
+      "product_categories": [
+        "IT services",
+        "Consulting",
+        "Software products"
+      ],
+      "trading": true
+    },
+    {
+      "id": 16,
+      "company_name": "Bharti Airtel Ltd",
+      "location": "New Delhi",
+      "founded_year": 1995,
+      "revenue": 15500000000,
+      "number_of_employees": 19000,
+      "current_price": 630.35,
+      "market_cap": 355781.53,
+      "pe_ratio": 22.2,
+      "high": 640.1,
+      "low": 625.55,
+      "industry": "Telecommunications",
+      "product_categories": [
+        "Mobile services",
+        "Fixed-line services",
+        "Broadband"
+      ],
+      "trading": true
+    },
+    {
+      "id": 17,
+      "company_name": "Bajaj Auto Ltd",
+      "location": "Pune",
+      "founded_year": 1945,
+      "revenue": 10500000000,
+      "number_of_employees": 8400,
+      "current_price": 4333,
+      "market_cap": 113073.6,
+      "pe_ratio": 22.1,
+      "high": 4400,
+      "low": 4280.25,
+      "industry": "Automotive",
+      "product_categories": [
+        "Motorcycles",
+        "Scooters",
+        "Three-wheelers"
+      ],
+      "trading": true
+    },
+    {
+      "id": 18,
+      "company_name": "Asian Paints Ltd",
+      "location": "Mumbai",
+      "founded_year": 1942,
+      "revenue": 2300000000,
+      "number_of_employees": 6400,
+      "current_price": 3375.05,
+      "market_cap": 240246.02,
+      "pe_ratio": 103.5,
+      "high": 3450,
+      "low": 3331.1,
+      "industry": "Manufacturing",
+      "product_categories": [
+        "Paints",
+        "Coatings"
+      ],
+      "trading": true
+    },
+    {
+      "id": 19,
+      "company_name": "LIC",
+      "location": "Mumbai",
+      "founded_year": 1994,
+      "revenue": 2000000000,
+      "number_of_employees": 116000,
+      "current_price": 1464,
+      "market_cap": 978917.14,
+      "pe_ratio": 26.96,
+      "high": 1478.85,
+      "low": 1456.5,
+      "industry": "Banking",
+      "product_categories": [
+        "Retail banking",
+        "Corporate banking"
+      ],
+      "trading": true
+    },
+    {
+      "id": 20,
+      "company_name": "HDFC Bank Ltd",
+      "location": "Mumbai",
+      "founded_year": 1994,
+      "revenue": 15900000000,
+      "number_of_employees": 110000,
+      "current_price": 1442.6,
+      "market_cap": 903654,
+      "pe_ratio": 29.31,
+      "high": 1460.7,
+      "low": 1434.05,
+      "industry": "Banking",
+      "product_categories": [
+        "Retail banking",
+        "Corporate banking",
+        "Credit cards"
+      ],
+      "trading": true
+    },
+    {
+      "id": 21,
+      "company_name": "Tata Steel Ltd",
+      "location": "Mumbai",
+      "founded_year": 1907,
+      "revenue": 23000000000,
+      "number_of_employees": 33000,
+      "current_price": 1169.85,
+      "market_cap": 78576.92,
+      "pe_ratio": 18.43,
+      "high": 1189.8,
+      "low": 1158.3,
+      "industry": "Mining and Metals",
+      "product_categories": [
+        "Steel",
+        "Ferro alloys"
+      ],
+      "trading": true
+    },
+    {
+      "id": 22,
+      "company_name": "Tata Motors Ltd",
+      "location": "Mumbai",
+      "founded_year": 1945,
+      "revenue": 44200000000,
+      "number_of_employees": 79000,
+      "current_price": 345,
+      "market_cap": 99235.13,
+      "pe_ratio": 116.46,
+      "high": 350.95,
+      "low": 343.45,
+      "industry": "Automotive",
+      "product_categories": [
+        "Passenger vehicles",
+        "Commercial vehicles"
+      ],
+      "trading": true
+    },
+    {
+      "id": 23,
+      "company_name": "Reliance Industries Ltd",
+      "location": "Mumbai",
+      "founded_year": 1966,
+      "revenue": 63000000000,
+      "number_of_employees": 236334,
+      "current_price": 2005.35,
+      "market_cap": 1260390.15,
+      "pe_ratio": 26.45,
+      "high": 2022.9,
+      "low": 1995.3,
+      "industry": "Conglomerate",
+      "product_categories": [
+        "Petrochemicals",
+        "Oil and Gas exploration",
+        "Retail"
+      ],
+      "trading": true
+    },
+    {
+      "id": 24,
+      "company_name": "Adani Ports and Special Economic Zone Ltd",
+      "location": "Ahmedabad",
+      "founded_year": 1998,
+      "revenue": 1350000000,
+      "number_of_employees": 12600,
+      "current_price": 742.7,
+      "market_cap": 174045.1,
+      "pe_ratio": 27.51,
+      "high": 754.8,
+      "low": 736.05,
+      "industry": "Transportation",
+      "product_categories": [
+        "Ports",
+        "Logistics"
+      ],
+      "trading": true
+    },
+    {
+      "id": 25,
+      "company_name": "HDFC Bank Ltd",
+      "location": "Mumbai",
+      "founded_year": 1994,
+      "revenue": 2000000000,
+      "number_of_employees": 116000,
+      "current_price": 1464,
+      "market_cap": 978917.14,
+      "pe_ratio": 26.96,
+      "high": 1478.85,
+      "low": 1456.5,
+      "industry": "Banking",
+      "product_categories": [
+        "Retail banking",
+        "Corporate banking"
+      ],
+      "trading": true
+    },
+    {
+      "id": 26,
+      "company_name": "Bharat Petroleum Corporation Ltd",
+      "location": "Mumbai",
+      "founded_year": 1977,
+      "revenue": 4500000000,
+      "number_of_employees": 12457,
+      "current_price": 444.4,
+      "market_cap": 85354.15,
+      "pe_ratio": 10.12,
+      "high": 448.4,
+      "low": 438.1,
+      "industry": "Oil and Gas",
+      "product_categories": [
+        "Petroleum products"
+      ],
+      "trading": true
+    },
+    {
+      "id": 27,
+      "company_name": "Tech Mahindra Ltd",
+      "location": "Pune",
+      "founded_year": 1986,
+      "revenue": 5000000000,
+      "number_of_employees": 131522,
+      "current_price": 1179.05,
+      "market_cap": 117042.18,
+      "pe_ratio": 22.12,
+      "high": 1195.75,
+      "low": 1171.25,
+      "industry": "Information Technology",
+      "product_categories": [
+        "Software",
+        "Consulting",
+        "Engineering services"
+      ],
+      "trading": true
+    },
+    {
+      "id": 28,
+      "company_name": "Reliance Industries Ltd",
+      "location": "Mumbai",
+      "founded_year": 1960,
+      "revenue": 9000000000,
+      "number_of_employees": 236334,
+      "current_price": 2218.9,
+      "market_cap": 1409494.43,
+      "pe_ratio": 37.46,
+      "high": 2254.7,
+      "low": 2201.45,
+      "industry": "Conglomerate",
+      "product_categories": [
+        "Oil and Gas",
+        "Telecommunications",
+        "Retail",
+        "Media"
+      ],
+      "trading": true
+    },
+    {
+      "id": 29,
+      "company_name": "Maruti Suzuki India Ltd",
+      "location": "New Delhi",
+      "founded_year": 1981,
+      "revenue": 5000000000,
+      "number_of_employees": 179843,
+      "current_price": 7093.4,
+      "market_cap": 238048.36,
+      "pe_ratio": 42.58,
+      "high": 7157.45,
+      "low": 6980,
+      "industry": "Automobiles",
+      "product_categories": [
+        "Passenger vehicles"
+      ],
+      "trading": true
+    },
+    {
+      "id": 30,
+      "company_name": "ICICI Bank Ltd",
+      "location": "Mumbai",
+      "founded_year": 1994,
+      "revenue": 3000000000,
+      "number_of_employees": 101255,
+      "current_price": 610.7,
+      "market_cap": 312809.61,
+      "pe_ratio": 19.56,
+      "high": 620,
+      "low": 606.65,
+      "industry": "Banking",
+      "product_categories": [
+        "Retail banking",
+        "Corporate banking"
+      ],
+      "trading": true
+    },
+    {
+      "id": 31,
+      "company_name": "Tata Consultancy Services Ltd",
+      "location": "Mumbai",
+      "founded_year": 1968,
+      "revenue": 8000000000,
+      "number_of_employees": 496000,
+      "current_price": 3045.55,
+      "market_cap": 1186090.87,
+      "pe_ratio": 41.58,
+      "high": 3078.75,
+      "low": 3015.05,
+      "industry": "Information Technology",
+      "product_categories": [
+        "Software",
+        "Consulting",
+        "Engineering services"
+      ],
+      "trading": true
+    },
+    {
+      "id": 32,
+      "company_name": "Wipro Limited",
+      "location": "Bengaluru",
+      "founded_year": 1945,
+      "revenue": 8875000000,
+      "number_of_employees": 195000,
+      "current_price": 604.3,
+      "market_cap": 2895.56,
+      "pe_ratio": 28.88,
+      "high": 625.9,
+      "low": 596,
+      "industry": "Information Technology",
+      "product_categories": [
+        "IT Services",
+        "Consulting",
+        "BPO"
+      ],
+      "trading": true
+    },
+    {
+      "id": 33,
+      "company_name": "Bharat Electronics Limited",
+      "location": "Bengaluru",
+      "founded_year": 1954,
+      "revenue": 3600000000,
+      "number_of_employees": 11000,
+      "current_price": 177.95,
+      "market_cap": 24367.99,
+      "pe_ratio": 16.88,
+      "high": 186.7,
+      "low": 177,
+      "industry": "Defense and Aerospace",
+      "product_categories": [
+        "Defense electronics",
+        "Aerospace electronics",
+        "Communications"
+      ],
+      "trading": true
+    },
+    {
+      "id": 34,
+      "company_name": "Hindustan Aeronautics Limited",
+      "location": "Bengaluru",
+      "founded_year": 1940,
+      "revenue": 1037000000,
+      "number_of_employees": 32000,
+      "current_price": 1264.1,
+      "market_cap": 30320.32,
+      "pe_ratio": 11.87,
+      "high": 1296,
+      "low": 1250.1,
+      "industry": "Defense and Aerospace",
+      "product_categories": [
+        "Aircraft",
+        "Engines",
+        "Accessories"
+      ],
+      "trading": true
+    },
+    {
+      "id": 35,
+      "company_name": "Ashok Leyland Limited",
+      "location": "Chennai",
+      "founded_year": 1948,
+      "revenue": 5350000000,
+      "number_of_employees": 12000,
+      "current_price": 139.4,
+      "market_cap": 36536,
+      "pe_ratio": 68.67,
+      "high": 142.75,
+      "low": 138,
+      "industry": "Automotive",
+      "product_categories": [
+        "Commercial vehicles",
+        "Buses",
+        "Trucks"
+      ],
+      "trading": true
+    },
+    {
+      "id": 36,
+      "company_name": "GVK Power & Infrastructure Limited",
+      "location": "Hyderabad",
+      "founded_year": 2005,
+      "revenue": 1500000000,
+      "number_of_employees": 3000,
+      "current_price": 4.15,
+      "market_cap": 3394.31,
+      "pe_ratio": 7.75,
+      "high": 4.23,
+      "low": 4.1,
+      "industry": "Energy",
+      "product_categories": [
+        "Power generation",
+        "Renewable energy"
+      ],
+      "trading": true
+    },
+    {
+      "id": 37,
+      "company_name": "Granules India Limited",
+      "location": "Hyderabad",
+      "founded_year": 1984,
+      "revenue": 900000000,
+      "number_of_employees": 2500,
+      "current_price": 374.35,
+      "market_cap": 11137.88,
+      "pe_ratio": 20.32,
+      "high": 378.5,
+      "low": 372.2,
+      "industry": "Pharmaceuticals",
+      "product_categories": [
+        "Active pharmaceutical ingredients",
+        "Pharmaceutical formulation intermediates",
+        "Finished dosage forms"
+      ],
+      "trading": true
+    },
+    {
+      "id": 38,
+      "company_name": "Bharat Biotech International Limited",
+      "location": "Hyderabad",
+      "founded_year": 1996,
+      "revenue": 150000000,
+      "number_of_employees": 3000,
+      "current_price": 695.85,
+      "market_cap": 35356.28,
+      "pe_ratio": 87.09,
+      "high": 713.6,
+      "low": 689.05,
+      "industry": "Biotechnology",
+      "product_categories": [
+        "Vaccines",
+        "Biotherapeutics"
+      ],
+      "trading": true
+    },
+    {
+      "id": 39,
+      "company_name": "NMDC Limited",
+      "location": "Hyderabad",
+      "founded_year": 1958,
+      "revenue": 5600000000,
+      "number_of_employees": 5000,
+      "current_price": 196.3,
+      "market_cap": 56624.14,
+      "pe_ratio": 8.97,
+      "high": 198.9,
+      "low": 195.7,
+      "industry": "Mining",
+      "product_categories": [
+        "Iron ore",
+        "Diamonds"
+      ],
+      "trading": true
+    },
+    {
+      "id": 40,
+      "company_name": "GMR Infrastructure Limited",
+      "location": "Hyderabad",
+      "founded_year": 1978,
+      "revenue": 2000000000,
+      "number_of_employees": 5000,
+      "current_price": 29.75,
+      "market_cap": 13413.05,
+      "pe_ratio": 26.64,
+      "high": 30.55,
+      "low": 29.05,
+      "industry": "Infrastructure",
+      "product_categories": [
+        "Airports",
+        "Energy",
+        "Highways"
+      ],
+      "trading": true
+    },
+    {
+      "id": 41,
+      "company_name": "Aurobindo Pharma Limited",
+      "location": "Hyderabad",
+      "founded_year": 1986,
+      "revenue": 3000000000,
+      "number_of_employees": 20000,
+      "current_price": 725.4,
+      "market_cap": 47391.77,
+      "pe_ratio": 17.34,
+      "high": 732.9,
+      "low": 715.2,
+      "industry": "Pharmaceuticals",
+      "product_categories": [
+        "Generic drugs",
+        "Specialty drugs"
+      ],
+      "trading": true
+    },
+    {
+      "id": 42,
+      "company_name": "Divis Laboratories Limited",
+      "location": "Hyderabad",
+      "founded_year": 1990,
+      "revenue": 1000000000,
+      "number_of_employees": 5000,
+      "current_price": 4686.7,
+      "market_cap": 84827.32,
+      "pe_ratio": 48.19,
+      "high": 4754,
+      "low": 4631.25,
+      "industry": "Pharmaceuticals",
+      "product_categories": [
+        "Active pharmaceutical ingredients"
+      ],
+      "trading": true
+    },
+    {
+      "id": 43,
+      "company_name": "Dr. Reddy's Laboratories Limited",
+      "location": "Hyderabad",
+      "founded_year": 1984,
+      "revenue": 4500000000,
+      "number_of_employees": 25000,
+      "current_price": 4790.5,
+      "market_cap": 97059.77,
+      "pe_ratio": 35.41,
+      "high": 4866.4,
+      "low": 4741.55,
+      "industry": "Pharmaceuticals",
+      "product_categories": [
+        "Generic drugs",
+        "Specialty drugs"
+      ],
+      "trading": true
+    },
+    {
+      "id": 44,
+      "company_name": "Gland Pharma Limited",
+      "location": "Hyderabad",
+      "founded_year": 1978,
+      "revenue": 900000000,
+      "number_of_employees": 5000,
+      "current_price": 3686.75,
+      "market_cap": 96679.39,
+      "pe_ratio": 64.94,
+      "high": 3749.95,
+      "low": 3662.1,
+      "industry": "Pharmaceuticals",
+      "product_categories": [
+        "Injectables",
+        "Oncology",
+        "Dermatology"
+      ],
+      "trading": true
+    },
+    {
+      "id": 45,
+      "company_name": "Dr. Reddy's Laboratories Limited",
+      "location": "Hyderabad",
+      "founded_year": 1984,
+      "revenue": 2900000000,
+      "number_of_employees": 21500,
+      "current_price": 4854.85,
+      "market_cap": 82511.83,
+      "pe_ratio": 45.92,
+      "high": 4922,
+      "low": 4827.45,
+      "industry": "Pharmaceuticals",
+      "product_categories": [
+        "Generic drugs",
+        "Biologics",
+        "Active pharmaceutical ingredients"
+      ],
+      "trading": true
+    },
+    {
+      "id": 46,
+      "company_name": "Cyient Limited",
+      "location": "Hyderabad",
+      "founded_year": 1991,
+      "revenue": 700000000,
+      "number_of_employees": 14000,
+      "current_price": 650.3,
+      "market_cap": 9398.56,
+      "pe_ratio": 21.41,
+      "high": 670.2,
+      "low": 640,
+      "industry": "Engineering services",
+      "product_categories": [
+        "Aerospace and defense",
+        "Industrial",
+        "Energy"
+      ],
+      "trading": true
+    },
+    {
+      "id": 47,
+      "company_name": "Divis Laboratories Limited",
+      "location": "Hyderabad",
+      "founded_year": 1990,
+      "revenue": 1200000000,
+      "number_of_employees": 6000,
+      "current_price": 4647.45,
+      "market_cap": 91292.28,
+      "pe_ratio": 37.98,
+      "high": 4728,
+      "low": 4582,
+      "industry": "Pharmaceuticals",
+      "product_categories": [
+        "APIs",
+        "Intermediates",
+        "Finished Dosages"
+      ],
+      "trading": true
+    },
+    {
+      "id": 48,
+      "company_name": "TVS Motor Company Limited",
+      "location": "Chennai",
+      "founded_year": 1978,
+      "revenue": 35615000000,
+      "number_of_employees": 7000,
+      "current_price": 673.5,
+      "market_cap": 26940,
+      "pe_ratio": 29.75,
+      "high": 691.95,
+      "low": 670,
+      "industry": "Automotive",
+      "product_categories": [
+        "Motorcycles",
+        "Scooters",
+        "Three-wheelers"
+      ],
+      "trading": true
+    },
+    {
+      "id": 49,
+      "company_name": "Sun TV Network Limited",
+      "location": "Chennai",
+      "founded_year": 1993,
+      "revenue": 36486500000,
+      "number_of_employees": 5000,
+      "current_price": 570.7,
+      "market_cap": 29805,
+      "pe_ratio": 17.87,
+      "high": 575,
+      "low": 564.3,
+      "industry": "Entertainment",
+      "product_categories": [
+        "Television channels",
+        "Movies"
+      ],
+      "trading": true
+    },
+    {
+      "id": 50,
+      "company_name": "Apollo Hospitals Enterprise Limited",
+      "location": "Chennai",
+      "founded_year": 1983,
+      "revenue": 104330000000,
+      "number_of_employees": 70000,
+      "current_price": 3705.65,
+      "market_cap": 72104.45,
+      "pe_ratio": 57.09,
+      "high": 3722.35,
+      "low": 3672,
+      "industry": "Healthcare",
+      "product_categories": [
+        "Hospitals",
+        "Clinics",
+        "Diagnostic centers"
+      ],
+      "trading": true
+    }
+  ],
+  "orderstock": [],
+  "ordersipo": []
+}
