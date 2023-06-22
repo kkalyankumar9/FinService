@@ -8,7 +8,7 @@ This is a web application that provides a user-friendly trading platform for inv
 
 
 
-[website Url--](https://melodious-mousse-545bd5.netlify.app/)
+[website Url--](https://build-nu-inky.vercel.app/)
 
 ## Tech Stack
 Client-side technologies:HTML and CSS.
@@ -40,7 +40,7 @@ Start the server
   npm run start
 ```
 ## Vercel deployed
-https://finservice.vercel.app/
+https://build-nu-inky.vercel.app/
 
 ## Screenshots
 
@@ -69,6 +69,8 @@ https://finservice.vercel.app/
 
 We welcome contributions from anyone who would like to contribute.
 
+## Server 
+https://foam-nonstop-existence.glitch.me/
 ## Authors
 
  [k kalyan kumar](https://github.com/kkalyankumar9)
