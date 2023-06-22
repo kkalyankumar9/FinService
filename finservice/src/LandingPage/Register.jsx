@@ -36,7 +36,7 @@ const Signup = () => {
     }
 
     axios
-      .post('http://localhost:8080/usersdata', {
+      .post('https://friendly-shorts-jay.cyclic.app/usersdata', {
         mobileNo: mobileNo,
         username:username,
         password: password,

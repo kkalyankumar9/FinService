@@ -36,7 +36,7 @@ const {funds,setFunds}=useContext(AppContext)
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = { amount, mobileno, paymentMode, description }
-    axios.post('http://localhost:8080/founds', formData)
+    axios.post('https://friendly-shorts-jay.cyclic.app/funds', formData)
       .then(function (response) {
         console.log(response)
       

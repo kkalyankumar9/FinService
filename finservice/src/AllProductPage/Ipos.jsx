@@ -48,7 +48,7 @@ function IpoData() {
   const [searchby,setSearchby]=useState("")
   const [page,setPage]=useState(1)
   useEffect(() => {
-    let url = `http://localhost:${process.env.REACT_APP_USERSDATA}/ipos?_page=${page}&_limit=3&`;
+    let url = `https://friendly-shorts-jay.cyclic.app/ipos?_page=${page}&_limit=3&`;
   
    
   

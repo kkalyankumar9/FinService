@@ -5,7 +5,7 @@ import axios from 'axios';
 import { AppContext } from '../Context/Appcontext';
 import { Link, useNavigate } from 'react-router-dom';
 
-const baseUrl = 'http://localhost:8080';
+const baseUrl = 'https://friendly-shorts-jay.cyclic.app';
 
 function Login() {
   const [mobileNo, setMobileNo] = useState('');

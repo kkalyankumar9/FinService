@@ -25,7 +25,7 @@ function Ordersipo(){
     const {orders,setOrders,funds,setFunds,LogOut}=useContext(AppContext)
 
     useEffect(()=>{
-        axios.get(`http://localhost:8080/ordersipo`)
+        axios.get(`https://friendly-shorts-jay.cyclic.app/ordersipo`)
         .then((res)=>{
             console.log(res)
             setOrders(res.data)
