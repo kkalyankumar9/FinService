@@ -26,7 +26,7 @@ function Orderstock(){
     const {orders,setOrders,funds,setFunds,LogOut}=useContext(AppContext)
 
     useEffect(()=>{
-        axios.get(`https://friendly-shorts-jay.cyclic.app/orderstock`)
+        axios.get("https://foam-nonstop-existence.glitch.me/orderstock")
         .then((res)=>{
             console.log(res)
             setOrders(res.data)
@@ -41,7 +41,7 @@ function Orderstock(){
 const handlesell = (id, current_price,data) => {
      // Check if user has added any funds
      // Check if user has enough funds to buy the stock
-        axios.delete(`https://friendly-shorts-jay.cyclic.app/orderstock/${id}`)
+        axios.delete(`https://foam-nonstop-existence.glitch.me/orderstock/${id}`)
         .then((res)=>{
             const UpdataOrdersData=orders.filter((e)=>e.id!==id)
             setOrders(UpdataOrdersData)

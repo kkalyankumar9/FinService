@@ -34,13 +34,11 @@ const Signup = () => {
       setError('Passwords do not match');
       return;
     }
-
-    axios
-      .post('https://friendly-shorts-jay.cyclic.app/usersdata', {
-        mobileNo: mobileNo,
-        username:username,
-        password: password,
-      })
+    axios.post('https://foam-nonstop-existence.glitch.me/usersdata', {
+      mobileNo,
+      username,
+      password,
+    })
       .then((response) => {
         console.log(response.data);
         setSuccess('Signup successful!');
@@ -63,7 +61,10 @@ const Signup = () => {
           isClosable: true,
         });
       });
-  };
+    };
+    const handleback=()=>{
+      navigate(-1)
+    }
 
   return (
     <div style={{ display: 'flex' ,justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
@@ -122,7 +123,7 @@ const Signup = () => {
         </Button>
         <Box>
           
-        <Button><Link to="/">Back    </Link></Button> 
+        <Button onClick={handleback}><Link >Back    </Link></Button> 
         </Box>
       
       </Box>

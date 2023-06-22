@@ -25,7 +25,7 @@ function Ordersipo(){
     const {orders,setOrders,funds,setFunds,LogOut}=useContext(AppContext)
 
     useEffect(()=>{
-        axios.get(`https://friendly-shorts-jay.cyclic.app/ordersipo`)
+        axios.get(`https://foam-nonstop-existence.glitch.me/ordersipo`)
         .then((res)=>{
             console.log(res)
             setOrders(res.data)
@@ -38,7 +38,7 @@ function Ordersipo(){
   
     
 const handlesell = (id, pricePerShare,data) => {
-  axios.delete(`http://localhost:8080/ordersipo/${id}`)
+  axios.delete(`https://foam-nonstop-existence.glitch.me/ordersipo/${id}`)
   .then((res)=>{
       const UpdataOrdersData=orders.filter((e)=>e.id!==id)
       setOrders(UpdataOrdersData)

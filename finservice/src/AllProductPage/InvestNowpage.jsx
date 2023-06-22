@@ -20,7 +20,7 @@ const InvestNow = () => {
 
 
   useEffect(() => {
-    let url = `https://friendly-shorts-jay.cyclic.app/stocks?_page=${page}&_limit=9&`;
+    let url = `https://foam-nonstop-existence.glitch.me/stocks?_page=${page}&_limit=9&`;
   
     if (location !== 'all') {
       url += `location=${location}&`;
@@ -69,7 +69,7 @@ const handleBuy = (id, current_price,data) => {
   }
 
   axios
-    .post("https://friendly-shorts-jay.cyclic.app/orderstock", data)
+    .post("https://foam-nonstop-existence.glitch.me/orderstock", data)
     .then(() => {
       setFunds(funds - current_price);
       alert("Stock bought successfully");

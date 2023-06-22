@@ -48,7 +48,7 @@ function IpoData() {
   const [searchby,setSearchby]=useState("")
   const [page,setPage]=useState(1)
   useEffect(() => {
-    let url = `https://friendly-shorts-jay.cyclic.app/ipos?_page=${page}&_limit=3&`;
+    let url = `https://foam-nonstop-existence.glitch.me/ipos?_page=${page}&_limit=3&`;
   
    
   
@@ -79,7 +79,7 @@ const handleBuy = (id, pricePerShare,data) => {
   }
 
   axios
-    .post("http://localhost:8080/ordersipo", data)
+    .post("https://foam-nonstop-existence.glitch.me/ordersipo", data)
     .then(() => {
       setFunds(funds - pricePerShare);
       alert("Stock bought successfully");

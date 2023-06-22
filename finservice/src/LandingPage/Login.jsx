@@ -5,7 +5,7 @@ import axios from 'axios';
 import { AppContext } from '../Context/Appcontext';
 import { Link, useNavigate } from 'react-router-dom';
 
-const baseUrl = 'https://friendly-shorts-jay.cyclic.app';
+const baseUrl = 'https://foam-nonstop-existence.glitch.me';
 
 function Login() {
   const [mobileNo, setMobileNo] = useState('');
@@ -25,7 +25,7 @@ function Login() {
         // handle the successful response
         const user = response.data[0];
         if (user && user.mobileNo === mobileNo && user.password === password) {
-          navigate('/');
+          navigate(-1);
           console.log(response.data);
           toast({
             title: 'Login Successful',
