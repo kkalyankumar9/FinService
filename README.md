@@ -1,11 +1,9 @@
-# gorgeous-hole-2479
 
 # FinService
 
 This is a web application that provides a user-friendly trading platform for investors to invest money in various companies.It is a user-friendly trading app website.
 
 ![Project-icon](https://t4.ftcdn.net/jpg/00/79/77/19/360_F_79771929_dkEtuIuxFdNOlv6Evj1Nj1kaSLgSas34.jpg)
-
 
 
 [website Url--](https://build-nu-inky.vercel.app/)
