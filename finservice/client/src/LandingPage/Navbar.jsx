@@ -29,7 +29,7 @@ const Navbar = () => {
       fontSize= "14px"
     line-height="1.42857143"
     color= "#333"
-    background-color=" #fff"
+    background-color=" rgb(255, 255, 255)"
       
     >
       <Box display="flex" alignItems="center" >
