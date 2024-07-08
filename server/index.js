@@ -5,6 +5,7 @@ const { connection } = require("./db");
 const adminRouters = require("./src/Routes/adminRoutes");
 const StockDataModel = require("./src/Admin/models/stockDataModel");
 const  userRouters  = require("./src/Routes/userRoutes");
+const UserModel = require("./src/User/Models/userAuthModel");
 
 
 
