@@ -1,9 +1,10 @@
 const bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
+const UserModel = require("../../Models/userAuthModel");
+const UserBlackListModule = require("../../Models/userBlackList");
 
 
-const UserModel = require("../Models/userAuthModel");
-const UserBlackListModule = require("../models/userBlackList");
+
 
 
 const userRegistration = async (req, res) => {

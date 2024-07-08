@@ -1,10 +1,11 @@
 const express =require("express");
 const { userRegistration, userLogin, userLogout } = require("../User/constrains/userAuth");
 const { userForgotPassword, userPasswordReset } = require("../User/constrains/userForgotPassword");
-const { userAuth } = require("../User/middleWare/authMiddleware");
+
 const { stocksRouter } = require("../User/constrains/stocksRenders");
 const { addFunds, verifyPayment } = require("../User/constrains/addFundsRouter");
 
+const { userAuth } = require("../User/middleWare/authMiddleware");
 
 const userRouters=express.Router();
 

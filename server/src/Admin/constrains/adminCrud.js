@@ -1,5 +1,7 @@
+const StockDataModel = require("../../Models/stockDataModel");
 
-const StockDataModel = require("../models/stockDataModel");
+
+
 
 const adminGetStocks = async (req, res) => {
   const data=req.body

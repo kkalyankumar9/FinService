@@ -1,8 +1,8 @@
 const express = require("express");
 const { adminRegistration, adminLogin, adminLogout } = require("../Admin/constrains/adminAuth");
 const { adminGetStocks, adminAddStocks, adminUpdateStocks, adminDeleteStocks } = require("../Admin/constrains/adminCrud");
-const { adminAuth } = require("../Admin/middlewareAdmin/adminMiddleware");
 const { adminForgotPassword, adminPasswordReset } = require("../Admin/constrains/adminForgotPassword");
+const { adminAuth } = require("../Admin/middlewareAdmin/adminMiddleware");
 
 const adminRouters = express.Router();
 

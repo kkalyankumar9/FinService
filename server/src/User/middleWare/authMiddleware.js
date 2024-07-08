@@ -1,6 +1,7 @@
 // middleware/userAuth.js
 const jwt = require("jsonwebtoken");
-const  UserBlackListModule  = require("../models/userBlackList");
+const UserBlackListModule = require("../../Models/userBlackList");
+
 
 const userAuth = async (req, res, next) => {
     try {
@@ -23,4 +24,4 @@ const userAuth = async (req, res, next) => {
     }
 };
 
-module.exports = { userAuth };
+module.exports={userAuth};

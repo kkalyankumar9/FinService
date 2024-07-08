@@ -1,7 +1,8 @@
 const bcrypt = require("bcrypt");
-var jwt = require("jsonwebtoken");
-const AdminBlackListModule = require("../models/adminBlacklist");
-const { AdminModel } = require("../models/adminAuthModel");
+const  jwt = require("jsonwebtoken");
+const AdminModel = require("../../Models/adminAuthModel");
+const AdminBlackListModule = require("../../Models/adminBlacklist");
+
 
 const adminRegistration= async(req, res)=> {
   const { userName, email, password } = req.body;

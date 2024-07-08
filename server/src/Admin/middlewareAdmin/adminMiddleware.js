@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
-const AdminBlackListModule = require("../models/adminBlacklist");
+const AdminBlackListModule = require("../../Models/adminBlacklist");
+
 
 const adminAuth = async (req, res, next) => {
   try {

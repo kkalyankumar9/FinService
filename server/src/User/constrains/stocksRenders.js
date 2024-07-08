@@ -1,4 +1,5 @@
-const StockDataModel = require("../../Admin/models/stockDataModel");
+const StockDataModel = require("../../Models/stockDataModel");
+
 
 
 const stocksRouter= async (req, res) => {

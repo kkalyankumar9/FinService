@@ -1,7 +1,8 @@
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const bcrypt = require('bcrypt');
-const { AdminModel } = require('../models/adminAuthModel');
+const AdminModel = require('../../Models/adminAuthModel');
+
 
 
 
