@@ -1,78 +1,70 @@
+# Getting Started with Create React App
 
-# FinService
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This is a web application that provides a user-friendly trading platform for investors to invest money in various companies.It is a user-friendly trading app website.
+## Available Scripts
 
-![Project-icon](https://t4.ftcdn.net/jpg/00/79/77/19/360_F_79771929_dkEtuIuxFdNOlv6Evj1Nj1kaSLgSas34.jpg)
+In the project directory, you can run:
 
+### `npm start`
 
-[website Url--](https://build-nu-inky.vercel.app/)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Tech Stack
-Client-side technologies:HTML and CSS.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Client-Server API: Local Storage and JSON Server.
+### `npm test`
 
-Programming languages and libraries: JavaScript, React.js.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-UI Library/Framework: ChakraUI.
+### `npm run build`
 
-Overall, this tech stack seems well-suited for building a user-friendly trading app website, as it includes commonly used front-end technologies such as HTML, CSS, and React.js, as well as a lightweight backend solution in the form of Local Storage and JSON Server. Additionally, ChakraUI can be a useful tool for creating responsive and visually appealing user interfaces.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Run Locally
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-Clone the project
-```bash
-git clone
-https://github.com/kkalyankumar9/gorgeous-hole-2479
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Install dependencies
+### `npm run eject`
 
-```bash
-  npm install
-```
-Live Running server  -
-Start the server
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-```bash
-  npm run start
-```
-## Vercel deployed
-https://build-nu-inky.vercel.app/
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Screenshots
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## Landing Page
-!![image](https://github.com/kkalyankumar9/gorgeous-hole-2479/assets/112814583/f0aaf7eb-cbc3-43e6-a2e3-f39a444c3f22)
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## SignUp Page
-![image](https://github.com/kkalyankumar9/gorgeous-hole-2479/assets/112814583/de6ee690-a846-4df6-9c04-4840e47bd3af)
+## Learn More
 
-## Login page
-![image](https://github.com/kkalyankumar9/gorgeous-hole-2479/assets/112814583/a4bdf83d-1cfc-4a84-8430-b563b556df4f)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Invest page
-![image](https://github.com/kkalyankumar9/gorgeous-hole-2479/assets/112814583/640fe2da-ccb8-43b9-9406-31c7355eb441)
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Add funds Page
-![image](https://github.com/kkalyankumar9/gorgeous-hole-2479/assets/112814583/3996fde2-03e5-490c-8430-b6014f7c3264)
+### Code Splitting
 
-## Ipos Page
-![image](https://github.com/kkalyankumar9/gorgeous-hole-2479/assets/112814583/33d8af73-71e7-4aaa-8a73-ced9970ea9bf)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## Orders Page
-![image](https://github.com/kkalyankumar9/gorgeous-hole-2479/assets/112814583/e9d4b652-674b-4faf-9920-a21999e61311)
+### Analyzing the Bundle Size
 
-## Contributing
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-We welcome contributions from anyone who would like to contribute.
+### Making a Progressive Web App
 
-## Server 
-https://foam-nonstop-existence.glitch.me/
-## Authors
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
- [k kalyan kumar](https://github.com/kkalyankumar9)
-## Linkedin
+### Advanced Configuration
 
- [kkalyankumar]([https://www.linkedin.com/in/neelesh-n-h-2704a7196/](https://www.linkedin.com/in/k-kalyan-kumar-a44321163/))
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
