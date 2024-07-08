@@ -1,7 +1,7 @@
 // controllers/paymentController.js
 const Razorpay = require('razorpay');
 const crypto = require('crypto');
-const { AddFundModel } = require('../models/addFundModel');
+const AddFundModel  = require('../models/addFundModel');
 
 const instance = new Razorpay({
     key_id: process.env.KEY_ID,

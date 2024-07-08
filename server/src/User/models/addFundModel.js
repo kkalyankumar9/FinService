@@ -32,4 +32,4 @@ const addFundSchema = new mongoose.Schema({
 });
 
 const AddFundModel = mongoose.model('AddFundsData', addFundSchema);
-module.exports = { AddFundModel };
+module.exports =  AddFundModel ;
