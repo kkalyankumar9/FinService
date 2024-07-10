@@ -6,7 +6,7 @@ import adminReducer from './Admin/Auth/reducer';
 
 
 const rootReducer = combineReducers({
-  AuthReducer: adminReducer, // Corrected reducer name
+  AdminAuthReducer: adminReducer, // Corrected reducer name
   // SubReducer: subReducer // Corrected reducer name
   
 });

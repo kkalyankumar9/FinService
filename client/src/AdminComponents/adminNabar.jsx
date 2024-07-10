@@ -1,19 +1,30 @@
 import { useState } from "react";
 import { MenuIcon, XIcon, UserCircleIcon } from "@heroicons/react/outline";
+import { useDispatch, useSelector } from "react-redux";
+import { adminLogout } from "../Redux/Admin/Auth/action";
+import { toast } from "react-toastify";
 
-const navigation = [
-  { name: "Invest", href: "/invest", current: true },
-  { name: "About", href: "/about", current: false },
-  { name: "Contact", href: "/contact", current: false },
+const data = [
+  { name: "Home", href: "/", current: true },
+  { name: "DashBoard", href: "/admin_dashboard", current: false },
 ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar() {
+const AdminNavbar = () => {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const adminToken = useSelector((store) => store.AdminAuthReducer.adminToken);
+  const isAuth = useSelector((store) => store.AdminAuthReducer.isAuth);
+
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(adminLogout());
+    toast.success("You have successfully logged out.");
+    setIsProfileOpen(false); // Close profile menu on logout
+  };
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-10">
@@ -37,27 +48,25 @@ export default function Navbar() {
             <div className="flex-shrink-0 flex items-center">
               <img
                 src="https://t4.ftcdn.net/jpg/00/79/77/19/360_F_79771929_dkEtuIuxFdNOlv6Evj1Nj1kaSLgSas34.jpg"
-                alt="Logo"
+                alt="FinService Logo"
                 className="w-20 h-15 mr-4"
               />
               <span className="font-bold text-2xl text-gray-800">FinService</span>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-  {navigation.map((item) => (
-    <a
-      key={item.name}
-      href={item.href}
-      className={classNames(
-        "border-transparent text-gray-500 hover:border-gray-300 hover:text-violet-500  hover:underline",
-        "inline-flex items-center px-1 pt-1  text-xl font-medium"
-      )}
-
-    >
-      {item.name}
-    </a>
-  ))}
-</div>
-
+              {data.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={classNames(
+                    "border-transparent text-gray-500 hover:border-gray-300 hover:text-violet-500 hover:underline",
+                    "inline-flex items-center px-1 pt-1 text-xl font-medium"
+                  )}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             {/* Profile dropdown */}
@@ -73,18 +82,29 @@ export default function Navbar() {
               </div>
               {isProfileOpen && (
                 <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
-                  <a
-                    href="/admin_dashboard"
-                    className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
-                  >
-                    Admin
-                  </a>
-                  <a
-                    href="/user_register"
-                    className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
-                  >
-                    User
-                  </a>
+                  {!isAuth ? (
+                    <>
+                      <a
+                        href="/admin_register"
+                        className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                      >
+                        Register
+                      </a>
+                      <a
+                        href="/admin_login"
+                        className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                      >
+                        Login
+                      </a>
+                    </>
+                  ) : (
+                    <button
+                      onClick={handleLogout}
+                      className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                    >
+                      Admin Logout
+                    </button>
+                  )}
                 </div>
               )}
             </div>
@@ -96,7 +116,7 @@ export default function Navbar() {
       {isHamburgerOpen && (
         <div className="sm:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {navigation.map((item) => (
+            {data.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
@@ -116,4 +136,6 @@ export default function Navbar() {
       )}
     </nav>
   );
-}
+};
+
+export default AdminNavbar;

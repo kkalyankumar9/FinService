@@ -1,9 +1,19 @@
-import React from 'react'
 
-const AdminPrivateRouter = () => {
-  return (
-    <div>adminPrivateRoute</div>
-  )
-}
 
-export default AdminPrivateRouter
+import React from "react";
+import { useSelector } from "react-redux";
+import { Navigate, useLocation } from "react-router-dom";
+
+const AdminPrivateRouter = ({ children }) => {
+  const isAuth = useSelector((store) => store.AdminAuthReducer.isAuth);
+  const adminToken = useSelector((store) => store.AdminAuthReducer.adminToken);
+  const location = useLocation();
+
+  return isAuth && adminToken ? (
+    children
+  ) : (
+    <Navigate to="/admin_login" state={{ from: location }} replace />
+  );
+};
+
+export default AdminPrivateRouter;

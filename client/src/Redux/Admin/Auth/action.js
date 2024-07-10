@@ -1,5 +1,7 @@
+import axios from 'axios';
 import {
   ADMIN_LOGOUT_REQUEST,
+  ADMIN_LOGOUT_ERROR,
   ADMIN_LOGOUT_SUCCESS,
   ADMIN_SIGNIN_ERROR,
   ADMIN_SIGNIN_REQUEST,
@@ -7,72 +9,61 @@ import {
   ADMIN_SIGNUP_ERROR,
   ADMIN_SIGNUP_REQUEST,
   ADMIN_SIGNUP_SUCCESS,
-} from "./actionType";
+} from './actionType';
 
 export const adminRegister = (signup_data) => async (dispatch) => {
   dispatch({ type: ADMIN_SIGNUP_REQUEST });
   try {
-    const res = await fetch("https://spack-solutions.onrender.com/userauth/registration", {
-      method: "POST",
+    const res = await axios.post("https://finservice-backend-server.onrender.com/admin/register", signup_data, {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(signup_data),
     });
-    const data = await res.json();
-    if (res.ok) {
-      dispatch({ type: ADMIN_SIGNUP_SUCCESS, payload: data });
-      return data;
-    } else {
-      throw new Error(data.message || "Signup failed");
-    }
+    dispatch({ type: ADMIN_SIGNUP_SUCCESS, payload: res.data });
+    return res.data;
   } catch (err) {
-    dispatch({ type: ADMIN_SIGNUP_ERROR, payload: err.message });
-    return err.message;
+    dispatch({ type: ADMIN_SIGNUP_ERROR, payload: err.response?.data?.message || err.message });
+    return err.response?.data?.message || err.message;
   }
 };
 
 export const adminLogIn = (signin_data) => async (dispatch) => {
   dispatch({ type: ADMIN_SIGNIN_REQUEST });
   try {
-    const res = await fetch("https://spack-solutions.onrender.com/userauth/login", {
-      method: "POST",
+    const res = await axios.post("https://finservice-backend-server.onrender.com/admin/login", signin_data, {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(signin_data),
     });
-    const data = await res.json();
-    if (res.ok) {
-      const { token } = data;
-      dispatch({ type: ADMIN_SIGNIN_SUCCESS, payload: { token } });
-      return data;
-    } else {
-      throw new Error(data.message || "Login failed");
-    }
+    const { token } = res.data;
+    localStorage.setItem('adminToken', token); 
+    dispatch({ type: ADMIN_SIGNIN_SUCCESS, payload: { token } });
+    return res.data;
   } catch (error) {
-    dispatch({ type: ADMIN_SIGNIN_ERROR, payload: error.message });
-    return error.message;
+    dispatch({ type: ADMIN_SIGNIN_ERROR, payload: error.response?.data?.message || error.message });
+    return error.response?.data?.message || error.message;
   }
 };
 
 export const adminLogout = () => async (dispatch) => {
-  const token = localStorage.getItem("token");
+  const adminToken = localStorage.getItem('adminToken');
+
+
   dispatch({ type: ADMIN_LOGOUT_REQUEST });
+
   try {
-    const res = await fetch("https://spack-solutions.onrender.com/userauth/logout", {
-      method: "POST",
+    await axios.post("https://finservice-backend-server.onrender.com/admin/logout", {}, {
       headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        Authorization: adminToken,
       },
     });
-    if (res.ok) {
-      dispatch({ type: ADMIN_LOGOUT_SUCCESS });
-    } else {
-      throw new Error("Logout failed");
-    }
+
+  
+    localStorage.removeItem('adminToken');
+    dispatch({ type: ADMIN_LOGOUT_SUCCESS });
   } catch (err) {
-    throw err;
+    console.log('Logout Error Response:', err.response); 
+    dispatch({ type: ADMIN_LOGOUT_ERROR, payload: err.response?.data?.message || err.message });
   }
 };

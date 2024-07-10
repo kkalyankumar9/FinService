@@ -22,7 +22,7 @@ const adminRegistration= async(req, res)=> {
           } else {
             const data = new AdminModel({ userName, email, password: hash });
             await data.save();
-            res.status(200).send({ msg: "User Registration successfully" });
+            res.status(200).send({ msg: "Admin Registration Successfully" });
           }
         });
       } else {
@@ -64,7 +64,7 @@ const adminLogin = async (req, res) => {
           );
 
           res.status(200).send({
-            msg: "Login successfull",
+            msg: "Admin Login successfull",
             token: token,
           });
         } else {
@@ -97,7 +97,7 @@ const adminLogout = async (req, res) => {
       } else {
         await AdminBlackListModule.create({ token });
 
-        return res.status(200).json({ msg: "Logout Successfull." });
+        return res.status(200).json({ msg: "Admin Logout Successfull." });
       }
     });
   } catch (error) {

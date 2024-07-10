@@ -1,15 +1,11 @@
 const express = require("express");
-const cookieParser=require("cookie-parser");
-const cors=require("cors");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
 const { connection } = require("./db");
 const adminRouters = require("./src/Routes/adminRoutes");
 
-const  userRouters  = require("./src/Routes/userRoutes");
+const userRouters = require("./src/Routes/userRoutes");
 const StockDataModel = require("./src/Models/stockDataModel");
-
-
-
-
 
 const PORT = process.env.PORT || 8080;
 
@@ -18,8 +14,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
 
-app.use("/admin",adminRouters);
-app.use("/user",userRouters);
+app.use("/admin", adminRouters);
+app.use("/user", userRouters);
 // app.use("/add",fundRouter)
 
 app.get("/data", async (req, res) => {
