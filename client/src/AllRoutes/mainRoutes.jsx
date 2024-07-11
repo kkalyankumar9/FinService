@@ -15,12 +15,10 @@ const MainAllRoutes = () => {
         <Route path='/about'/>
         <Route path='/contact'/>
         {/* Admin Routes */}
-        <Route path='/admin_dashboard' element={<AdminDashbord/>} />
+        <Route path='/admin_dashboard' element={<AdminPrivateRouter><AdminDashbord/></AdminPrivateRouter>} />
         <Route path='/admin_register'element={<AdminRegistration/>}/>
         <Route path='/admin_login' element={<AdminLogin/>}/>
-        <Route path='/admin_crud'/>
-        <Route path='/admin_stock' element={<AdminLogin/>}/>
-        <Route path='/admin_stock/:userId' element={<EditStocks/>}/>
+        <Route path='/admin_stock/:userId' element={<AdminPrivateRouter><EditStocks/></AdminPrivateRouter>}/>
         <Route path='/admin_forgotpassword' element={<AdminForgotpassword/>}/>
         
 

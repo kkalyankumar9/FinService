@@ -86,15 +86,20 @@ export const forgotPasswordAdmin = (email) => async (dispatch) => {
     throw new Error('Error sending reset email');
   }
 };
-// adminRouters.post('/forgot_password',adminAuth, adminForgotPassword)
-// adminRouters.patch('/reset_password',adminAuth, adminPasswordReset)
 
-export const resetPasswordAdmin = (emailToken, newPassword) => async (dispatch) => {
+
+export const resetPasswordAdmin = (token, newPassword) => async (dispatch) => {
   try {
-    const response = await axios.patch('https://finservice-backend-server.onrender.com/admin/reset_password', {
-      emailtoken: emailToken,
-      newPassword: newPassword,
+    const response = 
+    fetch('https://finservice-backend-server.onrender.com/admin/reset_password', {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({  token, newPassword }),
     });
+    
+  
     const data = response.data;
     dispatch({ type: ADMIN_RESET_PASSWORD_SUCCESS, payload: data });
     return data; // Optional: Return data for further handling in component

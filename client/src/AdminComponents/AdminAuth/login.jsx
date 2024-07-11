@@ -63,13 +63,13 @@ const AdminLogin = () => {
     try {
       const response = await dispatch(adminLogIn(user));
 
-      if (response.msg==="Admin Login successfull") {
+      if (response.msg === "Admin Login successfull") {
         navigate("/admin_dashboard");
         toast.success("Admin Login successfull");
       } else {
         if (response.err === "password does not match") {
           toast.error("Password does not match. Please try again.");
-        } else if (response.err==="email not match") {
+        } else if (response.err === "email not match") {
           toast.error("email not match");
         } else {
           toast.error("An unexpected error occurred. Please try again later.");
@@ -89,7 +89,7 @@ const AdminLogin = () => {
 
   return (
     <>
-         <AdminNavbar/>
+      <AdminNavbar />
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div className="bg-white p-10 rounded-lg shadow-lg">

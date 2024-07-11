@@ -38,8 +38,10 @@ export const createStock = (newTaskData) => async (dispatch) => {
       headers: { Authorization: `${localStorage.getItem("adminToken")}` },
     });
     dispatch({ type: STOCK_ADD_SUCCESS, payload: response.data });
+   
     console.log(response.data);
-    // dispatch(getStockdata()); // Ensure getStockdata is a valid function
+     dispatch(getStockdata()); 
+     
   } catch (error) {
     dispatch({ type: STOCK_ADD_ERROR, payload: error.response.data }); // Ensure to provide error payload if needed
     console.error(error);

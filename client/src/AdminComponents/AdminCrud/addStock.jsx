@@ -2,13 +2,10 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { createStock } from "../../Redux/Admin/AdminStockCrud/action";
-
-
+import { toast } from "react-toastify";
 
 const AddStocks = () => {
   const initialData = {
-    title: "",
-    description: "",
     company_name: "",
     image: "",
     location: "",
@@ -37,14 +34,24 @@ const AddStocks = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Check for missing fields
+    const requiredFields = ["company_name", "image", "location", "founded_year", "revenue", "number_of_employees", "current_price", "market_cap", "pe_ratio", "high", "low", "industry", "product_categories"];
+    for (const field of requiredFields) {
+      if (!stockAdd[field]) {
+        alert(`Please fill in the ${field.replace("_", " ")}`);
+        return;
+      }
+    }
+
+    // Parse the fields correctly
     const newStock = {
- 
       company_name: stockAdd.company_name,
       image: stockAdd.image,
       location: stockAdd.location,
-      founded_year: parseInt(stockAdd.founded_year),
+      founded_year: parseInt(stockAdd.founded_year, 10),
       revenue: parseFloat(stockAdd.revenue),
-      number_of_employees: parseInt(stockAdd.number_of_employees),
+      number_of_employees: parseInt(stockAdd.number_of_employees, 10),
       current_price: parseFloat(stockAdd.current_price),
       market_cap: parseFloat(stockAdd.market_cap),
       pe_ratio: parseFloat(stockAdd.pe_ratio),
@@ -54,25 +61,27 @@ const AddStocks = () => {
       product_categories: stockAdd.product_categories.split(",").map(category => category.trim()),
       trading: stockAdd.trading
     };
-    console.log(newStock)
+
+    console.log(newStock);
 
     dispatch(createStock(newStock))
       .then(() => {
-        alert("Stock added successfully");
-        navigate('/admin_dashboard'); // Redirect to dashboard after successful addition
+        toast.success("Stock added successfully");
+        navigate('/admin_dashboard');
+        setStockAdd(initialData)
+         // Redirect to dashboard after successful addition
       })
       .catch((error) => {
         console.error("Error adding stock:", error);
-        alert("Failed to add stock. Please try again.");
+        toast.error("Failed to add stock. Please try again.");
       });
   };
 
   return (
-    <div className="flex items-center justify-center h-screen mt-96">
-      <div className="bg-white shadow-md rounded-md p-8 w-96">
-        <h1 className="text-3xl font-bold mb-4">Add Stock</h1>
+    <div className="flex items-center justify-center h-screen bg-gray-100 mt-80 ml-10 ">
+      <div className="bg-white shadow-md rounded-md p-8 w-full max-w-md">
+        <h1 className="text-3xl font-bold mb-6 text-center">Add Stock</h1>
         <form onSubmit={handleSubmit}>
-         
           <div className="mb-4">
             <label htmlFor="company_name" className="block text-sm font-bold text-gray-700 mb-2">
               Company Name
@@ -84,7 +93,7 @@ const AddStocks = () => {
               name="company_name"
               value={stockAdd.company_name}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               required
             />
           </div>
@@ -99,7 +108,7 @@ const AddStocks = () => {
               name="image"
               value={stockAdd.image}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div className="mb-4">
@@ -113,7 +122,7 @@ const AddStocks = () => {
               name="location"
               value={stockAdd.location}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div className="mb-4">
@@ -127,7 +136,7 @@ const AddStocks = () => {
               name="founded_year"
               value={stockAdd.founded_year}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div className="mb-4">
@@ -141,7 +150,7 @@ const AddStocks = () => {
               name="revenue"
               value={stockAdd.revenue}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div className="mb-4">
@@ -155,7 +164,7 @@ const AddStocks = () => {
               name="number_of_employees"
               value={stockAdd.number_of_employees}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div className="mb-4">
@@ -169,7 +178,7 @@ const AddStocks = () => {
               name="current_price"
               value={stockAdd.current_price}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div className="mb-4">
@@ -183,7 +192,7 @@ const AddStocks = () => {
               name="market_cap"
               value={stockAdd.market_cap}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div className="mb-4">
@@ -197,7 +206,7 @@ const AddStocks = () => {
               name="pe_ratio"
               value={stockAdd.pe_ratio}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div className="mb-4">
@@ -211,7 +220,7 @@ const AddStocks = () => {
               name="high"
               value={stockAdd.high}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div className="mb-4">
@@ -225,7 +234,7 @@ const AddStocks = () => {
               name="low"
               value={stockAdd.low}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div className="mb-4">
@@ -239,7 +248,7 @@ const AddStocks = () => {
               name="industry"
               value={stockAdd.industry}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div className="mb-4">
@@ -253,7 +262,7 @@ const AddStocks = () => {
               name="product_categories"
               value={stockAdd.product_categories}
               onChange={handleChange}
-              className="input"
+              className="appearance-none rounded-md w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
           </div>
           <div className="mb-4">
