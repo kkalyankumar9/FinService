@@ -7,6 +7,11 @@ import AdminDashbord from '../AdminComponents/adminDashbord'
 import AdminPrivateRouter from './adminPrivateRoute'
 import EditStocks from '../AdminComponents/AdminCrud/editStock'
 import AdminForgotpassword from '../AdminComponents/AdminAuth/forgotpass'
+import UserRegistration from '../UserComponents/UserAuth/registration'
+import { UserCircleIcon } from '@heroicons/react/outline'
+import UserLogin from '../UserComponents/UserAuth/login'
+import UserForgotpassword from '../UserComponents/UserAuth/forgotpass'
+import InvestStocksCom from '../UserComponents/Invest/investStocks'
 
 const MainAllRoutes = () => {
   return (
@@ -20,11 +25,11 @@ const MainAllRoutes = () => {
         <Route path='/admin_login' element={<AdminLogin/>}/>
         <Route path='/admin_stock/:userId' element={<AdminPrivateRouter><EditStocks/></AdminPrivateRouter>}/>
         <Route path='/admin_forgotpassword' element={<AdminForgotpassword/>}/>
-        
-
-
-        
-
+        {/* User */}
+        <Route path='/user_register'element={<UserRegistration/>}/>
+        <Route path='/user_login' element={<UserLogin/>}/>
+        <Route path='/user_forgotpassword' element={<UserForgotpassword/>}/>
+        <Route path='/user_invest' element={<InvestStocksCom/>}/>
 
         
           {/* User Routes */}

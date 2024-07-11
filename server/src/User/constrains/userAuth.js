@@ -3,10 +3,6 @@ var jwt = require("jsonwebtoken");
 const UserModel = require("../../Models/userAuthModel");
 const UserBlackListModule = require("../../Models/userBlackList");
 
-
-
-
-
 const userRegistration = async (req, res) => {
   const { username, email, password } = req.body;
 
