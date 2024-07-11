@@ -1,7 +1,15 @@
 const StockDataModel = require("../../Models/stockDataModel");
 
 
-
+const adminGetAllStocks = async (req, res) => {
+  try {
+    const stocks = await StockDataModel.find();
+    res.status(200).json(stocks);
+  } catch (error) {
+    console.error(`Error fetching stocks: ${error.message}`);
+    res.status(400).json({ error: error.message });
+  }
+};
 
 const adminGetStocks = async (req, res) => {
   const data=req.body
@@ -103,4 +111,4 @@ const adminDeleteStocks= async (req, res) => {
 };
 
 
-module.exports = { adminGetStocks,adminAddStocks,adminUpdateStocks,adminDeleteStocks};
+module.exports = {adminGetAllStocks, adminGetStocks,adminAddStocks,adminUpdateStocks,adminDeleteStocks};

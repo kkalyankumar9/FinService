@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 const data = [
   { name: "Home", href: "/", current: true },
   { name: "DashBoard", href: "/admin_dashboard", current: false },
+
 ];
 
 function classNames(...classes) {
@@ -22,8 +23,7 @@ const AdminNavbar = () => {
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(adminLogout());
-    toast.success("You have successfully logged out.");
-    setIsProfileOpen(false); // Close profile menu on logout
+    toast.success("You have successfully Logout.");
   };
 
   return (
@@ -80,31 +80,30 @@ const AdminNavbar = () => {
                   <UserCircleIcon className="h-8 w-8 text-gray-400" aria-hidden="true" />
                 </button>
               </div>
-              {isProfileOpen && (
+              {isProfileOpen && !adminToken && (
                 <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
-                  {!isAuth ? (
-                    <>
-                      <a
-                        href="/admin_register"
-                        className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
-                      >
-                        Register
-                      </a>
-                      <a
-                        href="/admin_login"
-                        className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
-                      >
-                        Login
-                      </a>
-                    </>
-                  ) : (
-                    <button
-                      onClick={handleLogout}
-                      className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
-                    >
-                      Admin Logout
-                    </button>
-                  )}
+                  <a
+                    href="/admin_register"
+                    className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                  >
+                    Register
+                  </a>
+                  <a
+                    href="admin_login"
+                    className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                  >
+                    Login
+                  </a>
+                </div>
+              )}
+              {isProfileOpen && adminToken && (
+                <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
+                  <button
+                    onClick={handleLogout}
+                    className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                  >
+                    Admin Logout
+                  </button>
                 </div>
               )}
             </div>

@@ -3,11 +3,12 @@ import {thunk} from 'redux-thunk';
 
 
 import adminReducer from './Admin/Auth/reducer';
+import { stockReducer } from './Admin/AdminStockCrud/reducer';
 
 
 const rootReducer = combineReducers({
   AdminAuthReducer: adminReducer, // Corrected reducer name
-  // SubReducer: subReducer // Corrected reducer name
+  StockReducer: stockReducer // Corrected reducer name
   
 });
 

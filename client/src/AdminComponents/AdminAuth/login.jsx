@@ -63,13 +63,17 @@ const AdminLogin = () => {
     try {
       const response = await dispatch(adminLogIn(user));
 
-      if (response && response.token) {
+      if (response.msg==="Admin Login successfull") {
         navigate("/admin_dashboard");
         toast.success("Admin Login successfull");
       } else {
-        toast.error(
-          response.msg || "An error occurred during login. Please try again."
-        );
+        if (response.err === "password does not match") {
+          toast.error("Password does not match. Please try again.");
+        } else if (response.err==="email not match") {
+          toast.error("email not match");
+        } else {
+          toast.error("An unexpected error occurred. Please try again later.");
+        }
       }
     } catch (error) {
       console.error("Login error:", error);
@@ -163,6 +167,14 @@ const AdminLogin = () => {
                 className="font-medium text-pink-600 hover:text-pink-500"
               >
                 Register
+              </Link>
+            </p>
+            <p className="mt-4 text-center text-md text-gray-600">
+              <Link
+                to="/admin_forgotpassword"
+                className="font-medium text-gray-600 hover:text-pink-500"
+              >
+                Forgot Password
               </Link>
             </p>
             <button

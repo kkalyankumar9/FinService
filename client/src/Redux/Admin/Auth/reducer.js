@@ -48,6 +48,7 @@ const adminReducer = (state = initialState, { type, payload }) => {
         isLoading: false,
         adminToken: '',
       };
+     
 
     default:
       return state;

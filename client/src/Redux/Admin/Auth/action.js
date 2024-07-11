@@ -9,6 +9,8 @@ import {
   ADMIN_SIGNUP_ERROR,
   ADMIN_SIGNUP_REQUEST,
   ADMIN_SIGNUP_SUCCESS,
+  ADMIN_RESET_PASSWORD_SUCCESS,
+  ADMIN_FORGOT_PASSWORD_SUCCESS,
 } from './actionType';
 
 export const adminRegister = (signup_data) => async (dispatch) => {
@@ -36,6 +38,7 @@ export const adminLogIn = (signin_data) => async (dispatch) => {
       },
     });
     const { token } = res.data;
+   
     localStorage.setItem('adminToken', token); 
     dispatch({ type: ADMIN_SIGNIN_SUCCESS, payload: { token } });
     return res.data;
@@ -65,5 +68,38 @@ export const adminLogout = () => async (dispatch) => {
   } catch (err) {
     console.log('Logout Error Response:', err.response); 
     dispatch({ type: ADMIN_LOGOUT_ERROR, payload: err.response?.data?.message || err.message });
+  }
+};
+
+
+export const forgotPasswordAdmin = (email) => async (dispatch) => {
+  
+  try {
+    const response = await axios.post('https://finservice-backend-server.onrender.com/admin/forgot_password', {
+      email: email,
+    });
+    const data = response.data;
+    dispatch({ type: ADMIN_FORGOT_PASSWORD_SUCCESS, payload: data });
+    return data; // Optional: Return data for further handling in component
+  } catch (error) {
+    console.error(error);
+    throw new Error('Error sending reset email');
+  }
+};
+// adminRouters.post('/forgot_password',adminAuth, adminForgotPassword)
+// adminRouters.patch('/reset_password',adminAuth, adminPasswordReset)
+
+export const resetPasswordAdmin = (emailToken, newPassword) => async (dispatch) => {
+  try {
+    const response = await axios.patch('https://finservice-backend-server.onrender.com/admin/reset_password', {
+      emailtoken: emailToken,
+      newPassword: newPassword,
+    });
+    const data = response.data;
+    dispatch({ type: ADMIN_RESET_PASSWORD_SUCCESS, payload: data });
+    return data; // Optional: Return data for further handling in component
+  } catch (error) {
+    console.error(error);
+    throw new Error('Error resetting password');
   }
 };

@@ -106,7 +106,7 @@ console.log(user)
     try {
       const response = await dispatch(adminRegister(user));
 
-      if (response.status === "") {
+      if (response.msg === "Admin Registration Successfully") {
         navigate("/admin_login");
         toast.success("Admin Registration Successfully");
       } else {

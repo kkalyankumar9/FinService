@@ -6,6 +6,7 @@ const AdminBlackListModule = require("../../Models/adminBlacklist");
 
 const adminRegistration= async(req, res)=> {
   const { userName, email, password } = req.body;
+  
 
   try {
   
