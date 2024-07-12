@@ -8,7 +8,7 @@ const UserPrivateRouter = ({ children }) => {
   const userToken = useSelector((store) => store.UserAuthReducer.userToken);
   const location = useLocation();
 
-  return isAuth && userToken ? (
+  return userToken ? (
     children
   ) : (
     <Navigate to="/user_login" state={{ from: location }} replace />
