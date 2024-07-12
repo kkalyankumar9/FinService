@@ -11,7 +11,7 @@ const UserPrivateRouter = ({ children }) => {
   return isAuth && token ? (
     children
   ) : (
-    <Navigate to="/admin_login" state={{ from: location }} replace />
+    <Navigate to="/user_login" state={{ from: location }} replace />
   );
 };
 
