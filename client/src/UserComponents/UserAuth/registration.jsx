@@ -97,7 +97,7 @@ const UserRegistration = () => {
     }
 
     const user = {
-      userName: signData.username,
+      username: signData.username,
       email: signData.email,
       password: signData.password,
     };
