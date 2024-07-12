@@ -13,8 +13,8 @@ const userRouters=express.Router();
 userRouters.post("/register",userRegistration)
 userRouters.post("/login",userLogin)
 userRouters.post("/logout",userAuth, userLogout)
-userRouters.post('/forgot_password',userAuth, userForgotPassword)
-userRouters.patch('/reset_password',userAuth, userPasswordReset)
+userRouters.post('/forgot_password', userForgotPassword)
+userRouters.patch('/reset_password', userPasswordReset)
 //Render Stocks
 userRouters.get("/stocks_render",stocksRouter)
 

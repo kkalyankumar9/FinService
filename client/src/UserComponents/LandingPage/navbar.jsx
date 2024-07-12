@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MenuIcon, XIcon, UserCircleIcon } from "@heroicons/react/outline";
 
 const navigation = [
-  { name: "Invest", href: "/invest", current: true },
+  { name: "Invest", href: "/user_invest", current: true },
   { name: "About", href: "/about", current: false },
   { name: "Contact", href: "/contact", current: false },
 ];

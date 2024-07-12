@@ -64,9 +64,9 @@ const UserLogin = () => {
     try {
       const response = await dispatch(userLogIn(user));
 
-      if (response.msg === "Admin Login successfull") {
+      if (response.msg === "Login Successfull") {
         navigate("/user_invest");
-        toast.success("Admin Login successfull");
+        toast.success("User Login successfull");
       } else {
         if (response.err === "password does not match") {
           toast.error("Password does not match. Please try again.");
