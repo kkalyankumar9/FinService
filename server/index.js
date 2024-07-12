@@ -1,6 +1,6 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
-const cors = require('cors')
+const {cors}=require("cors")
 const { connection } = require("./db");
 const adminRouters = require("./src/Routes/adminRoutes");
 
@@ -10,8 +10,9 @@ const StockDataModel = require("./src/Models/stockDataModel");
 const PORT = process.env.PORT || 8080;
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.use(cookieParser());
-app.options(cors());
+
 
 app.use("/admin", adminRouters);
 app.use("/user", userRouters);
