@@ -8,11 +8,14 @@ const userRouters = require("./src/Routes/userRoutes");
 const StockDataModel = require("./src/Models/stockDataModel");
 
 const PORT = process.env.PORT || 8080;
-
+const corsOptions = {
+  origin: "http://localhost:3000",
+  optionsSuccessStatus: 200, // For legacy browser support
+};
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors())
+app.use(cors(corsOptions))
 
 app.use("/admin", adminRouters);
 app.use("/user", userRouters);
