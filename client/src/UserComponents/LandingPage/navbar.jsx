@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { MenuIcon, XIcon, UserCircleIcon } from "@heroicons/react/outline";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import { userLogout } from "../../Redux/User/Auth/action";
+import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Invest", href: "/user_invest", current: true },
@@ -14,6 +18,13 @@ function classNames(...classes) {
 export default function Navbar() {
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const userToken = useSelector((store) => store.UserAuthReducer.userToken);
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(userLogout());
+    toast.success("You have successfully logged out.");
+  };
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-10">
@@ -43,21 +54,19 @@ export default function Navbar() {
               <span className="font-bold text-2xl text-gray-800">FinService</span>
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-  {navigation.map((item) => (
-    <a
-      key={item.name}
-      href={item.href}
-      className={classNames(
-        "border-transparent text-gray-500 hover:border-gray-300 hover:text-violet-500  hover:underline",
-        "inline-flex items-center px-1 pt-1  text-xl font-medium"
-      )}
-
-    >
-      {item.name}
-    </a>
-  ))}
-</div>
-
+              {navigation.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className={classNames(
+                    "border-transparent text-gray-500 hover:border-gray-300 hover:text-violet-500  hover:underline",
+                    "inline-flex items-center px-1 pt-1  text-xl font-medium"
+                  )}
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             {/* Profile dropdown */}
@@ -73,18 +82,37 @@ export default function Navbar() {
               </div>
               {isProfileOpen && (
                 <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
-                  <a
-                    href="/admin_dashboard"
-                    className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
-                  >
-                    Admin
-                  </a>
-                  <a
-                    href="/user_register"
-                    className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
-                  >
-                    User
-                  </a>
+                  {!userToken ? (
+                    <>
+                      <a
+                        href="/admin_dashboard"
+                        className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                      >
+                        Admin
+                      </a>
+                      <a
+                        href="/user_register"
+                        className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                      >
+                        User
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      <a
+                        href="/admin_dashboard"
+                        className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                      >
+                        Admin
+                      </a>
+                      <button
+                        onClick={handleLogout}
+                        className="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100"
+                      >
+                        User Logout
+                      </button>
+                    </>
+                  )}
                 </div>
               )}
             </div>

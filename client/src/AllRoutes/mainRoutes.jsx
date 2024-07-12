@@ -12,6 +12,8 @@ import { UserCircleIcon } from '@heroicons/react/outline'
 import UserLogin from '../UserComponents/UserAuth/login'
 import UserForgotpassword from '../UserComponents/UserAuth/forgotpass'
 import InvestStocksCom from '../UserComponents/Invest/investStocks'
+import UserPrivateRouter from './userPrivateRoute'
+import InvestSingleStocksMore from '../UserComponents/Invest/investSingleStocks'
 
 const MainAllRoutes = () => {
   return (
@@ -29,7 +31,8 @@ const MainAllRoutes = () => {
         <Route path='/user_register'element={<UserRegistration/>}/>
         <Route path='/user_login' element={<UserLogin/>}/>
         <Route path='/user_forgotpassword' element={<UserForgotpassword/>}/>
-        <Route path='/user_invest' element={<InvestStocksCom/>}/>
+        <Route path='/user_invest' element={<UserPrivateRouter><InvestStocksCom/></UserPrivateRouter>}/>
+        <Route path='/user_invest/:id' element={<UserPrivateRouter><InvestSingleStocksMore/></UserPrivateRouter>}/>
 
         
           {/* User Routes */}

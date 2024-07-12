@@ -79,14 +79,13 @@ export const forgotPasswordUser = (email) => async (dispatch) => {
 
 export const resetPasswordUser = (token, newPassword) => async (dispatch) => {
   try {
-    const response = 
-    fetch('https://finservice-backend-server.onrender.com/admin/reset_password', {
+    const response = fetch('https://finservice-backend-server.onrender.com/user/reset_password', {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({  token, newPassword }),
-    });
+    })
     
   
     const data = response.data;

@@ -1,4 +1,14 @@
-import { USER_LOGOUT_ERROR, USER_LOGOUT_REQUEST, USER_LOGOUT_SUCCESS, USER_SIGNIN_ERROR, USER_SIGNIN_REQUEST,  USER_SIGNIN_SUCCESS,  USER_SIGNUP_ERROR, USER_SIGNUP_REQUEST } from "./actionType";
+import {
+  USER_LOGOUT_ERROR,
+  USER_LOGOUT_REQUEST,
+  USER_LOGOUT_SUCCESS,
+  USER_SIGNIN_ERROR,
+  USER_SIGNIN_REQUEST,
+  USER_SIGNIN_SUCCESS,
+  USER_SIGNUP_ERROR,
+  USER_SIGNUP_REQUEST,
+  USER_SIGNUP_SUCCESS
+} from "./actionType";
 
 const initialState = {
   isLoading: false,
@@ -7,7 +17,7 @@ const initialState = {
   userToken: localStorage.getItem('userToken') || '',
 };
 
-const adminReducer = (state = initialState, { type, payload }) => {
+const userReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case USER_SIGNUP_REQUEST:
     case USER_SIGNIN_REQUEST:
@@ -19,6 +29,7 @@ const adminReducer = (state = initialState, { type, payload }) => {
     case USER_LOGOUT_ERROR:
       return { ...state, isError: true, isLoading: false, errorMessage: payload };
 
+    case USER_SIGNUP_SUCCESS:
     case USER_SIGNIN_SUCCESS:
       localStorage.setItem('userToken', payload.token);
       return {
@@ -38,11 +49,10 @@ const adminReducer = (state = initialState, { type, payload }) => {
         isLoading: false,
         userToken: '',
       };
-     
 
     default:
       return state;
   }
 };
 
-export default adminReducer;
+export default userReducer;

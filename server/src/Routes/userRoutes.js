@@ -2,7 +2,7 @@ const express =require("express");
 const { userRegistration, userLogin, userLogout } = require("../User/constrains/userAuth");
 const { userForgotPassword, userPasswordReset } = require("../User/constrains/userForgotPassword");
 
-const { stocksRouter } = require("../User/constrains/stocksRenders");
+const { stocksRouter, stocksByIdRouter } = require("../User/constrains/stocksRenders");
 const { addFunds, verifyPayment } = require("../User/constrains/addFundsRouter");
 
 const { userAuth } = require("../User/middleWare/authMiddleware");
@@ -17,6 +17,7 @@ userRouters.post('/forgot_password', userForgotPassword)
 userRouters.patch('/reset_password', userPasswordReset)
 //Render Stocks
 userRouters.get("/stocks_render",stocksRouter)
+userRouters.get("/stocks_render/:id",stocksByIdRouter)
 
 //Add Funds
 userRouters.post("/addfunds",userAuth,addFunds)
