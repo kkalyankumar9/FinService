@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import HomePage from '../UserComponents/home'
+
 import AdminRegistration from '../AdminComponents/AdminAuth/registration'
 import AdminLogin from '../AdminComponents/AdminAuth/login'
 import AdminDashbord from '../AdminComponents/adminDashbord'
@@ -8,19 +8,24 @@ import AdminPrivateRouter from './adminPrivateRoute'
 import EditStocks from '../AdminComponents/AdminCrud/editStock'
 import AdminForgotpassword from '../AdminComponents/AdminAuth/forgotpass'
 import UserRegistration from '../UserComponents/UserAuth/registration'
-import { UserCircleIcon } from '@heroicons/react/outline'
+
 import UserLogin from '../UserComponents/UserAuth/login'
 import UserForgotpassword from '../UserComponents/UserAuth/forgotpass'
 import InvestStocksCom from '../UserComponents/Invest/investStocks'
 import UserPrivateRouter from './userPrivateRoute'
 import InvestSingleStocksMore from '../UserComponents/Invest/investSingleStocks'
 
+import PaymentComponent from '../UserComponents/Invest/addFunds'
+import HomePage from '../Pages/home'
+import AboutPage from '../Pages/about'
+import ContactDetails from '../Pages/contact'
+
 const MainAllRoutes = () => {
   return (
     <Routes>
         <Route path='/' element={<HomePage/>}/>
-        <Route path='/about'/>
-        <Route path='/contact'/>
+        <Route path='/about' element={<AboutPage/>}/>
+        <Route path='/contact' element={<ContactDetails/>}/>
         {/* Admin Routes */}
         <Route path='/admin_dashboard' element={<AdminPrivateRouter><AdminDashbord/></AdminPrivateRouter>} />
         <Route path='/admin_register'element={<AdminRegistration/>}/>
@@ -36,7 +41,7 @@ const MainAllRoutes = () => {
 
         
           {/* User Routes */}
-        <Route path='/user_auth'/>
+        <Route path='/addfunds' element={<PaymentComponent/>}/>
    
     </Routes>
   )

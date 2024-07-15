@@ -38,7 +38,7 @@ export const userLogIn = (signin_data) => async (dispatch) => {
 };
 
 export const userLogout = () => async (dispatch) => {
-  const adminToken = localStorage.getItem('userToken');
+  const userToken = localStorage.getItem('userToken');
 
 
   dispatch({ type:USER_LOGOUT_REQUEST });
@@ -47,7 +47,7 @@ export const userLogout = () => async (dispatch) => {
     await axios.post("https://finservice-backend-server.onrender.com/user/logout", {}, {
       headers: {
         'Content-Type': 'application/json',
-        Authorization: adminToken,
+        Authorization: userToken,
       },
     });
 
