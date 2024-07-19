@@ -1,8 +1,6 @@
-// controllers/paymentController.js
 const Razorpay = require('razorpay');
 const crypto = require('crypto');
 const AddFundModel = require('../../Models/addFundModel');
-
 
 const instance = new Razorpay({
     key_id: process.env.KEY_ID,
@@ -10,16 +8,12 @@ const instance = new Razorpay({
 });
 
 const addFunds = async (req, res) => {
-    const { amount } = req.body; // Extract amount from request body
-    const { username, userId } = req.body; // Extract username and userId from the middleware
+    const { amount, username, userId } = req.body;
 
-    if (!username || !userId) {
-        return res.status(400).send({ error: "Username and UserId are required" });
-    }
 
     try {
         const options = {
-            amount: amount * 100,  // amount in the smallest currency unit
+            amount: amount * 100,
             currency: "INR",
             receipt: `order_rcptid_${Date.now()}`
         };
@@ -36,9 +30,9 @@ const addFunds = async (req, res) => {
             orderId: order.id,
             amount: order.amount,
             currency: order.currency,
-            paymentId: null, // Payment ID will be updated after payment verification
-            username, // Include username
-            userId, // Include userId
+            paymentId: null,
+            username,
+            userId,
         });
 
         await fundData.save();
@@ -52,15 +46,19 @@ const addFunds = async (req, res) => {
 
 const verifyPayment = async (req, res) => {
     const { order_id, razorpay_payment_id, razorpay_signature } = req.body;
-    const secret = process.env.SECRETKEY;
+    const secret = process.env.KEY_SECRET; // Ensure you are using the correct environment variable
+
+    console.log("Verification payload received:", req.body);
 
     const generated_signature = crypto.createHmac('sha256', secret)
         .update(order_id + "|" + razorpay_payment_id)
         .digest('hex');
 
+    console.log("Generated signature:", generated_signature);
+    console.log("Received signature:", razorpay_signature);
+
     if (generated_signature === razorpay_signature) {
         try {
-            // Update the paymentId in the database after successful verification
             await AddFundModel.updateOne({ orderId: order_id }, { paymentId: razorpay_payment_id });
             res.send({ message: "Payment is successful" });
         } catch (error) {
@@ -68,6 +66,7 @@ const verifyPayment = async (req, res) => {
             res.status(500).send({ error: "An error occurred while updating payment ID" });
         }
     } else {
+        console.error("Invalid signature. Generated:", generated_signature, "Received:", razorpay_signature);
         res.status(400).send({ error: "Invalid signature" });
     }
 };

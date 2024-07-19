@@ -1,66 +1,57 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addfundsUser } from '../../Redux/User/InvestStocks/action';
 
-const PaymentComponent = () => {
+const RazorpayPayment = () => {
     const [amount, setAmount] = useState('');
+    const [payments, setPayments] = useState([]);
+    const dispatch=useDispatch()
     const userToken = useSelector((store) => store.UserAuthReducer.userToken);
-
-
     const handlePayment = async () => {
-        try {
-            const response = await axios.post('https://finservice-backend-server.onrender.com/user/addfunds', { amount },
-                {
+        const payload = {
+            amount: amount
+          
+        };
+        dispatch(addfundsUser(payload, addPaymentToTable));
+    };
 
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: `${userToken}`,
-                      },
-                });
-            const { orderId } = response.data;
-
-            const options = {
-                key:"rzp_test_i0jQ4pziAEMEgY",
-                amount: amount * 100,
-                currency: 'INR',
-                name: 'Your App Name',
-                description: 'Adding funds to your account',
-                order_id: orderId,
-                handler: async (response) => {
-                    const paymentData = {
-                        order_id: response.razorpay_order_id,
-                        razorpay_payment_id: response.razorpay_payment_id,
-                        razorpay_signature: response.razorpay_signature,
-                    };
-                    await axios.post('/api/payment/verifyPayment', paymentData);
-                    alert('Payment successful!');
-                },
-                prefill: {
-                    name: 'User Name', // prefill user name if available
-                    email: 'user@example.com', // prefill user email if available
-                    contact: '9876543210', // prefill user contact number if available
-                },
-                notes: {
-                    address: 'Your address',
-                },
-                theme: {
-                    color: '#F37254',
-                },
-            };
-
-            const rzp = new window.Razorpay(options);
-            rzp.open();
-        } catch (error) {
-            console.error('Error initiating payment:', error);
-        }
+    const addPaymentToTable = (paymentId, orderId, signature) => {
+        setPayments([...payments, { paymentId, orderId, signature }]);
     };
 
     return (
         <div>
-            <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount" />
-            <button onClick={handlePayment}>Add Funds</button>
+            <div>
+                <input
+                    type="text"
+                    placeholder="Enter Amount"
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                />
+                <button onClick={handlePayment}>Pay</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Payment ID</th>
+                        <th>Order ID</th>
+                        <th>Razorpay Signature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {payments.map((payment, index) => (
+                        <tr key={index}>
+                            <td>{payment.paymentId}</td>
+                            <td>{payment.orderId}</td>
+                            <td>{payment.signature}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 };
 
-export default PaymentComponent;
+export default RazorpayPayment;
