@@ -8,7 +8,7 @@ const instance = new Razorpay({
 });
 
 const addFunds = async (req, res) => {
-    const { amount, username, userId } = req.body;
+    const { amount,no_of_stocks,productId, username, userId } = req.body;
 
 
     try {
@@ -31,6 +31,8 @@ const addFunds = async (req, res) => {
             amount: order.amount,
             currency: order.currency,
             paymentId: null,
+            no_of_stocks,
+            productId,
             username,
             userId,
         });
@@ -70,5 +72,15 @@ const verifyPayment = async (req, res) => {
         res.status(400).send({ error: "Invalid signature" });
     }
 };
+const transactionsHistory =async (req, res)=>{
 
-module.exports = { addFunds, verifyPayment };
+    try {
+        const data=await AddFundModel.find(req.body)
+        res.status(200).send(data)
+        
+    } catch (error) {
+        res.status(500).send({ error: "An error occurred" });
+    }
+
+}
+module.exports = { addFunds, verifyPayment,transactionsHistory };

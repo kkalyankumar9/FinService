@@ -92,7 +92,7 @@ const InvestSingleStocksMore = () => {
             <ReactApexChart options={chartOptions.options} series={chartOptions.series} type="pie" height={350} />
           </div>
         </div>
-        <button><Link to="/addfunds">add</Link></button>
+        <button><Link to={`/addfunds/${id}`}>add</Link></button>
       </div>
     </div>
   );

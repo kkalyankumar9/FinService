@@ -41,7 +41,7 @@ const MainAllRoutes = () => {
 
         
           {/* User Routes */}
-        <Route path='/addfunds' element={<PaymentComponent/>}/>
+        <Route path='/addfunds/:id' element={<PaymentComponent/>}/>
    
     </Routes>
   )

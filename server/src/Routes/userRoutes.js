@@ -3,7 +3,7 @@ const { userRegistration, userLogin, userLogout } = require("../User/constrains/
 const { userForgotPassword, userPasswordReset } = require("../User/constrains/userForgotPassword");
 
 const { stocksRouter, stocksByIdRouter } = require("../User/constrains/stocksRenders");
-const { addFunds, verifyPayment } = require("../User/constrains/addFundsRouter");
+const { addFunds, verifyPayment, transactionsHistory } = require("../User/constrains/addFundsRouter");
 
 const { userAuth } = require("../User/middleWare/authMiddleware");
 
@@ -22,5 +22,6 @@ userRouters.get("/stocks_render/:id",stocksByIdRouter)
 //Add Funds
 userRouters.post("/addfunds",userAuth,addFunds)
 userRouters.post("/verifyPayment",userAuth,verifyPayment)
+userRouters.get('/transactions',userAuth,transactionsHistory )
 
 module.exports=userRouters

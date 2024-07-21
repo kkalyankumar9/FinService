@@ -20,22 +20,55 @@ export const userRegister = (signup_data) => async (dispatch) => {
 
 export const userLogIn = (signin_data) => async (dispatch) => {
   dispatch({ type: USER_SIGNIN_REQUEST });
+
   try {
     const res = await axios.post("https://finservice-backend-server.onrender.com/user/login", signin_data, {
       headers: {
         'Content-Type': 'application/json',
       },
     });
-    const { token } = res.data;
-   
-    localStorage.setItem('userToken', token); 
+
+    const { token, expiresIn } = res.data;
+
+    // Ensure expiresIn is a number
+    const expiresInSeconds = Number(expiresIn);
+    if (isNaN(expiresInSeconds)) {
+      throw new Error('Invalid expiresIn value');
+    }
+
+    // Calculate expiration time in milliseconds
+    const expirationTime = new Date().getTime() + expiresInSeconds * 1000;
+    localStorage.setItem('userToken', token);
+    localStorage.setItem('tokenExpiration', expirationTime.toString()); // Store as string
+
+    console.log('Expiration Time:', expirationTime);
+
+    // Function to check if the token is valid
+    const isTokenValid = () => {
+      const token = localStorage.getItem('userToken');
+      const expirationTime = localStorage.getItem('tokenExpiration');
+      if (!token || !expirationTime || new Date().getTime() > parseInt(expirationTime, 10)) {
+        localStorage.removeItem('userToken');
+        localStorage.removeItem('tokenExpiration');
+        return false;
+      }
+      return true;
+    };
+
+    console.log('Is Token Valid:', isTokenValid());
+
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: { token } });
+
     return res.data;
   } catch (error) {
-    dispatch({ type: USER_SIGNIN_ERROR, payload: error.response?.data?.message || error.message });
-    return error.response?.data?.message || error.message;
+    const errorMessage = error.response?.data?.message || error.message;
+    dispatch({ type: USER_SIGNIN_ERROR, payload: errorMessage });
+
+    return errorMessage;
   }
 };
+
+
 
 export const userLogout = () => async (dispatch) => {
   const userToken = localStorage.getItem('userToken');
@@ -53,6 +86,7 @@ export const userLogout = () => async (dispatch) => {
 
   
     localStorage.removeItem('userToken');
+    localStorage.removeItem('tokenExpiration');
     dispatch({ type:USER_LOGOUT_SUCCESS });
   } catch (err) {
     console.log('Logout Error Response:', err.response); 

@@ -34,7 +34,7 @@ export const addfundsUser = (payload, addPaymentToTable) => async (dispatch) => 
     dispatch({ type: ADD_FUNDS_REQUEST });
     console.log('Request payload:', payload);
 
-    const orderResponse = await axios.post('https://finservice-backend-server.onrender.com/user/addfunds', payload, {
+    const orderResponse = await axios.post(`${API_URL}/addfunds`, payload, {
         headers: {
             'Content-Type': 'application/json',
              Authorization:`${localStorage.getItem("userToken")}`
@@ -61,7 +61,7 @@ export const addfundsUser = (payload, addPaymentToTable) => async (dispatch) => 
                 };
                 console.log('Payment verification payload:', paymentVerificationPayload);
 
-                const paymentVerificationResponse = await axios.post('https://finservice-backend-server.onrender.com/user/verifyPayment', paymentVerificationPayload, {
+                const paymentVerificationResponse = await axios.post(`${API_URL}/verifyPayment`, paymentVerificationPayload, {
                     headers: {
                         'Content-Type': 'application/json',
                         Authorization:`${localStorage.getItem("userToken")}` ,
@@ -82,11 +82,11 @@ export const addfundsUser = (payload, addPaymentToTable) => async (dispatch) => 
                 alert('Payment verification failed.');
             }
         },
-        // prefill: {
-        //     name: "kalyan",
-        //     email: "kalyan@gmail.com",
-        //     contact: "8888899999"
-        // },
+        prefill: {
+            name: "",
+            email: "",
+            contact: ""
+        },
         notes: {
             address: "Razorpay Corporate Office"
         },

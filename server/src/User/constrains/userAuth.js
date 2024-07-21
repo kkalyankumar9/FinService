@@ -56,14 +56,16 @@ const userLogin = async (req, res) => {
           if (!secretkey) {
             return res.status(500).send({ msg: "Secret key not defined" });
           }
+          const expiresIn = 3600; 
           const token = jwt.sign(
             { userId: user._id, username: user.username },
-            secretkey
+            secretkey, { expiresIn }
           );
 
           res.status(200).send({
             msg: "Login Successfull",
             token: token,
+            expiresIn: expiresIn 
           });
         } else {
           res.status(400).send({ err: "password does not match" });
