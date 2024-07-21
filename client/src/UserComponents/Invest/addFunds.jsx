@@ -1,24 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { addfundsUser } from '../../Redux/User/InvestStocks/action';
+import { addfundsUser, getUserSingleStock } from '../../Redux/User/InvestStocks/action';
 import { useParams } from 'react-router-dom';
 
 const RazorpayPayment = () => {
-    const [amount, setAmount] = useState('');
-    const { id } = useParams();
-    const [no_of_stocks, setNoofstocks] = useState('');
-   
+    const [no_of_stocks, setNoOfStocks] = useState('');
     const [payments, setPayments] = useState([]);
-    const dispatch=useDispatch()
+    const { id } = useParams();
+    const dispatch = useDispatch();
     const userToken = useSelector((store) => store.UserAuthReducer.userToken);
+    const singleStockData = useSelector((store) => store.UserStocksReducer.singleStockData);
+
+    useEffect(() => {
+        dispatch(getUserSingleStock(id));
+    }, [dispatch, id]);
+
     const handlePayment = async () => {
+        const stock_price = singleStockData.current_price;
         const payload = {
-            amount: amount,
-            no_of_stocks:no_of_stocks,
-            productId:id,
-            
-          
+            stock_price: stock_price,
+            no_of_stocks: no_of_stocks,
+            productId: id,
+            userToken: userToken,
         };
         dispatch(addfundsUser(payload, addPaymentToTable));
     };
@@ -33,14 +37,14 @@ const RazorpayPayment = () => {
                 <input
                     type="text"
                     placeholder="Enter Amount"
-                    value={amount}
-                    onChange={(e) => setAmount(e.target.value)}
+                    value={singleStockData.current_price || ''}
+                    disabled
                 />
-                  <input
+                <input
                     type="text"
-                    placeholder="Enter setNoofstocks"
+                    placeholder="Enter Number of Stocks"
                     value={no_of_stocks}
-                    onChange={(e) => setNoofstocks(e.target.value)}
+                    onChange={(e) => setNoOfStocks(e.target.value)}
                 />
                 <button onClick={handlePayment}>Pay</button>
             </div>

@@ -19,7 +19,11 @@ const addFundSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  amount: {
+  stock_price: {
+    type: Number,
+    required: true,
+  },
+  total_amount: {
     type: Number,
     required: true,
   },
