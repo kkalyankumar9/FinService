@@ -8,33 +8,31 @@ const instance = new Razorpay({
 });
 
 const addFunds = async (req, res) => {
-    let { stock_price, no_of_stocks, productId, username, userId } = req.body;
+    const { amount,no_of_stocks,productId, username, userId } = req.body;
+
 
     try {
-        // Calculate total_amount
-      const total_amount = Math.floor(stock_price * no_of_stocks * 100)
-        
         const options = {
-            amount: total_amount,
+            amount: amount *no_of_stocks* 100,
             currency: "INR",
             receipt: `order_rcptid_${Date.now()}`
         };
 
-        // Create order with Razorpay instance
         const order = await instance.orders.create(options);
 
         if (!order) {
             return res.status(500).send({ error: "Failed to create order" });
         }
 
-        // Save the fund data in the database
+        res.send({ orderId: order.id, amount: order.amount, currency: order.currency });
+
         const fundData = new AddFundModel({
             orderId: order.id,
-            total_amount: order.amount,
+            amount: (order.amount)/100,
             currency: order.currency,
             paymentId: null,
-            stock_price,
             no_of_stocks,
+            stocks_price:amount,
             productId,
             username,
             userId,
@@ -43,15 +41,11 @@ const addFunds = async (req, res) => {
         await fundData.save();
         console.log("Fund data saved:", fundData);
 
-        // Send response after saving the fund data
-        res.send({ orderId: order.id, total_amount: order.amount, currency: order.currency });
-
     } catch (error) {
         console.error("Error processing add funds:", error);
         res.status(500).send({ error: "An error occurred" });
     }
 };
-
 
 const verifyPayment = async (req, res) => {
     const { order_id, razorpay_payment_id, razorpay_signature } = req.body;

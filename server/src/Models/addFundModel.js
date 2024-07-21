@@ -14,16 +14,17 @@ const addFundSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  stocks_price: {
+    type: Number,
+    required: true,
+  },
 
   productId: {
     type: String,
     required: true,
   },
-  stock_price: {
-    type: Number,
-    required: true,
-  },
-  total_amount: {
+ 
+  amount: {
     type: Number,
     required: true,
   },
