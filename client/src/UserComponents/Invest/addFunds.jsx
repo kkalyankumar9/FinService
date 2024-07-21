@@ -21,8 +21,8 @@ const RazorpayPayment = () => {
         const payload = {
             stock_price: stock_price,
             no_of_stocks: no_of_stocks,
-            productId: id,
-            userToken: userToken,
+            productId: id
+            
         };
         dispatch(addfundsUser(payload, addPaymentToTable));
     };

@@ -8,7 +8,7 @@ const instance = new Razorpay({
 });
 
 const addFunds = async (req, res) => {
-    let { stock_price, no_of_stocks, total_amount, productId, username, userId } = req.body;
+    let { stock_price, no_of_stocks, productId, username, userId } = req.body;
 
     try {
         // Calculate total_amount
