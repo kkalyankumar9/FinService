@@ -12,7 +12,7 @@ const addFunds = async (req, res) => {
 
     try {
         // Calculate total_amount
-      const total_amount = stock_price * no_of_stocks * 100;
+      const total_amount = Math.floor(stock_price * no_of_stocks * 100)
         
         const options = {
             amount: total_amount,
