@@ -3,7 +3,7 @@ import { MenuIcon, XIcon, UserCircleIcon } from "@heroicons/react/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { userLogout } from "../../Redux/User/Auth/action";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const navigation = [
   { name: "Invest", href: "/user_invest", current: true },
@@ -20,11 +20,14 @@ export default function Navbar() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const userToken = useSelector((store) => store.UserAuthReducer.userToken);
   const dispatch = useDispatch();
-
+  const navigate=useNavigate()
   const handleLogout = () => {
     dispatch(userLogout());
     toast.success("You have successfully logged out.");
   };
+  const handleHome=()=>{
+    navigate("/")
+  }
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-10">
@@ -45,7 +48,7 @@ export default function Navbar() {
             </button>
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex-shrink-0 flex items-center">
+            <div className="flex-shrink-0 flex items-center cursor-pointer" onClick={handleHome}>
               <img
                 src="https://t4.ftcdn.net/jpg/00/79/77/19/360_F_79771929_dkEtuIuxFdNOlv6Evj1Nj1kaSLgSas34.jpg"
                 alt="Logo"
