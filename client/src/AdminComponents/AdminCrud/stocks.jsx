@@ -9,7 +9,7 @@ const StocksRender = () => {
   const adminStocks = useSelector((store) => store.StockReducer.adminStocks);
   const isLoading = useSelector((store) => store.StockReducer.isLoading);
   const isError = useSelector((store) => store.StockReducer.isError);
-
+console.log(adminStocks)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

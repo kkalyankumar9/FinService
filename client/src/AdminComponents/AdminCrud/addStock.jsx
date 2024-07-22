@@ -78,7 +78,7 @@ const AddStocks = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100 mt-80 ml-10 ">
+    <div className="flex items-center justify-center h-screen bg-gray-100 mt-96 ml-10 ">
       <div className="bg-white shadow-md rounded-md p-8 w-full max-w-md">
         <h1 className="text-3xl font-bold mb-6 text-center">Add Stock</h1>
         <form onSubmit={handleSubmit}>

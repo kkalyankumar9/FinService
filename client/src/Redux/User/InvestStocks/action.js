@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { ADD_FUNDS_ERROR, ADD_FUNDS_REQUEST, ADD_FUNDS_SUCCESS, USER_GETSINGLESTOCK_ERROR, USER_GETSINGLESTOCK_REQUEST, USER_GETSINGLESTOCK_SUCCESS, USER_GETSTOCKS_ERROR, USER_GETSTOCKS_REQUEST, USER_GETSTOCKS_SUCCESS } from './actionType';
+import { ADD_FUNDS_ERROR, ADD_FUNDS_REQUEST, ADD_FUNDS_SUCCESS, GET_TRANSACTIONS_ERROR, GET_TRANSACTIONS_REQUEST, GET_TRANSACTIONS_SUCCESS, USER_GETSINGLESTOCK_ERROR, USER_GETSINGLESTOCK_REQUEST, USER_GETSINGLESTOCK_SUCCESS, USER_GETSTOCKS_ERROR, USER_GETSTOCKS_REQUEST, USER_GETSTOCKS_SUCCESS } from './actionType';
 
-
+import { toast } from 'react-toastify';
 const API_URL = "https://finservice-backend-server.onrender.com/user";
 
 export const getUserStocksdata = () => async (dispatch) => {
@@ -28,7 +28,7 @@ export const getUserSingleStock = (id) => async (dispatch) => {
     console.error(error);
   }
 };
-export const addfundsUser = (payload, addPaymentToTable) => async (dispatch) => {
+export const addfundsUser = (payload, payDetails) => async (dispatch) => {
     
   try {
     dispatch({ type: ADD_FUNDS_REQUEST });
@@ -71,21 +71,22 @@ export const addfundsUser = (payload, addPaymentToTable) => async (dispatch) => 
 
                 if (paymentVerificationResponse.data.message === "Payment is successful") {
                    
-                    addPaymentToTable(response.razorpay_payment_id, response.razorpay_order_id, response.razorpay_signature);
+                    // addPaymentToTable(response.razorpay_payment_id, response.razorpay_order_id, response.razorpay_signature);
                     dispatch({ type: ADD_FUNDS_SUCCESS, payload: response });
+                    toast.success('Payment is successful');
                 } else {
-                    alert('Payment verification failed.');
+                    toast.error('Payment verification failed.');
                     dispatch({ type: ADD_FUNDS_ERROR, error: 'Payment verification failed.' });
                 }
             } catch (error) {
                 console.error('Error verifying payment:', error);
-                alert('Payment verification failed.');
+                toast.error('Payment verification failed.');
             }
         },
         prefill: {
-            name: "",
-            email: "",
-            contact: ""
+            name: payDetails.name,
+            email: payDetails.email,
+            contact: payDetails.contact
         },
         notes: {
             address: "Razorpay Corporate Office"
@@ -97,13 +98,31 @@ export const addfundsUser = (payload, addPaymentToTable) => async (dispatch) => 
 
     const rzp1 = new window.Razorpay(options);
     rzp1.on('payment.failed', (response) => {
-        alert('Payment Failed');
+        toast.error('Payment Failed');
         console.error('Payment failed response:', response);
     });
 
     rzp1.open();
 } catch (error) {
     console.error('Error creating order:', error);
-    alert('Failed to create order. Please try again.');
+    toast.error('Failed to create order. Please try again.');
 }
 };
+
+export const getTransactionsHistory= () => async (dispatch) => {
+    dispatch({ type: GET_TRANSACTIONS_REQUEST });
+    try {
+      const response = await axios.get(`${API_URL}/transactions`,
+        {headers: {
+            'Content-Type': 'application/json',
+             Authorization:`${localStorage.getItem("userToken")}`
+        }}
+      
+      );
+      dispatch({ type:GET_TRANSACTIONS_SUCCESS, payload: response.data });
+      
+    } catch (error) {
+      dispatch({ type: GET_TRANSACTIONS_ERROR });
+      console.error(error);
+    }
+  };

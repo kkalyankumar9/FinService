@@ -9,7 +9,7 @@ const AdminPrivateRouter = ({ children }) => {
   const adminToken = useSelector((store) => store.AdminAuthReducer.adminToken);
   const location = useLocation();
 
-  return isAuth && adminToken ? (
+  return  adminToken ? (
     children
   ) : (
     <Navigate to="/admin_login" state={{ from: location }} replace />

@@ -60,7 +60,7 @@ const InvestStocksCom = () => {
                 <img
                   src={stock.image}
                   alt="error"
-                  className="w-full h-32 object-cover rounded-t-md mb-2"
+                  className="w-56 h-32  rounded-t-md mb-2"
                 />
                 <h3 className="text-lg font-bold mb-1">{stock.company_name}</h3>
                 <p className="text-sm text-gray-600 mb-1">

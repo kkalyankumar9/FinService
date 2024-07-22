@@ -1,52 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { getUserSingleStock } from '../../Redux/User/InvestStocks/action';
 import Navbar from '../LandingPage/navbar';
-import ReactApexChart from 'react-apexcharts';
+
+import StockBarChart from './charts/barChartCom';
+import StockLineChart from './charts/lineChartCom';
+import Footer from '../LandingPage/footer';
+import StockPieChart from './charts/pieChartCom';
+
 
 const InvestSingleStocksMore = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const singleStockData = useSelector((store) => store.UserStocksReducer.singleStockData);
   const isLoading = useSelector((store) => store.UserStocksReducer.isLoading);
-  const [chartOptions, setChartOptions] = useState({
-    series: [],
-    options: {
-      chart: {
-        type: 'pie',
-        height: 350
-      },
-      labels: ['P/E Ratio', 'High', 'Low'],
-      colors: ['#6ab04c', '#2980b9', '#f39c12'],
-      title: {
-        text: 'P/E Ratio, High, and Low Prices',
-        align: 'center',
-        margin: 20,
-        offsetY: 20,
-        style: {
-          fontSize: '20px',
-          fontWeight: 'bold',
-          color: '#333'
-        }
-      }
-    },
-  });
 
   useEffect(() => {
     dispatch(getUserSingleStock(id));
   }, [dispatch, id]);
-
-  useEffect(() => {
-    if (singleStockData) {
-      setChartOptions({
-        series: [singleStockData.pe_ratio, singleStockData.high, singleStockData.low],
-        options: {
-          ...chartOptions.options,
-        }
-      });
-    }
-  }, [singleStockData]);
 
   if (isLoading) {
     return (
@@ -67,33 +39,74 @@ const InvestSingleStocksMore = () => {
   return (
     <div>
       <Navbar />
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <img
-          src={singleStockData.image}
-          alt={singleStockData.company_name}
-          className="w-full h-48 object-cover rounded-t-lg mb-4"
-        />
-        <div className="px-4">
-          <h2 className="text-3xl font-bold mb-2">{singleStockData.company_name}</h2>
-          <p className="text-lg text-gray-800 mb-2">{singleStockData.industry}</p>
-          <p className="text-lg text-gray-800 mb-2">Location: {singleStockData.location}</p>
-          <p className="text-lg text-gray-800 mb-2">Founded: {singleStockData.founded_year}</p>
-          <p className="text-lg text-gray-800 mb-2">Revenue: ₹{singleStockData.revenue}</p>
-          <p className="text-lg text-gray-800 mb-2">Employees: {singleStockData.number_of_employees}</p>
-          <p className="text-lg text-gray-800 mb-2">Current Stock Price: ₹{singleStockData.current_price}</p>
-          <p className="text-lg text-gray-800 mb-2">Market Cap: ₹{singleStockData.market_cap}M</p>
-          <p className="text-lg text-gray-800 mb-2">P/E Ratio: {singleStockData.pe_ratio}</p>
-          <p className="text-lg text-gray-800 mb-2">High: ₹{singleStockData.high}</p>
-          <p className="text-lg text-gray-800 mb-2">Low: ₹{singleStockData.low}</p>
-          <p className="text-lg text-gray-800 mb-2">
-            Product Categories: {singleStockData.product_categories.join(", ")}
-          </p>
-          <div className="mt-8">
-            <ReactApexChart options={chartOptions.options} series={chartOptions.series} type="pie" height={350} />
-          </div>
-        </div>
-        <button><Link to={`/addfunds/${id}`}>add</Link></button>
-      </div>
+      <div className=" from-blue-50 to-indigo-100 shadow-lg rounded-lg p-8 m-6 max-w-4xl mx-auto">
+  <img
+    src={singleStockData.image}
+    alt={singleStockData.company_name}
+    className="w-full h-60  rounded-t-lg mb-6"
+  />
+  <div className="px-6">
+    <h2 className="text-4xl font-extrabold text-gray-900 mb-4">{singleStockData.company_name}</h2>
+    <p className="text-xl text-gray-700 mb-3">
+      <span className="font-semibold">Industry:</span> {singleStockData.industry}
+    </p>
+    <p className="text-xl text-gray-700 mb-3">
+      <span className="font-semibold">Location:</span> {singleStockData.location}
+    </p>
+    <p className="text-xl text-gray-700 mb-3">
+      <span className="font-semibold">Founded:</span> {singleStockData.founded_year}
+    </p>
+    <p className="text-xl text-gray-700 mb-3">
+      <span className="font-semibold">Revenue:</span> ₹{singleStockData.revenue}
+    </p>
+    <p className="text-xl text-gray-700 mb-3">
+      <span className="font-semibold">Employees:</span> {singleStockData.number_of_employees}
+    </p>
+    <p className="text-xl text-gray-700 mb-3">
+      <span className="font-semibold">Current Stock Price:</span> ₹{singleStockData.current_price}
+    </p>
+    <p className="text-xl text-gray-700 mb-3">
+      <span className="font-semibold">Market Cap:</span> ₹{singleStockData.market_cap}M
+    </p>
+    <p className="text-xl text-gray-700 mb-3">
+      <span className="font-semibold">P/E Ratio:</span> {singleStockData.pe_ratio}
+    </p>
+    <p className="text-xl text-gray-700 mb-3">
+      <span className="font-semibold">High:</span> ₹{singleStockData.high}
+    </p>
+    <p className="text-xl text-gray-700 mb-3">
+      <span className="font-semibold">Low:</span> ₹{singleStockData.low}
+    </p>
+    <p className="text-xl text-gray-700 mb-3">
+      <span className="font-semibold">Product Categories:</span> {singleStockData.product_categories.join(", ")}
+    </p>
+    <div className="flex justify-center mt-8">
+      <Link to={`/addfunds/${id}`}>
+        <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition-all duration-200">
+          Buy
+        </button>
+      </Link>
+    </div>
+  </div>
+</div>
+
+
+
+<div className="flex flex-col items-center justify-center mt-8 space-y-8">
+  <div className="w-full max-w-3xl">
+  
+    <StockPieChart data={singleStockData} />
+  </div>
+  <div className="w-full max-w-3xl">
+    <StockBarChart data={singleStockData} />
+  </div>
+  <div className="w-full max-w-3xl">
+    <StockLineChart data={singleStockData} />
+  </div>
+</div>
+
+     
+ <Footer/>
     </div>
   );
 };
