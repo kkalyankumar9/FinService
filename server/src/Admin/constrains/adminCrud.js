@@ -14,7 +14,7 @@ const adminGetAllStocks = async (req, res) => {
 const adminGetStocks = async (req, res) => {
   const data=req.body
   try {
-    const stocks = await StockDataModel.find({ userId:data.userId});
+    const stocks = await StockDataModel.find(data);
     console.log(stocks.length);
     res.status(200).send(stocks);
   } catch (error) {

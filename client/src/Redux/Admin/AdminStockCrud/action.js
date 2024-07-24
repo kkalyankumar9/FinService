@@ -1,5 +1,5 @@
 import axios from "axios";
-import { STOCK_ADD_ERROR, STOCK_ADD_REQUEST, STOCK_ADD_SUCCESS, STOCK_DELETE_ERROR, STOCK_DELETE_REQUEST, STOCK_DELETE_SUCCESS, STOCK_GET_ERROR, STOCK_GET_REQUEST, STOCK_GET_SUCCESS, STOCK_UPDATE_ERROR, STOCK_UPDATE_REQUEST, STOCK_UPDATE_SUCCESS } from "./actionType";
+import { ALLSTOCK_GET_ERROR, ALLSTOCK_GET_REQUEST, ALLSTOCK_GET_SUCCESS, STOCK_ADD_ERROR, STOCK_ADD_REQUEST, STOCK_ADD_SUCCESS, STOCK_DELETE_ERROR, STOCK_DELETE_REQUEST, STOCK_DELETE_SUCCESS, STOCK_GET_ERROR, STOCK_GET_REQUEST, STOCK_GET_SUCCESS, STOCK_UPDATE_ERROR, STOCK_UPDATE_REQUEST, STOCK_UPDATE_SUCCESS } from "./actionType";
 
 
 
@@ -7,12 +7,13 @@ import { STOCK_ADD_ERROR, STOCK_ADD_REQUEST, STOCK_ADD_SUCCESS, STOCK_DELETE_ERR
 const API_URL = "https://finservice-backend-server.onrender.com/admin";
 
 export const getAllStocksdata = () => async (dispatch) => {
-  dispatch({ type: STOCK_GET_REQUEST });
+  dispatch({ type: ALLSTOCK_GET_REQUEST });
   try {
     const response = await axios.get(`${API_URL}/getallstocks`);
-    dispatch({ type: STOCK_GET_SUCCESS, payload: response.data });
+    dispatch({ type: ALLSTOCK_GET_SUCCESS, payload: response.data });
+    console.log(response.data)
   } catch (error) {
-    dispatch({ type: STOCK_GET_ERROR });
+    dispatch({ type: ALLSTOCK_GET_ERROR });
     console.error(error);
   }
 };

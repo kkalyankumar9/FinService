@@ -38,10 +38,7 @@ const MainAllRoutes = () => {
         <Route path='/user_forgotpassword' element={<UserForgotpassword/>}/>
         <Route path='/user_invest' element={<UserPrivateRouter><InvestStocksCom/></UserPrivateRouter>}/>
         <Route path='/user_invest/:id' element={<UserPrivateRouter><InvestSingleStocksMore/></UserPrivateRouter>}/>
-
-        
-          {/* User Routes */}
-        <Route path='/addfunds/:id' element={<PaymentComponent/>}/>
+        <Route path='/addfunds/:id' element={<UserPrivateRouter><PaymentComponent/></UserPrivateRouter>}/>
    
     </Routes>
   )

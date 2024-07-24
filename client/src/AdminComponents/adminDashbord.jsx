@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const AdminDashbord = () => {
   const adminStocks = useSelector((store) => store.StockReducer.adminStocks);
-
+  console.log(adminStocks)
   return (
     <div>
       <AdminNavbar />
@@ -15,16 +15,11 @@ const AdminDashbord = () => {
           {" "}
           <AddStocks />
         </div>
-        {adminStocks.length > 0 ? (
+        {adminStocks.length > 0 && 
           <div>
             <StocksRender />
           </div>
-        ) : (
-          <p className="text-center text-3xl font-bold  text-violet-700 m-auto mt-44 scrolling-text">
-            No stocks added yet.
-            <br /> Add one now!
-          </p>
-        )}
+       }
       </div>
   
     </div>

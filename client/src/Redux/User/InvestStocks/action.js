@@ -120,7 +120,7 @@ export const getTransactionsHistory= () => async (dispatch) => {
       
       );
       dispatch({ type:GET_TRANSACTIONS_SUCCESS, payload: response.data });
-      
+      console.log(response.data)
     } catch (error) {
       dispatch({ type: GET_TRANSACTIONS_ERROR });
       console.error(error);

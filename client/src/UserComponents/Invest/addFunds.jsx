@@ -6,6 +6,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../LandingPage/navbar';
+import AllTransactions from './allTransactions';
+import Footer from '../LandingPage/footer';
 
 const RazorpayPayment = () => {
   const { id } = useParams();
@@ -110,6 +112,8 @@ const RazorpayPayment = () => {
       </div>
       
     </div>
+    <AllTransactions/>
+    <Footer/>
     </>
   );
 };
