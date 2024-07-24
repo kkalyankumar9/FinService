@@ -7,7 +7,7 @@ This is a web application that provides a user-friendly trading platform for inv
 
 
 ## Vercel deployed
-https://fin-service-h2r9qaint-kalyankumars-projects.vercel.app/
+https://fin-serviceap-git-main-kalyankumars-projects.vercel.app/
 
 ## server deployed render
 https://finservice-backend-server.onrender.com/
