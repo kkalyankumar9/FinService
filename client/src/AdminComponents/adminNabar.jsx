@@ -19,7 +19,7 @@ const AdminNavbar = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const adminToken = useSelector((store) => store.AdminAuthReducer.adminToken);
   const isAuth = useSelector((store) => store.AdminAuthReducer.isAuth);
-
+  const adminStocks = useSelector((store) => store.StockReducer.adminStocks);
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(adminLogout());
@@ -104,6 +104,7 @@ const AdminNavbar = () => {
                   >
                     Admin Logout
                   </button>
+                
                 </div>
               )}
             </div>

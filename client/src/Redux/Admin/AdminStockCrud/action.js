@@ -18,19 +18,21 @@ export const getAllStocksdata = () => async (dispatch) => {
   }
 };
 
-export const getStockdata = () => async (dispatch) => {
+export const getStockdata = (page = 1, limit = 8) => async (dispatch) => {
   dispatch({ type: STOCK_GET_REQUEST });
   try {
     const response = await axios.get(`${API_URL}/getstocks`, {
-      headers: { Authorization: `${localStorage.getItem("adminToken")}` },
+      params: { page, limit },
+      headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` },
     });
     dispatch({ type: STOCK_GET_SUCCESS, payload: response.data });
-    console.log(response.data)
+    console.log(response.data);
   } catch (error) {
     dispatch({ type: STOCK_GET_ERROR });
-    console.error(error);
+    console.error('Error fetching stock data:', error);
   }
 };
+
 
 export const createStock = (newTaskData) => async (dispatch) => {
   dispatch({ type: STOCK_ADD_REQUEST });
