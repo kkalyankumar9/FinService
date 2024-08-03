@@ -11,6 +11,8 @@ import {
   ADMIN_SIGNUP_SUCCESS,
   ADMIN_RESET_PASSWORD_SUCCESS,
   ADMIN_FORGOT_PASSWORD_SUCCESS,
+  ADMIN_RESET_PASSWORD_REQUEST,
+  ADMIN_RESET_PASSWORD_ERROR,
 } from './actionType';
 
 export const adminRegister = (signup_data) => async (dispatch) => {
@@ -89,7 +91,9 @@ export const forgotPasswordAdmin = (email) => async (dispatch) => {
 
 
 export const resetPasswordAdmin = (token, newPassword) => async (dispatch) => {
+
   try {
+    dispatch({ type: ADMIN_RESET_PASSWORD_REQUEST });
     const response = 
     fetch('https://finservice-backend-server.onrender.com/admin/reset_password', {
       method: 'PATCH',
@@ -97,14 +101,15 @@ export const resetPasswordAdmin = (token, newPassword) => async (dispatch) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({  token, newPassword }),
-    });
+    },{withCredentials: true,});
     
   
     const data = response.data;
     dispatch({ type: ADMIN_RESET_PASSWORD_SUCCESS, payload: data });
-    return data; // Optional: Return data for further handling in component
+    return data; 
   } catch (error) {
     console.error(error);
+    dispatch({ type: ADMIN_RESET_PASSWORD_ERROR, payload: error.message });
     throw new Error('Error resetting password');
   }
 };

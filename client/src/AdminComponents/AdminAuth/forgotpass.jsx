@@ -32,8 +32,8 @@ const AdminForgotpassword = () => {
     try {
       await dispatch(resetPasswordAdmin(token, newPassword));
       toast.success("Password Reset Successful");
-      setToken("");
-      setNewPassword("");
+      // setToken("");
+      // setNewPassword("");
     } catch (error) {
       console.error(error);
       toast.error("Error resetting password");

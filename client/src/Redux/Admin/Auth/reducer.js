@@ -8,6 +8,9 @@ import {
   ADMIN_SIGNUP_ERROR,
   ADMIN_SIGNUP_REQUEST,
   ADMIN_SIGNUP_SUCCESS,
+  ADMIN_RESET_PASSWORD_SUCCESS,
+  ADMIN_RESET_PASSWORD_REQUEST,
+  ADMIN_RESET_PASSWORD_ERROR
 } from './actionType';
 
 const initialState = {
@@ -22,11 +25,13 @@ const adminReducer = (state = initialState, { type, payload }) => {
     case ADMIN_SIGNUP_REQUEST:
     case ADMIN_SIGNIN_REQUEST:
     case ADMIN_LOGOUT_REQUEST:
+   case ADMIN_RESET_PASSWORD_REQUEST:
       return { ...state, isLoading: true, isError: false };
 
     case ADMIN_SIGNUP_ERROR:
     case ADMIN_SIGNIN_ERROR:
     case ADMIN_LOGOUT_ERROR:
+    case ADMIN_RESET_PASSWORD_ERROR:
       return { ...state, isError: true, isLoading: false, errorMessage: payload };
 
     case ADMIN_SIGNIN_SUCCESS:
@@ -48,7 +53,8 @@ const adminReducer = (state = initialState, { type, payload }) => {
         isLoading: false,
         adminToken: '',
       };
-     
+    case ADMIN_RESET_PASSWORD_SUCCESS:
+      return { ...state, isLoading: false, isError: false };
 
     default:
       return state;
