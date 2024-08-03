@@ -11,8 +11,13 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 app.use(express.json());
 app.use(cors())
-app.use(cookieParser());
-
+// app.use(cookieParser());
+app.use(session({
+  secret: process.env.SESSION_KEY, // Change this to a strong secret key
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: process.env.SESSION_KEY === 'production' } // Set secure to true in production
+}));
 
 app.use("/admin", adminRouters);
 app.use("/user", userRouters);

@@ -29,17 +29,10 @@ const adminForgotPassword = async (req, res) => {
     // Set expiration time for the token (e.g., 1 hour)
     const resetTokenExpiration = Date.now() + 3600000;
 
-    // Store reset token and email in HTTP-only cookies
-    res.cookie('resetToken', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      expires: new Date(resetTokenExpiration),
-    });
-    res.cookie('resetEmail', email, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      expires: new Date(resetTokenExpiration),
-    });
+    // Store reset token and email in session
+    req.session.resetToken = token;
+    req.session.resetEmail = email;
+    req.session.resetTokenExpiration = resetTokenExpiration;
 
     // Include token in the email body
     const mailOptions = {
@@ -63,17 +56,17 @@ const adminPasswordReset = async (req, res) => {
   const { token, newPassword } = req.body;
 
   try {
-    // Retrieve reset token and email from cookies
-    const resetToken = req.cookies.resetToken;
-    const resetEmail = req.cookies.resetEmail;
+    // Retrieve reset token and email from session
+    const { resetToken, resetEmail, resetTokenExpiration } = req.session;
 
-    if (!resetToken || resetToken !== token || !resetEmail) {
+    if (!resetToken || resetToken !== token || !resetEmail || Date.now() > resetTokenExpiration) {
       return res.status(404).send({ msg: 'Invalid or expired token' });
     }
 
-    // Clear the reset token from cookies
-    res.clearCookie('resetToken');
-    res.clearCookie('resetEmail');
+    // Clear the reset token from session
+    req.session.resetToken = null;
+    req.session.resetEmail = null;
+    req.session.resetTokenExpiration = null;
 
     // Now you can proceed to update the user password
     const user = await AdminModel.findOne({ email: resetEmail });

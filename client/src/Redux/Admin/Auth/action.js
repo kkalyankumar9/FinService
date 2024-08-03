@@ -90,21 +90,24 @@ export const forgotPasswordAdmin = (email) => async (dispatch) => {
 };
 
 
-export const resetPasswordAdmin = (token, newPassword) => async (dispatch) => {
 
+export const resetPasswordAdmin = (token, newPassword) => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_RESET_PASSWORD_REQUEST });
-    const response = 
-    fetch('https://finservice-backend-server.onrender.com/admin/reset_password', {
+
+    const response = await fetch('https://finservice-backend-server.onrender.com/admin/reset_password', {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({  token, newPassword }),
+      body: JSON.stringify({ token, newPassword }),
     });
-    
-  
-    const data =await response.json();
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const data = await response.json();
     dispatch({ type: ADMIN_RESET_PASSWORD_SUCCESS, payload: data });
     return data; 
   } catch (error) {
