@@ -104,7 +104,7 @@ export const resetPasswordAdmin = (token, newPassword) => async (dispatch) => {
     });
     
   
-    const data = response.data;
+    const data =await response.json();
     dispatch({ type: ADMIN_RESET_PASSWORD_SUCCESS, payload: data });
     return data; 
   } catch (error) {

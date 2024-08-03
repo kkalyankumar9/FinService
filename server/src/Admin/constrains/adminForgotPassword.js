@@ -3,9 +3,6 @@ const nodemailer = require('nodemailer');
 const bcrypt = require('bcrypt');
 const AdminModel = require('../../Models/adminAuthModel');
 
-
-
-
 // Initialize nodemailer transporter
 const transporter = nodemailer.createTransport({
   host: process.env.HOST,
