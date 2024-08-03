@@ -38,7 +38,12 @@ const adminForgotPassword = async (req, res) => {
       secure: process.env.NODE_ENV === 'production',
       expires: new Date(resetTokenExpiration),
     });
-  
+    res.cookie('resetEmail', email, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      expires: new Date(resetTokenExpiration),
+    });
+
     // Include token in the email body
     const mailOptions = {
       from: 'kkalyan2312@gmail.com',

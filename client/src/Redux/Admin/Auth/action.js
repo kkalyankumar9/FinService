@@ -79,7 +79,7 @@ export const forgotPasswordAdmin = (email) => async (dispatch) => {
   try {
     const response = await axios.post('https://finservice-backend-server.onrender.com/admin/forgot_password', {
       email: email,
-    });
+    } );
     const data = response.data;
     dispatch({ type: ADMIN_FORGOT_PASSWORD_SUCCESS, payload: data });
     return data; // Optional: Return data for further handling in component
@@ -101,7 +101,7 @@ export const resetPasswordAdmin = (token, newPassword) => async (dispatch) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({  token, newPassword }),
-    },{withCredentials: true,});
+    });
     
   
     const data = response.data;
