@@ -18,6 +18,7 @@ const initialState = {
   isError: false,
   isAuth: false,
   adminToken: localStorage.getItem('adminToken') || '',
+  success:null
 };
 
 const adminReducer = (state = initialState, { type, payload }) => {
@@ -53,8 +54,10 @@ const adminReducer = (state = initialState, { type, payload }) => {
         isLoading: false,
         adminToken: '',
       };
-    case ADMIN_RESET_PASSWORD_SUCCESS:
-      return { ...state, isLoading: false, isError: false };
+      case 'ADMIN_FORGOT_PASSWORD_SUCCESS':
+      return { ...state, success: payload, error: null };
+      case 'ADMIN_RESET_PASSWORD_SUCCESS':
+        return { ...state, loading: false, success: payload, error: null };
 
     default:
       return state;

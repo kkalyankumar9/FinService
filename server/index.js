@@ -10,10 +10,7 @@ const StockDataModel = require("./src/Models/stockDataModel");
 const PORT = process.env.PORT || 8080;
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin: 'https://finservice-backend-server.onrender.com',
-  credentials: true,
-}))
+app.use(cors())
 app.use(cookieParser());
 
 
