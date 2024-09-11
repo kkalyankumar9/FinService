@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import  ipo from "../Assests/ipo.webp"
+import  stocks from "../Assests/stock.webp"
+import  mf from "../Assests/MF.webp"
 const assetData = [
     {
       title: 'Stocks',
-      imageSrc: 'https://upstox.com/open-demat-account/assets/images/grow-stock.png',
+      imageSrc: stocks,
       description: 'Invest in shares of companies and earn returns based on their performance.',
     },
     {
       title: 'IPOs',
-      imageSrc: 'https://upstox.com/open-demat-account/assets/images/grow-IPOs.png',
+      imageSrc: ipo,
       description: 'Get in on the ground floor of a company before it goes public and potentially see huge returns.',
     },
     {
       title: 'Mutual Funds',
-      imageSrc: 'https://upstox.com/open-demat-account/assets/images/grow-mutual-fund.png',
+      imageSrc: mf,
       description: 'Pool your money with other investors and invest in a variety of securities.',
     },
   ];

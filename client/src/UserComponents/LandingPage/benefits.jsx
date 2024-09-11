@@ -1,5 +1,7 @@
 import React from 'react';
-
+import  ipo from "../Assests/ipo.webp"
+import  stocks from "../Assests/stock.webp"
+import  mf from "../Assests/MF.webp"
 const benefitsData = [
   {
     title: 'Quick Onboarding',
@@ -29,17 +31,17 @@ const  BenefitsSection=() =>{
 
       <div className="flex justify-center items-center flex-wrap mt-6">
         <img 
-          src="https://upstox.com/open-demat-account/assets/images/benefit-2.png" 
+          src={stocks} 
           alt="Benefit 1" 
           className="w-36 md:w-72 mb-5 md:mr-5 hover:scale-105 transition-transform"
         />
         <img 
-          src="https://upstox.com/open-demat-account/assets/images/benefit-1.png" 
+          src={ipo} 
           alt="Benefit 2" 
           className="w-36 md:w-72 mb-5 md:mr-5 hover:scale-105 transition-transform"
         />
         <img 
-          src="https://upstox.com/open-demat-account/assets/images/benefit-3.png" 
+          src={mf}
           alt="Benefit 3" 
           className="w-36 md:w-72 mb-5 md:mr-5 hover:scale-105 transition-transform"
         />
