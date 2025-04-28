@@ -43,9 +43,10 @@ export const addfundsUser = (payload, payDetails) => async (dispatch) => {
     console.log('Order response:', orderResponse.data);
 
     const { amount: orderAmount, orderId, currency } = orderResponse.data;
-
+// console.log("key_id",ProcessingInstruction.env.REACT_APP_KEY_ID)
+//const key_id = process.env.REACT_APP_KEY_ID
     const options = {
-        key: process.env.KEY_ID,
+        key: "rzp_test_Yp3rYfQtBpL7B9",
         amount: orderAmount.toString(),
         currency: currency,
         name: "Fin Services",

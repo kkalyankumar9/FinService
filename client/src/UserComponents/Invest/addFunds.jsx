@@ -47,7 +47,7 @@ const RazorpayPayment = () => {
     }
 
     const payload = {
-      amount: amount,
+      amount: amount.toString(),
       no_of_stocks: +no_of_stocks,
       productId: id,
     };

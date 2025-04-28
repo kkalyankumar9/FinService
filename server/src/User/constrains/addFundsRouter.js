@@ -2,10 +2,12 @@ const Razorpay = require('razorpay');
 const crypto = require('crypto');
 const AddFundModel = require('../../Models/addFundModel');
 
+
 const instance = new Razorpay({
     key_id: process.env.KEY_ID,
     key_secret: process.env.KEY_SECRET,
 });
+
 
 const addFunds = async (req, res) => {
     const { amount,no_of_stocks,productId, username, userId } = req.body;
@@ -37,7 +39,7 @@ const addFunds = async (req, res) => {
             username,
             userId,
         });
-
+        console.log(process.env.KEY_ID,process.env.KEY_SECRET)
         await fundData.save();
         console.log("Fund data saved:", fundData);
 
