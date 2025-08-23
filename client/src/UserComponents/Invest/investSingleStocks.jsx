@@ -10,15 +10,20 @@ import Footer from '../LandingPage/footer';
 import StockPieChart from './charts/pieChartCom';
 
 
+
 const InvestSingleStocksMore = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const singleStockData = useSelector((store) => store.UserStocksReducer.singleStockData);
   const isLoading = useSelector((store) => store.UserStocksReducer.isLoading);
+  console.log(singleStockData ,"singleStockData")
 
   useEffect(() => {
     dispatch(getUserSingleStock(id));
   }, [dispatch, id]);
+  
+
+   
 
   if (isLoading) {
     return (
