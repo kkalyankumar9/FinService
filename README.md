@@ -75,6 +75,7 @@ Start the server
 ## Stock Buy
 ![finservice_stockbuy](https://github.com/user-attachments/assets/c62e210d-9a9a-41a4-ac60-e0293e274aac)
 ## Payment
+
 ### Razorpay Gateway
 #### Select payment mode (Eg:- Netbanking)
 ![finservice_payment](https://github.com/user-attachments/assets/11b64b16-adb8-439e-a073-0303fbcd263f)
@@ -83,7 +84,6 @@ Start the server
 ![image](https://github.com/user-attachments/assets/b75c9450-1a0d-45ca-9bcf-f318edb633b6)
 
 ## Contributing
-
 We welcome contributions from anyone who would like to contribute.
 
 ## Authors 
