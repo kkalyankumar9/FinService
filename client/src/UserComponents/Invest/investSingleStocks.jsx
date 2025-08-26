@@ -9,21 +9,15 @@ import StockLineChart from './charts/lineChartCom';
 import Footer from '../LandingPage/footer';
 import StockPieChart from './charts/pieChartCom';
 
-
-
 const InvestSingleStocksMore = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const singleStockData = useSelector((store) => store.UserStocksReducer.singleStockData);
   const isLoading = useSelector((store) => store.UserStocksReducer.isLoading);
-  console.log(singleStockData ,"singleStockData")
 
   useEffect(() => {
     dispatch(getUserSingleStock(id));
   }, [dispatch, id]);
-  
-
-   
 
   if (isLoading) {
     return (
@@ -42,76 +36,88 @@ const InvestSingleStocksMore = () => {
   }
 
   return (
-    <div>
+    <div className="bg-gray-50 min-h-screen">
       <Navbar />
-      <div className=" from-blue-50 to-indigo-100 shadow-lg rounded-lg p-8 m-6 max-w-4xl mx-auto">
-  <img
-    src={singleStockData.image}
-    alt={singleStockData.company_name}
-    className="w-full h-60  rounded-t-lg mb-6"
-  />
-  <div className="px-6">
-    <h2 className="text-4xl font-extrabold text-gray-900 mb-4">{singleStockData.company_name}</h2>
-    <p className="text-xl text-gray-700 mb-3">
-      <span className="font-semibold">Industry:</span> {singleStockData.industry}
-    </p>
-    <p className="text-xl text-gray-700 mb-3">
-      <span className="font-semibold">Location:</span> {singleStockData.location}
-    </p>
-    <p className="text-xl text-gray-700 mb-3">
-      <span className="font-semibold">Founded:</span> {singleStockData.founded_year}
-    </p>
-    <p className="text-xl text-gray-700 mb-3">
-      <span className="font-semibold">Revenue:</span> ₹{singleStockData.revenue}
-    </p>
-    <p className="text-xl text-gray-700 mb-3">
-      <span className="font-semibold">Employees:</span> {singleStockData.number_of_employees}
-    </p>
-    <p className="text-xl text-gray-700 mb-3">
-      <span className="font-semibold">Current Stock Price:</span> ₹{singleStockData.current_price}
-    </p>
-    <p className="text-xl text-gray-700 mb-3">
-      <span className="font-semibold">Market Cap:</span> ₹{singleStockData.market_cap}M
-    </p>
-    <p className="text-xl text-gray-700 mb-3">
-      <span className="font-semibold">P/E Ratio:</span> {singleStockData.pe_ratio}
-    </p>
-    <p className="text-xl text-gray-700 mb-3">
-      <span className="font-semibold">High:</span> ₹{singleStockData.high}
-    </p>
-    <p className="text-xl text-gray-700 mb-3">
-      <span className="font-semibold">Low:</span> ₹{singleStockData.low}
-    </p>
-    <p className="text-xl text-gray-700 mb-3">
-      <span className="font-semibold">Product Categories:</span> {singleStockData.product_categories.join(", ")}
-    </p>
-    <div className="flex justify-center mt-8">
-      <Link to={`/addfunds/${id}`}>
-        <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded-lg shadow-md transition-all duration-200">
-          Buy
-        </button>
-      </Link>
-    </div>
-  </div>
-</div>
 
+      {/* Stock Info Card */}
+      <div className="bg-white shadow-xl rounded-2xl p-8 m-6  max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="flex items-center space-x-6 border-b pb-6">
+          <img
+            src={singleStockData.image}
+            alt={singleStockData.company_name}
+            className="w-28 h-28 rounded-xl shadow-md object-cover"
+          />
+          <div>
+            <h2 className="text-4xl font-extrabold text-gray-900">
+              {singleStockData.company_name}
+            </h2>
+            <p className="text-lg text-gray-600">{singleStockData.industry}</p>
+            <p className="text-md text-gray-500">{singleStockData.location}</p>
+          </div>
+        </div>
 
+        {/* Stock Price Highlight */}
+        <div className="mt-6 flex justify-between items-center bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl shadow-inner">
+          <div>
+            <p className="text-3xl font-bold text-green-600">
+              ₹{singleStockData.current_price}
+            </p>
+            <p className="text-gray-500">Current Stock Price</p>
+          </div>
+          <div>
+            <p className="text-2xl font-semibold text-indigo-600">
+              {singleStockData.pe_ratio}
+            </p>
+            <p className="text-gray-500">P/E Ratio</p>
+          </div>
+          <div>
+            <p className="text-2xl font-semibold text-blue-600">
+              ₹{singleStockData.market_cap}M
+            </p>
+            <p className="text-gray-500">Market Cap</p>
+          </div>
+        </div>
 
-<div className="flex flex-col items-center justify-center mt-8 space-y-8">
-  <div className="w-full max-w-3xl">
-  
-    <StockPieChart data={singleStockData} />
-  </div>
-  <div className="w-full max-w-3xl">
-    <StockBarChart data={singleStockData} />
-  </div>
-  <div className="w-full max-w-3xl">
-    <StockLineChart data={singleStockData} />
-  </div>
-</div>
+        {/* Stock Details Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8 text-gray-700">
+          <p><span className="font-semibold">Founded:</span> {singleStockData.founded_year}</p>
+          <p><span className="font-semibold">Revenue:</span> ₹{singleStockData.revenue}</p>
+          <p><span className="font-semibold">Employees:</span> {singleStockData.number_of_employees}</p>
+          <p><span className="font-semibold">High:</span> ₹{singleStockData.high}</p>
+          <p><span className="font-semibold">Low:</span> ₹{singleStockData.low}</p>
+          <p><span className="font-semibold">Products:</span> {singleStockData.product_categories.join(", ")}</p>
+        </div>
 
-     
- <Footer/>
+        {/* Buy Button */}
+        <div className="flex justify-center mt-10">
+          <Link to={`/addfunds/${id}`}>
+            <button className="bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white font-semibold px-8 py-3 rounded-xl shadow-md transition-all duration-300 transform hover:scale-105">
+              Buy Stock
+            </button>
+          </Link>
+        </div>
+      </div>
+
+      {/* Charts Section */}
+      <div className="flex flex-col items-center justify-center m-10 space-y-10 px-6 ">
+        <div className="w-full max-w-4xl bg-white shadow-md rounded-2xl p-6">
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">Stock Distribution</h3>
+          <StockPieChart data={singleStockData} />
+        </div>
+
+        <div className="w-full max-w-4xl bg-white shadow-md rounded-2xl p-6">
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">Stock Performance</h3>
+          <StockBarChart data={singleStockData} />
+        </div>
+
+        <div className="w-full max-w-4xl bg-white shadow-md rounded-2xl p-6">
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">Historical Trend</h3>
+          <StockLineChart data={singleStockData} />
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 };

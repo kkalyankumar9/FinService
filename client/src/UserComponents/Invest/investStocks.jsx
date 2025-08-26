@@ -10,6 +10,7 @@ const InvestStocksCom = () => {
   const isLoading = useSelector((store) => store.UserStocksReducer.isLoading);
   const [searchStock, setSearchStock] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [sortOption, setSortOption] = useState(""); // <-- new state
   const itemsPerPage = 8;
 
   useEffect(() => {
@@ -18,13 +19,31 @@ const InvestStocksCom = () => {
 
   const handleChange = (e) => {
     setSearchStock(e.target.value);
-    setCurrentPage(1); // Reset to the first page on search
+    setCurrentPage(1);
   };
 
-  const filteredStocks = stockData.filter(stock =>
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
+    setCurrentPage(1);
+  };
+
+  // 🔎 Filter stocks
+  let filteredStocks = stockData.filter(stock =>
     stock.company_name.toLowerCase().includes(searchStock.toLowerCase())
   );
 
+  // 🔽 Apply sorting
+  if (sortOption === "priceAsc") {
+    filteredStocks.sort((a, b) => a.current_price - b.current_price);
+  } else if (sortOption === "priceDesc") {
+    filteredStocks.sort((a, b) => b.current_price - a.current_price);
+  } else if (sortOption === "yearAsc") {
+    filteredStocks.sort((a, b) => a.founded_year - b.founded_year);
+  } else if (sortOption === "yearDesc") {
+    filteredStocks.sort((a, b) => b.founded_year - a.founded_year);
+  }
+
+  // 🔄 Pagination
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredStocks.slice(indexOfFirstItem, indexOfLastItem);
@@ -46,6 +65,8 @@ const InvestStocksCom = () => {
     <>
       <Navbar />
       <div className="max-w-screen-lg mx-auto p-4">
+        
+        {/* Search Input */}
         <input
           type="text"
           placeholder="Search"
@@ -53,6 +74,23 @@ const InvestStocksCom = () => {
           value={searchStock}
           className="w-full p-2 mb-4 border border-gray-300 rounded-md"
         />
+
+        {/* Sort Dropdown */}
+        <div className="flex justify-end mb-4">
+          <select
+            value={sortOption}
+            onChange={handleSortChange}
+            className="p-2 border border-gray-300 rounded-md"
+          >
+            <option value="">Sort By</option>
+            <option value="priceAsc">Price: Low to High</option>
+            <option value="priceDesc">Price: High to Low</option>
+            <option value="yearAsc">Founded: Oldest First</option>
+            <option value="yearDesc">Founded: Newest First</option>
+          </select>
+        </div>
+
+        {/* Stocks Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {currentItems.length > 0 ? (
             currentItems.map((stock) => (
@@ -60,7 +98,7 @@ const InvestStocksCom = () => {
                 <img
                   src={stock.image}
                   alt="error"
-                  className="w-56 h-32  rounded-t-md mb-2"
+                  className="w-56 h-32 rounded-t-md mb-2"
                 />
                 <h3 className="text-lg font-bold mb-1">{stock.company_name}</h3>
                 <p className="text-sm text-gray-600 mb-1">
@@ -81,6 +119,8 @@ const InvestStocksCom = () => {
             <p className="col-span-full text-center text-gray-500">No stocks available</p>
           )}
         </div>
+
+        {/*  Pagination */}
         <div className="flex justify-center mt-4">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
